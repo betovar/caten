@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Cataniquette!</title>
+	<link href="bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" media="screen">
+	<meta name="author" content="Brian E Tovar">
+	<script src="http://d3js.org/d3.v3.min.js"></script>
+</head>
+<body>
+	<div class="row">
+  	<div class="span6">
+  		<embed src="board.svg" type="image/svg+xml" />
+  	</div>
+	</div>
+	<div class="row">
+		<div class="span8 offset1">
+			<embed src="hand.svg" type="image/svg+xml" />
+		</div>
+  </div>
+
+	<script type="text/javascript">
+		//Width and height
+		var w = 400;
+		var h = 100;
+		var barPadding = 1;
+
+		var dataset = [ 0, 2, 5, 4, 8, 10, 8, 5, 5, 6, 2 ];
+
+		//Create SVG element
+		var svg = d3.select("body")
+					.append("svg")
+					.attr("width", w)
+					.attr("height", h);
+
+		svg.selectAll("rect")
+		   .data(dataset)
+		   .enter()
+		   .append("rect")
+		   .attr("x", function(d, i) {
+		   		return i * (w / dataset.length);
+		   })
+		   .attr("y", function(d) {
+		   		return h - (d * 10);
+		   })
+		   .attr("width", w / dataset.length - barPadding)
+		   .attr("height", function(d) {
+		   		return d * 10;
+		   })
+		   .attr("fill", "grey");
+
+		svg.selectAll("text")
+		   .data(dataset)
+		   .enter()
+		   .append("text")
+		   .text(function(d) {
+		   		return d;
+		   })
+		   .attr("text-anchor", "middle")
+		   .attr("x", function(d, i) {
+		   		return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
+		   })
+		   .attr("y", function(d) {
+		   		return h - (d * 10) + 14;
+		   })
+		   .attr("font-family", "sans-serif")
+		   .attr("font-size", "11px")
+		   .attr("fill", "white");
+	</script>
+
+  <script src="http://code.jquery.com/jquery-latest.js"></script>
+  <script src="bootstrap/docs/assets/js/bootstrap.js"></script>
+</body>
+</html>

@@ -1,0 +1,53 @@
+polygon {
+	fill: inherit;
+  	stroke: black;
+  	stroke-width: 8;
+}
+
+circle {
+	fill: khaki;
+	stroke: black;
+	stroke-width: 5;
+}
+
+text {
+	fill: black;
+	text-align: center;
+	text-anchor: middle;
+	dominant-baseline: central;
+	font-family: serif;
+	font-size: 2em;
+}
+
+path {
+	stroke-linecap: round;
+	stroke-width: 10;
+}
+
+.hills {
+  	fill: firebrick;
+}
+
+.pasture {
+  	fill: lightgreen;
+}
+
+.quarry {
+  	fill: slategrey;
+}
+
+.fields {
+  	fill: goldenrod;
+}
+
+.forest {
+  	fill: forestgreen;
+}
+
+.desert {
+  	fill: beige;
+}
+
+#ocean {
+  	fill: blue;
+}

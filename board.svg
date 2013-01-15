@@ -1,0 +1,96 @@
+<?xml version="1.0" standalone="no" ?>
+<?xml-stylesheet href="default.css" type="text/css"?>
+
+<svg xmlns="http://www.w3.org/2000/svg" 
+	version="1.1"
+	id="board"
+	width="1010"
+    height="900">
+	<polygon id="ocean" transform="translate(10 10)"
+		points="0,428.7 247.5,857.4 742.5,857.4 990,428.7 742.5,0 247.5,0" />
+	<g id="resources" transform="translate(10 10)">
+		<polygon id="A" class="desert"
+		points="412.5,762.1 330.0,809.7 247.5,762.1 247.5,666.8 330.0,619.2 412.5,666.8" />
+		<polygon id="B" class="desert"
+		points="577.5,762.1 495.0,809.7 412.5,762.1 412.5,666.8 495.0,619.2 577.5,666.8" />
+		<polygon id="C" class="desert"
+		points="742.5,762.1 660.0,809.7 577.5,762.1 577.5,666.8 660.0,619.2 742.5,666.8" />
+		<polygon id="D" class="desert"
+		points="825.0,619.2 742.5,666.8 660.0,619.2 660.0,523.9 742.5,476.3 825.0,523.9" />
+		<polygon id="E" class="desert"
+		points="907.5,476.3 825.0,523.9 742.5,476.3 742.5,381.1 825.0,333.4 907.5,381.1" />
+		<polygon id="F" class="desert"
+		points="825.0,333.4 742.5,381.1 660.0,333.4 660.0,238.2 742.5,190.5 825.0,238.2" />
+		<polygon id="G" class="desert"
+		points="742.5,190.5 660.0,238.2 577.5,190.5 577.5,95.3 660.0,47.6 742.5,95.3" />
+		<polygon id="H" class="desert"
+		points="577.5,190.5 495.0,238.2 412.5,190.5 412.5,95.3 495.0,47.6 577.5,95.3" />
+		<polygon id="I" class="desert"
+		points="412.5,190.5 330.0,238.2 247.5,190.5 247.5,95.3 330.0,47.6 412.5,95.3" />
+		<polygon id="J" class="desert"
+		points="330.0,333.4 247.5,381.1 165.0,333.4 165.0,238.2 247.5,190.5 330.0,238.2" />
+		<polygon id="K" class="desert"
+		points="247.5,476.3 165.0,523.9 82.5,476.3 82.5,381.1 165.0,333.4 247.5,381.1" />
+		<polygon id="L" class="desert"
+		points="330.0,619.2 247.5,666.8 165.0,619.2 165.0,523.9 247.5,476.3 330.0,523.9" />
+		<polygon id="M" class="desert"
+		points="495.0,619.2 412.5,666.8 330.0,619.2 330.0,523.9 412.5,476.3 495.0,523.9" />
+		<polygon id="N" class="desert"
+		points="660.0,619.2 577.5,666.8 495.0,619.2 495.0,523.9 577.5,476.3 660.0,523.9" />
+		<polygon id="O" class="desert"
+		points="742.5,476.3 660.0,523.9 577.5,476.3 577.5,381.1 660.0,333.4 742.5,381.1" />
+		<polygon id="P" class="desert"
+		points="660.0,333.4 577.5,381.1 495.0,333.4 495.0,238.2 577.5,190.5 660.0,238.2" />
+		<polygon id="Q" class="desert"
+		points="495.0,333.4 412.5,381.1 330.0,333.4 330.0,238.2 412.5,190.5 495.0,238.2" />
+		<polygon id="R" class="desert"
+		points="412.5,476.3 330.0,523.9 247.5,476.3 247.5,381.1 330.0,333.4 412.5,381.1" />
+		<polygon id="S" class="desert"
+		points="577.5,476.3 495.0,523.9 412.5,476.3 412.5,381.1 495.0,333.4 577.5,381.1" />
+	</g>
+	<g id="tokens" transform="translate(10 10)">
+		<circle id="A" cx="330.0" cy="714.5" r="30" />
+		<circle id="B" cx="495.0" cy="714.5" r="30" />
+		<circle id="C" cx="660.0" cy="714.5" r="30" />
+		<circle id="D" cx="742.5" cy="571.6" r="30" />
+		<circle id="E" cx="825.0" cy="428.7" r="30" />
+		<circle id="F" cx="742.5" cy="285.8" r="30" />
+		<circle id="G" cx="660.0" cy="142.9" r="30" />
+		<circle id="H" cx="495.0" cy="142.9" r="30" />
+		<circle id="I" cx="330.0" cy="142.9" r="30" />
+		<circle id="J" cx="247.5" cy="285.8" r="30" />
+		<circle id="K" cx="165.0" cy="428.7" r="30" />
+		<circle id="L" cx="247.5" cy="571.6" r="30" />
+		<circle id="M" cx="412.5" cy="571.6" r="30" />
+		<circle id="N" cx="577.5" cy="571.6" r="30" />
+		<circle id="O" cx="660.0" cy="428.7" r="30" />
+		<circle id="P" cx="577.5" cy="285.8" r="30" />
+		<circle id="Q" cx="412.5" cy="285.8" r="30" />
+		<circle id="R" cx="330.0" cy="428.7" r="30" />
+		<circle id="S" cx="495.0" cy="428.7" r="30" />
+	</g>
+	<g id="numerals" transform="translate(10 10)">
+		<text id="A" x="330.0" y="714.5">1</text>
+		<text id="B" x="495.0" y="714.5">2</text>
+		<text id="C" x="660.0" y="714.5">3</text>
+		<text id="D" x="742.5" y="571.6">4</text>
+		<text id="E" x="825.0" y="428.7">5</text>
+		<text id="F" x="742.5" y="285.8">6</text>
+		<text id="G" x="660.0" y="142.9">7</text>
+		<text id="H" x="495.0" y="142.9">8</text>
+		<text id="I" x="330.0" y="142.9">9</text>
+		<text id="J" x="247.5" y="285.8">10</text>
+		<text id="K" x="165.0" y="428.7">11</text>
+		<text id="L" x="247.5" y="571.6">12</text>
+		<text id="M" x="412.5" y="571.6">13</text>
+		<text id="N" x="577.5" y="571.6">14</text>
+		<text id="O" x="660.0" y="428.7">15</text>
+		<text id="P" x="577.5" y="285.8">16</text>
+		<text id="Q" x="412.5" y="285.8">17</text>
+		<text id="R" x="330.0" y="428.7">18</text>
+		<text id="S" x="495.0" y="428.7">19</text>
+	</g>
+	<g id="harbors" transform="translate(10 10)">
+
+	</g>
+</svg>
