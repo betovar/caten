@@ -8,61 +8,61 @@
      height="900">
 
 	<g id="resources">
-		<polygon id="A" class="desert"
+		<polygon id="A" class="quarry"
 		transform="translate(326,733)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="B" class="desert"
+		<polygon id="B" class="fields"
 		transform="translate(500,733)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="C" class="desert"
+		<polygon id="C" class="forest"
 		transform="translate(673,733)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="D" class="desert"
+		<polygon id="D" class="quarry"
 		transform="translate(759,583)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="E" class="desert"
+		<polygon id="E" class="fields"
 		transform="translate(846,433)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="F" class="desert"
+		<polygon id="F" class="pasture"
 		transform="translate(759,283)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="G" class="desert"
+		<polygon id="G" class="fields"
 		transform="translate(673,133)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="H" class="desert"
+		<polygon id="H" class="pasture"
 		transform="translate(500,133)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="I" class="desert"
+		<polygon id="I" class="forest"
 		transform="translate(326,133)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="J" class="desert"
+		<polygon id="J" class="hills"
 		transform="translate(240,283)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
 		<polygon id="K" class="desert"
 		transform="translate(153,433)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="L" class="desert"
+		<polygon id="L" class="hills"
 		transform="translate(240,583)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="M" class="desert"
+		<polygon id="M" class="pasture"
 		transform="translate(413,583)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="N" class="desert"
+		<polygon id="N" class="pasture"
 		transform="translate(586,583)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="O" class="desert"
+		<polygon id="O" class="forest"
 		transform="translate(673,433)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="P" class="desert"
+		<polygon id="P" class="hills"
 		transform="translate(586,283)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="Q" class="desert"
+		<polygon id="Q" class="quarry"
 		transform="translate(413,283)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="R" class="desert"
+		<polygon id="R" class="forest"
 		transform="translate(326,433)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
-		<polygon id="S" class="desert"
+		<polygon id="S" class="fields"
 		transform="translate(500,433)"
 		points=" 86,50 0,100 -86,50 -86,-50 0,-100 86,-50 "/>
 	</g>
