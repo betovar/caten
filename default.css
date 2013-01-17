@@ -1,8 +1,11 @@
 polygon {
 	fill: inherit;
   	stroke: black;
-  	stroke-width: 8;
+  	stroke-width: 10;
 }
+
+html, body { margin:0; padding:0; overflow:hidden }
+svg { position:fixed; top:0; left:0; height:100%; width:100% }
 
 circle {
 	fill: khaki;
@@ -21,33 +24,34 @@ text {
 
 path {
 	stroke-linecap: round;
-	stroke-width: 10;
+	stroke-width: 20;
 }
 
 .hills {
-  	fill: firebrick;
-}
-
-.pasture {
-  	fill: lightgreen;
-}
-
-.quarry {
-  	fill: slategrey;
-}
-
-.fields {
-  	fill: goldenrod;
+  	fill: #F1362F;
 }
 
 .forest {
-  	fill: forestgreen;
+  	fill: SaddleBrown;
+}
+
+.pasture {
+  	fill: #88C349;
+}
+
+.quarry {
+  	fill: grey;
+}
+
+.fields {
+  	fill: #F7A51B;
 }
 
 .desert {
-  	fill: beige;
+  	fill: #F5DEB3;
 }
 
-#ocean {
-  	fill: blue;
+svg #ocean {
+  	fill: #1991B6;
+  	stroke: black;
 }

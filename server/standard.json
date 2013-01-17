@@ -1,0 +1,47 @@
+{
+	"game": {
+		"id":"50beffb1b9116fe837001378",
+		"type": "standard",
+		"title": "My Catatniquette Game",
+	},
+	"board": {
+		"A": {
+			"numeral": "5", 
+			"resource": "quarry", 
+			"points": "412,762 330,809 247,762 247,666 330,619 412,666"
+		},
+		"B": {
+			"numeral": "2", 
+			"resource": "fields", 
+			"points": "577,762 495,809 412,762 412,666 495,619 577,666"
+		},
+		"C": {"numeral": "6", "resource": "forest"},
+		"D": {"numeral": "3", "resource": "quarry"},
+		"E": {"numeral": "8", "resource": "fields"},
+		"F": {"numeral": "10", "resource": "pasture"},
+		"G": {"numeral": "9", "resource": "fields"},
+		"H": {"numeral": "12", "resource": "pasture"},
+		"I": {"numeral": "11", "resource": "forest"},
+		"J": {"numeral": "4", "resource": "hills"},
+		"K": {"numeral": "0", "resource": "desert"},
+		"L": {"numeral": "8", "resource": "hills"},
+		"M": {"numeral": "10", "resource": "pasture"},
+		"N": {"numeral": "9", "resource": "pasture"},
+		"O": {"numeral": "4", "resource": "forest"},
+		"P": {"numeral": "5", "resource": "hills"},
+		"Q": {"numeral": "6", "resource": "quarry"},
+		"R": {"numeral": "3", "resource": "forest"},
+		"S": {"numeral": "11", "resource": "fields"}
+	},
+	"harbors": {
+		"1": {"exchange": "3:1", "resource": "all"},
+		"4": {"exchange": "2:1", "resource": "lumber"},
+		"8": {"exchange": "2:1", "resource": "brick"},
+		"11": {"exchange": "3:1", "resource": "all"},
+		"14": {"exchange": "3:1", "resource": "all"},
+		"18": {"exchange": "2:1", "resource": "wool"},
+		"21": {"exchange": "3:1", "resource": "all"},
+		"24": {"exchange": "2:1", "resource": "ore"},
+		"28": {"exchange": "2:1", "resource": "wheat"}
+	}
+}

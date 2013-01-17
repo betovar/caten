@@ -2,73 +2,52 @@
 <html lang="en">
 <head>
 	<meta charset="utf-8">
-	<title>Cataniquette!</title>
-	<link href="bootstrap/docs/assets/css/bootstrap.css" rel="stylesheet" media="screen">
+	<title>Caten Home</title>
+	<link href="bootstrap/css/bootstrap.css" rel="stylesheet" media="screen">
 	<meta name="author" content="Brian E Tovar">
-	<script src="http://d3js.org/d3.v3.min.js"></script>
 </head>
 <body>
+	<h1 align="center">Welcome to Caten!</h1>
 	<div class="row">
-  	<div class="span6">
+		<div class="span6 offset1">
+			<svg xmlns="http://www.w3.org/2000/svg" 
+					 version="1.1"
+					 width="0"
+					 height="0"
+					 id="board">
+				<style type="text/css">
+					#ocean {
+						fill: goldenrod;
+						stroke: black;
+						stroke-width: 10;
+					}
+					polygon:hover {
+						opacity: 1;
+					}
+					#house {
+						fill: SaddleBrown;
+						stroke: white;
+						stroke-width: 3;
+					}
+				</style>
+			</svg>
+		</div>
+	</div>
+	<div class="row">
+  	<div class="span6 offset1">
   		<embed src="board.svg" type="image/svg+xml" />
   	</div>
 	</div>
+	<!--
 	<div class="row">
-		<div class="span8 offset1">
-			<embed src="hand.svg" type="image/svg+xml" />
+		<div class="span3 offset6">
+		  <script src="frequency.js"></script>
 		</div>
   </div>
-
-	<script type="text/javascript">
-		//Width and height
-		var w = 400;
-		var h = 100;
-		var barPadding = 1;
-
-		var dataset = [ 0, 2, 5, 4, 8, 10, 8, 5, 5, 6, 2 ];
-
-		//Create SVG element
-		var svg = d3.select("body")
-					.append("svg")
-					.attr("width", w)
-					.attr("height", h);
-
-		svg.selectAll("rect")
-		   .data(dataset)
-		   .enter()
-		   .append("rect")
-		   .attr("x", function(d, i) {
-		   		return i * (w / dataset.length);
-		   })
-		   .attr("y", function(d) {
-		   		return h - (d * 10);
-		   })
-		   .attr("width", w / dataset.length - barPadding)
-		   .attr("height", function(d) {
-		   		return d * 10;
-		   })
-		   .attr("fill", "grey");
-
-		svg.selectAll("text")
-		   .data(dataset)
-		   .enter()
-		   .append("text")
-		   .text(function(d) {
-		   		return d;
-		   })
-		   .attr("text-anchor", "middle")
-		   .attr("x", function(d, i) {
-		   		return i * (w / dataset.length) + (w / dataset.length - barPadding) / 2;
-		   })
-		   .attr("y", function(d) {
-		   		return h - (d * 10) + 14;
-		   })
-		   .attr("font-family", "sans-serif")
-		   .attr("font-size", "11px")
-		   .attr("fill", "white");
-	</script>
-
+	-->
   <script src="http://code.jquery.com/jquery-latest.js"></script>
-  <script src="bootstrap/docs/assets/js/bootstrap.js"></script>
+  <script src="bootstrap/js/bootstrap.js"></script>
+	<script src="d3/d3.min.js"></script>
+  <script src="board.js"></script>
 </body>
 </html>
