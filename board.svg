@@ -9,43 +9,44 @@
 	<polygon id="ocean" transform="translate(5 5)"
 		points="0,428.7 247.5,857.4 742.5,857.4 990,428.7 742.5,0 247.5,0" />
 	<g id="resources" transform="translate(5 5)">
-		<polygon id="A" class="fields"
-		points="412.5,762.1 330.0,809.7 247.5,762.1 247.5,666.8 330.0,619.2 412.5,666.8" />
-		<polygon id="B" class="quarry"
+		<polygon id="A" class="quarry"
+		points="87,50 0,100 -87,50 -87,-50 0,-100 87,-50" 
+		transform="translate(330,714)" />
+		<polygon id="B" class="fields"
 		points="577.5,762.1 495.0,809.7 412.5,762.1 412.5,666.8 495.0,619.2 577.5,666.8" />
-		<polygon id="C" class="fields"
+		<polygon id="C" class="forest"
 		points="742.5,762.1 660.0,809.7 577.5,762.1 577.5,666.8 660.0,619.2 742.5,666.8" />
-		<polygon id="D" class="hills"
+		<polygon id="D" class="quarry"
 		points="825.0,619.2 742.5,666.8 660.0,619.2 660.0,523.9 742.5,476.3 825.0,523.9" />
-		<polygon id="E" class="pasture"
+		<polygon id="E" class="fields"
 		points="907.5,476.3 825.0,523.9 742.5,476.3 742.5,381.1 825.0,333.4 907.5,381.1" />
-		<polygon id="F" class="hills"
+		<polygon id="F" class="pasture"
 		points="825.0,333.4 742.5,381.1 660.0,333.4 660.0,238.2 742.5,190.5 825.0,238.2" />
-		<polygon id="G" class="quarry"
+		<polygon id="G" class="fields"
 		points="742.5,190.5 660.0,238.2 577.5,190.5 577.5,95.3 660.0,47.6 742.5,95.3" />
-		<polygon id="H" class="quarry"
+		<polygon id="H" class="pasture"
 		points="577.5,190.5 495.0,238.2 412.5,190.5 412.5,95.3 495.0,47.6 577.5,95.3" />
-		<polygon id="I" class="pasture"
+		<polygon id="I" class="forest"
 		points="412.5,190.5 330.0,238.2 247.5,190.5 247.5,95.3 330.0,47.6 412.5,95.3" />
-		<polygon id="J" class="fields"
+		<polygon id="J" class="hills"
 		points="330.0,333.4 247.5,381.1 165.0,333.4 165.0,238.2 247.5,190.5 330.0,238.2" />
-		<polygon id="K" class="pasture"
+		<polygon id="K" class="desert"
 		points="247.5,476.3 165.0,523.9 82.5,476.3 82.5,381.1 165.0,333.4 247.5,381.1" />
-		<polygon id="L" class="desert"
+		<polygon id="L" class="hills"
 		points="330.0,619.2 247.5,666.8 165.0,619.2 165.0,523.9 247.5,476.3 330.0,523.9" />
-		<polygon id="M" class="hills"
+		<polygon id="M" class="pasture"
 		points="495.0,619.2 412.5,666.8 330.0,619.2 330.0,523.9 412.5,476.3 495.0,523.9" />
-		<polygon id="N" class="forest"
+		<polygon id="N" class="pasture"
 		points="660.0,619.2 577.5,666.8 495.0,619.2 495.0,523.9 577.5,476.3 660.0,523.9" />
-		<polygon id="O" class="desert"
+		<polygon id="O" class="forest"
 		points="742.5,476.3 660.0,523.9 577.5,476.3 577.5,381.1 660.0,333.4 742.5,381.1" />
-		<polygon id="P" class="pasture"
+		<polygon id="P" class="hills"
 		points="660.0,333.4 577.5,381.1 495.0,333.4 495.0,238.2 577.5,190.5 660.0,238.2" />
 		<polygon id="Q" class="quarry"
 		points="495.0,333.4 412.5,381.1 330.0,333.4 330.0,238.2 412.5,190.5 495.0,238.2" />
-		<polygon id="R" class="hills"
+		<polygon id="R" class="forest"
 		points="412.5,476.3 330.0,523.9 247.5,476.3 247.5,381.1 330.0,333.4 412.5,381.1" />
-		<polygon id="S" class="forest"
+		<polygon id="S" class="fields"
 		points="577.5,476.3 495.0,523.9 412.5,476.3 412.5,381.1 495.0,333.4 577.5,381.1" />
 	</g>
 	<g id="tokens" transform="translate(5 5)">
@@ -89,5 +90,16 @@
 		<text id="Q" x="412.5" y="285.8">Q</text>
 		<text id="R" x="330.0" y="428.7">R</text>
 		<text id="S" x="495.0" y="428.7">S</text>
+	</g>
+	<g id="buildings" >
+		<polygon id="A1" class="unowned"
+			points="-20,20 -20,-5 0,-20 20,-5 20,20"
+			transform="translate(417.5,767.1)" />
+		<polygon id="A2" class="unowned"
+			points="-20,20 -20,-5 0,-20 20,-5 20,20"
+			transform="translate(252.5,767.1)" />
+		<polygon id="A3" class="unowned"
+			points="-20,20 -20,-5 0,-20 20,-5 20,20"
+			transform="translate(335.0,624.2)" />
 	</g>
 </svg>

@@ -1,11 +1,11 @@
+html, body { margin:0; padding:0; overflow:hidden }
+svg { position:fixed; top:0; left:0; height:100%; width:100% }
+
 polygon {
 	fill: inherit;
   	stroke: black;
   	stroke-width: 10;
 }
-
-html, body { margin:0; padding:0; overflow:hidden }
-svg { position:fixed; top:0; left:0; height:100%; width:100% }
 
 circle {
 	fill: khaki;
@@ -19,7 +19,7 @@ text {
 	text-anchor: middle;
 	dominant-baseline: central;
 	font-family: serif;
-	font-size: 2em;
+	font-size: 30px;
 }
 
 path {
@@ -28,30 +28,40 @@ path {
 }
 
 .hills {
-  	fill: #F1362F;
+  	fill: #EBB;
 }
 
 .forest {
-  	fill: SaddleBrown;
-}
-
-.pasture {
-  	fill: #88C349;
-}
-
-.quarry {
-  	fill: grey;
+  	fill: #BEB;
 }
 
 .fields {
-  	fill: #F7A51B;
+  	fill: #EEB;
+}
+
+.pasture {
+  	fill: #BEE;
+}
+
+.quarry {
+  	fill: #BBB;
 }
 
 .desert {
-  	fill: #F5DEB3;
+  	fill: #EEE;
 }
 
-svg #ocean {
-  	fill: #1991B6;
-  	stroke: black;
+#ocean {
+  	fill: #49B;
+}
+
+.unowned:hover {
+	opacity: 1;
+}
+
+.unowned {
+	fill: grey;
+	opacity: 0;
+	stroke: white;
+	stroke-width: 3;
 }
