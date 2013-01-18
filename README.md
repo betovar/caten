@@ -1,7 +1,7 @@
 README
 ======
 
-This is an online board game modeled after the popular Settlers of Catan.
+This is an online board game modeled after the popular Settlers of Catan. This project is A_WORK_IN_PTOGRESS.
 
 Dependencies
 ============

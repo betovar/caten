@@ -1,8 +1,7 @@
 html, body { margin:0; padding:0; overflow:hidden }
 svg { position:fixed; top:0; left:0; height:100%; width:100% }
 
-polygon {
-	fill: inherit;
+#resources polygon {
   	stroke: black;
   	stroke-width: 10;
 }
@@ -11,6 +10,10 @@ polygon {
 	fill: khaki;
 	stroke: black;
 	stroke-width: 3;
+}
+
+.token:hover {
+	opacity: .5;
 }
 
 text {
@@ -55,13 +58,43 @@ path {
   	fill: #49B;
 }
 
-.unowned:hover {
-	opacity: 1;
-}
-
-.unowned {
-	fill: hotpink;
-	opacity: 0;
+#buildings {
+	fill: grey;
 	stroke: white;
 	stroke-width: 3;
+}
+
+#buildings .unowned {
+	opacity: 0;
+}
+
+#buildings .unowned:hover {
+	opacity: 1;
+	fill: inherit;
+	stroke: inherit;
+	stroke-width: inherit;
+}
+
+#buildings .city-p1 {
+	fill: hotpink;
+	stroke: inherit;
+	stroke-width: inherit;
+}
+
+#buildings .city-p2 {
+	fill: blue;
+	stroke: inherit;
+	stroke-width: inherit;
+}
+
+#buildings .city-p3 {
+	fill: purple;
+	stroke: inherit;
+	stroke-width: inherit;
+}
+
+#buildings .city-p4 {
+	fill: orange;
+	stroke: inherit;
+	stroke-width: inherit;
 }

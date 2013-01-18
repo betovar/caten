@@ -1,0 +1,160 @@
+import math
+from random import randint
+
+DEFAULT_GRID_SIZE=100.
+
+tokens = { # tokens have an associated payout number
+	'B': 2,	
+	'D': 3, 'Q': 3, 
+	'J': 4, 'N': 4,	
+	'A': 5,	'O': 5, 
+	'C': 6, 'P': 6, 
+	'E': 8,	'K': 8, 
+	'G': 9, 'M': 9, 
+	'F': 10, 'L': 10, 
+	'I': 11, 'R': 11, 
+	'H': 12 }
+
+tiles = [ # a list of dictionaries, tiles --> board
+	{ 'token': 'A', 'resource': 'quarry' },
+	{ 'token': 'B', 'resource': 'fields' },
+	{ 'token': 'C', 'resource': 'forest' },
+	{ 'token': 'D', 'resource': 'quarry' },
+	{ 'token': 'E', 'resource': 'fields' },
+	{ 'token': 'F', 'resource': 'pasture' },
+	{ 'token': 'G', 'resource': 'fields' },
+	{ 'token': 'H', 'resource': 'pasture' },
+	{ 'token': 'I', 'resource': 'forest' },
+	{ 'token': 'J', 'resource': 'hills' },
+	{ 'token': 'K', 'resource': 'hills' },
+	{ 'token': 'L', 'resource': 'pasture' },
+	{ 'token': 'M', 'resource': 'pasture' },
+	{ 'token': 'N', 'resource': 'forest' },
+	{ 'token': 'O', 'resource': 'hills' },
+	{ 'token': 'P', 'resource': 'quarry' },
+	{ 'token': 'Q', 'resource': 'forest' },
+	{ 'token': 'R', 'resource': 'fields' },
+	{ 'token': 'X', 'resource': 'desert' }
+]
+
+class Hexagon():
+	""" A class that generates point for hexagonal grids in a spiral
+				   3-->4       2   3  
+				  /     \       \ /   
+				 2   0   5   1<--0-->4 
+				  \     /       / \   
+				   1<--6       6   5 	
+	"""
+	def __init__(self, radius=DEFAULT_GRID_SIZE):
+		self.r = radius											#piece radius
+		self.g = radius*math.sin(math.pi/3.)*2. 				#grid distance
+		self.circ = [( radius*5.,radius*5.*math.sin(math.pi/3.) )]#first point
+
+	def h1(self, t, r=DEFAULT_GRID_SIZE):
+		x,y = t
+		c = r/2.
+		s = r*math.sin(math.pi/3.)
+		return (x-2.*c,y)
+
+	def h2(self, t, r=DEFAULT_GRID_SIZE):
+		x,y = t
+		c = r/2.
+		s = r*math.sin(math.pi/3.)
+		return (x-c,y-s)
+
+	def h3(self, t, r=DEFAULT_GRID_SIZE):
+		x,y = t
+		c = r/2.
+		s = r*math.sin(math.pi/3.)
+		return (x+c,y-s)
+
+	def h4(self, t, r=DEFAULT_GRID_SIZE):
+		x,y = t
+		c = r/2.
+		s = r*math.sin(math.pi/3.)
+		return (x+2.*c,y)
+
+	def h5(self, t, r=DEFAULT_GRID_SIZE):
+		x,y = t
+		c = r/2.
+		s = r*math.sin(math.pi/3.)
+		return (x+c,y+s)
+
+	def h6(self, t, r=DEFAULT_GRID_SIZE):
+		x,y = t
+		c = r/2.
+		s = r*math.sin(math.pi/3.)
+		return (x-c,y+s)
+
+	def grid(self, n):
+		self.circ.append( self.h1( self.circ[-1], self.g) )
+		for i in range(n-1):
+			self.circ.append( self.h2( self.circ[-1], self.g) )
+		for i in range(n):
+			self.circ.append( self.h3( self.circ[-1], self.g) )
+		for i in range(n):
+			self.circ.append( self.h4( self.circ[-1], self.g) )
+		for i in range(n):
+			self.circ.append( self.h5( self.circ[-1], self.g) )
+		for i in range(n):
+			self.circ.append( self.h6( self.circ[-1], self.g) )
+		for i in range(n):
+			self.circ.append( self.h1( self.circ[-1], self.g) )
+
+	def main(self):
+		self.grid(1)
+		self.grid(2)
+		self.circ.reverse()
+		nodes = []
+		h = hex((0.,0.), self.r)
+		print '<g id="resources">'
+		for i,c in enumerate(self.circ):
+			print '<polygon id="%c" class="desert"' % chr(i+ord('A'))
+			print 'transform="translate(%.1f,%.1f)"' % c
+			print 'points="',
+			for point in h:
+				print '%.1f,%.1f' % point,
+				nodes.append( (round(c[0]+point[0],1),round(c[1]+point[1],1)) )
+			print '"/>'
+		print '</g>'
+		print '<g id="tiles">'
+		for i,c in enumerate(self.circ):
+			print '<g id="%c" class="token"' % chr(i+ord('A')),
+			print 'transform="translate(%.1f, %.1f)">' % c
+			print '<circle cx="0" cy="0" r="30" />'
+			print '<text x="0" y="-5">%d</text>' % randint(1,12)
+			print '<text x="0" y="5">.....</text>'
+			print '</g>'
+		print '</g>'
+		print '<g id="buildings">'
+		nodes = list(set(nodes)) #remove duplicates
+		nodes.sort(key=lambda x: x[1]) #sort by 'y'
+		for i,b in enumerate(nodes):
+			print '<polygon id="%d" class="unowned"' % i
+			print 'points="-20,20 -20,-5 0,-20 20,-5 20,20"'
+			print 'transform="translate(%.1f,%.1f)"' % b,
+			print '/>'
+		print '</g>'
+		
+
+def hex((x,y), r):
+	local = []
+	c = r/2.
+	s = r*math.sin(math.pi/3)
+	local.append( (x+s,y+c) )
+	local.append( (x,y+2*c) )
+	local.append( (x-s,y+c) )
+	local.append( (x-s,y-c) )
+	local.append( (x,y-2*c) )
+	local.append( (x+s,y-c) )
+	return local
+
+if __name__ == "__main__":
+	import sys
+	if len(sys.argv) == 1:
+		h = Hexagon( )
+	elif len(sys.argv) == 2:
+		h = Hexagon( float(sys.argv[1]) )
+	else:
+		print "Invalid syntax!"
+	h.main()
