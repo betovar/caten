@@ -15,6 +15,18 @@ tokens = { # tokens have an associated payout number
 	'I': 11, 'R': 11, 
 	'H': 12 }
 
+dots = {
+	2: '.',
+	3: '..',
+	4: '...',
+	5: '....',
+	6: '.....',
+	8: '.....',
+	9: '....',
+	10: '...',
+	11: '..',
+	12: '.' }
+
 tiles = [ # a list of dictionaries, tiles --> board
 	{ 'token': 'A', 'resource': 'quarry' },
 	{ 'token': 'B', 'resource': 'fields' },
@@ -26,6 +38,7 @@ tiles = [ # a list of dictionaries, tiles --> board
 	{ 'token': 'H', 'resource': 'pasture' },
 	{ 'token': 'I', 'resource': 'forest' },
 	{ 'token': 'J', 'resource': 'hills' },
+	{ 'token': 'X', 'resource': 'desert' },
 	{ 'token': 'K', 'resource': 'hills' },
 	{ 'token': 'L', 'resource': 'pasture' },
 	{ 'token': 'M', 'resource': 'pasture' },
@@ -33,8 +46,7 @@ tiles = [ # a list of dictionaries, tiles --> board
 	{ 'token': 'O', 'resource': 'hills' },
 	{ 'token': 'P', 'resource': 'quarry' },
 	{ 'token': 'Q', 'resource': 'forest' },
-	{ 'token': 'R', 'resource': 'fields' },
-	{ 'token': 'X', 'resource': 'desert' }
+	{ 'token': 'R', 'resource': 'fields' }
 ]
 
 class Hexagon():
@@ -107,23 +119,22 @@ class Hexagon():
 		self.circ.reverse()
 		nodes = []
 		h = hex((0.,0.), self.r)
-		print '<g id="resources">'
-		for i,c in enumerate(self.circ):
-			print '<polygon id="%c" class="desert"' % chr(i+ord('A'))
-			print 'transform="translate(%.1f,%.1f)"' % c
-			print 'points="',
-			for point in h:
-				print '%.1f,%.1f' % point,
-				nodes.append( (round(c[0]+point[0],1),round(c[1]+point[1],1)) )
-			print '"/>'
-		print '</g>'
+
 		print '<g id="tiles">'
 		for i,c in enumerate(self.circ):
-			print '<g id="%c" class="token"' % chr(i+ord('A')),
+			t = tiles[i]
+			print '<g id="%s" class="token"' % t['token']
 			print 'transform="translate(%.1f, %.1f)">' % c
-			print '<circle cx="0" cy="0" r="30" />'
-			print '<text x="0" y="-5">%d</text>' % randint(1,12)
-			print '<text x="0" y="5">.....</text>'
+			print '<polygon class="%s"' % t['resource']
+			print 'points="',
+			for p in h: #for point in hexagon, where c is center
+				print '%.1f,%.1f' % p,
+				nodes.append( (round(c[0]+p[0],1),round(c[1]+p[1],1)) )
+			print '"/>'
+			if (t['token'] != 'X'):
+				print '<circle cx="0" cy="0" r="30" />'
+				print '<text x="0" y="-5">%s</text>' % tokens[t['token']]
+				print '<text x="0" y="5">%s</text>' % dots[tokens[t['token']]]
 			print '</g>'
 		print '</g>'
 		print '<g id="buildings">'
@@ -140,12 +151,12 @@ class Hexagon():
 def hex((x,y), r):
 	local = []
 	c = r/2.
-	s = r*math.sin(math.pi/3)
+	s = r*math.sin(math.pi/3.)
 	local.append( (x+s,y+c) )
-	local.append( (x,y+2*c) )
+	local.append( (x,y+2.*c) )
 	local.append( (x-s,y+c) )
 	local.append( (x-s,y-c) )
-	local.append( (x,y-2*c) )
+	local.append( (x,y-2.*c) )
 	local.append( (x+s,y-c) )
 	return local
 
