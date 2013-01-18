@@ -290,47 +290,97 @@
 		points="-20,20 -20,-5 0,-20 20,-5 20,20"
 		transform="translate(500,833)" />
 	</g>
-	<g id="tokens">
-		<circle id="A" cx="326" cy="733" r="30" />
-		<circle id="B" cx="500" cy="733" r="30" />
-		<circle id="C" cx="673" cy="733" r="30" />
-		<circle id="D" cx="759" cy="583" r="30" />
-		<circle id="E" cx="846" cy="433" r="30" />
-		<circle id="F" cx="759" cy="283" r="30" />
-		<circle id="G" cx="673" cy="133" r="30" />
-		<circle id="H" cx="500" cy="133" r="30" />
-		<circle id="I" cx="326" cy="133" r="30" />
-		<circle id="J" cx="240" cy="283" r="30" />
-		<circle id="K" cx="153" cy="433" r="30" />
-		<circle id="L" cx="240" cy="583" r="30" />
-		<circle id="M" cx="413" cy="583" r="30" />
-		<circle id="N" cx="586" cy="583" r="30" />
-		<circle id="O" cx="673" cy="433" r="30" />
-		<circle id="P" cx="586" cy="283" r="30" />
-		<circle id="Q" cx="413" cy="283" r="30" />
-		<circle id="R" cx="326" cy="433" r="30" />
-		<circle id="S" cx="500" cy="433" r="30" />
-	</g>
-	<g id="numerals">
-		<text id="A" x="326" y="733" >A</text>
-		<text id="B" x="500" y="733" >B</text>
-		<text id="C" x="673" y="733" >C</text>
-		<text id="D" x="759" y="583" >D</text>
-		<text id="E" x="846" y="433" >E</text>
-		<text id="F" x="759" y="283" >F</text>
-		<text id="G" x="673" y="133" >G</text>
-		<text id="H" x="500" y="133" >H</text>
-		<text id="I" x="326" y="133" >I</text>
-		<text id="J" x="240" y="283" >J</text>
-		<text id="K" x="153" y="433" >K</text>
-		<text id="L" x="240" y="583" >L</text>
-		<text id="M" x="413" y="583" >M</text>
-		<text id="N" x="586" y="583" >N</text>
-		<text id="O" x="673" y="433" >O</text>
-		<text id="P" x="586" y="283" >P</text>
-		<text id="Q" x="413" y="283" >Q</text>
-		<text id="R" x="326" y="433" >R</text>
-		<text id="S" x="500" y="433" >S</text>
+	<g id="numerals" class="token">
+		<g id="A" transform="translate(326.8, 733.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">5</text>
+			<text x="0" y="5">....</text>
+		</g>
+		<g id="B" transform="translate(500.0, 733.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">2</text>
+			<text x="0" y="5">.</text>
+		</g>
+		<g id="C" transform="translate(673.2, 733.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">6</text>
+			<text x="0" y="5">.....</text>
+		</g>
+		<g id="D" transform="translate(759.8, 583.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">3</text>
+			<text x="0" y="5">..</text>
+		</g>
+		<g id="E" transform="translate(846.4, 433.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">8</text>
+			<text x="0" y="5">.....</text>
+		</g>
+		<g id="F" transform="translate(759.8, 283.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">10</text>
+			<text x="0" y="5">...</text>
+		</g>
+		<g id="G" transform="translate(673.2, 133.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">9</text>
+			<text x="0" y="5">....</text>
+		</g>
+		<g id="H" transform="translate(500.0, 133.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">12</text>
+			<text x="0" y="5">.</text>
+		</g>
+		<g id="I" transform="translate(326.8, 133.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">11</text>
+			<text x="0" y="5">..</text>
+		</g>
+		<g id="J" transform="translate(240.2, 283.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">4</text>
+			<text x="0" y="5">...</text>
+		</g>
+		<g id="K" transform="translate(240.2, 583.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">8</text>
+			<text x="0" y="5">.....</text>
+		</g>
+		<g id="L" transform="translate(413.4, 583.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">10</text>
+			<text x="0" y="5">...</text>
+		</g>
+		<g id="M" transform="translate(586.6, 583.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">9</text>
+			<text x="0" y="5">....</text>
+		</g>
+		<g id="N" transform="translate(673.2, 433.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">4</text>
+			<text x="0" y="5">...</text>
+		</g>
+		<g id="O" transform="translate(586.6, 283.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">5</text>
+			<text x="0" y="5">....</text>
+		</g>
+		<g id="P" transform="translate(413.4, 283.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">6</text>
+			<text x="0" y="5">.....</text>
+		</g>
+		<g id="Q" transform="translate(326.8, 433.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">3</text>
+			<text x="0" y="5">..</text>
+		</g>
+		<g id="R" transform="translate(500.0, 433.0)">
+			<circle cx="0" cy="0" r="30" />
+			<text x="0" y="-5">11</text>
+			<text x="0" y="5">..</text>
+		</g>
 	</g>
 
 </svg>
