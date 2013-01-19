@@ -6,6 +6,12 @@ svg { position:fixed; top:0; left:0; height:100%; width:100% }
   	stroke-width: 5;
 }
 
+#ocean {
+  	stroke: black;
+	stroke-width: 10;
+	fill: dodgerblue;
+}
+
 .token {
 	stroke: black;
 	stroke-width: 3;
@@ -24,7 +30,7 @@ svg { position:fixed; top:0; left:0; height:100%; width:100% }
 	text-anchor: middle;
 	dominant-baseline: central;
 	font-family: serif;
-	font-size: 32px;
+	font-size: 24px;
 	pointer-events: none;
 }
 
@@ -57,8 +63,20 @@ path {
   	fill: #EEE;
 }
 
-#ocean {
-  	fill: #49B;
+.harbor rect {
+	fill: lightgrey;
+	stroke: black;
+	stroke-width: 3;
+}
+
+.harbor text {
+	text-align: center;
+	text-anchor: middle;
+	dominant-baseline: central;
+	font-family: serif;
+	fill: black;
+	font-size: 20px;
+	font-weight: 1000;
 }
 
 #buildings {
@@ -75,18 +93,22 @@ path {
 	opacity: 1;
 }
 
-#buildings .city-p1 {
-	fill: hotpink;
+#buildings .city {
+	fill: grey;
 }
 
-#buildings .city-p2 {
-	fill: darkgreen;
+#buildings .p1 {
+	fill: deeppink;
 }
 
-#buildings .city-p3 {
-	fill: darkpurple;
+#buildings .p2 {
+	fill: gold;
 }
 
-#buildings .city-p4 {
-	fill: darkred;
+#buildings .p3 {
+	fill: darkviolet;
+}
+
+#buildings .p4 {
+	fill: darkorange;
 }

@@ -60,7 +60,7 @@ class Hexagon():
 	def __init__(self, radius=DEFAULT_GRID_SIZE):
 		self.r = radius											#piece radius
 		self.g = radius*math.sin(math.pi/3.)*2. 				#grid distance
-		self.circ = [( radius*5.,radius*5.*math.sin(math.pi/3.) )]#first point
+		self.circ = [( radius*5.5+5,radius*5.5*math.sin(math.pi/3.)+5 )]#first point
 
 	def h1(self, t, r=DEFAULT_GRID_SIZE):
 		x,y = t
@@ -114,12 +114,16 @@ class Hexagon():
 			self.circ.append( self.h1( self.circ[-1], self.g) )
 
 	def main(self):
+		print '<polygon id="ocean" transform="translate(%.1f,%.1f) rotate(30)"' % self.circ[0]
+		print 'points="',
+		for h in hex((0.,0.),self.r*5.5):
+			print '%.1f,%.1f' % h,
+		print '"/>'
 		self.grid(1)
 		self.grid(2)
 		self.circ.reverse()
 		nodes = []
 		h = hex((0.,0.), self.r)
-
 		print '<g id="tiles">'
 		for i,c in enumerate(self.circ):
 			t = tiles[i]
@@ -136,21 +140,20 @@ class Hexagon():
 				print '<circle cx="0" cy="0" r="30" />'
 				print '<text x="0" y="-5"',
 				if tokens[t['token']] in [6,8]:
-					print 'style="fill:maroon"',
+					print 'style="stroke:maroon"',
 				print '>%s</text>' % tokens[t['token']]
 				print '<text x="0" y="5"',
 				if tokens[t['token']] in [6,8]:
-					print 'style="fill:maroon"',
+					print 'style="stroke:maroon"',
 				print '>%s</text>' % dots[tokens[t['token']]]
 				print '</g>'
 			print '</g>'
 		print '</g>'
 		print '<g id="buildings">'
 		nodes = list(set(nodes)) #remove duplicates
-		nodes.sort(key=lambda x: x[1]) #sort by 'y'
 		for i,b in enumerate(nodes):
 			print '<polygon id="%d" class="unowned"' % i
-			print 'points="-20,20 -20,-5 0,-20 20,-5 20,20"'
+			print 'points="-15,15 -15,-5 0,-15 15,-5 15,15"'
 			print 'transform="translate(%.1f,%.1f)"' % b,
 			print '/>'
 		print '</g>'
