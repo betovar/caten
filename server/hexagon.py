@@ -152,10 +152,8 @@ class Hexagon():
 		print '<g id="buildings">'
 		nodes = list(set(nodes)) #remove duplicates
 		for i,b in enumerate(nodes):
-			print '<polygon id="%d" class="unowned"' % i
-			print 'points="-15,15 -15,-5 0,-15 15,-5 15,15"'
-			print 'transform="translate(%.1f,%.1f)"' % b,
-			print '/>'
+			print '<use id="%s" xlink:href="#settlement"' % i,
+			print 'x="%.1f" y="%.1f" class="unowned" />' % b
 		print '</g>'
 		
 
