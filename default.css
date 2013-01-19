@@ -34,9 +34,8 @@ svg { position:fixed; top:0; left:0; height:100%; width:100% }
 	pointer-events: none;
 }
 
-path {
+#roads path {
 	stroke-linecap: round;
-	stroke-width: 10;
 }
 
 .hills {
@@ -85,7 +84,7 @@ path {
 	fill: lightgrey;
 }
 
-.harbor rect:hover {
+.harbor:hover {
 	opacity: .5;
 }
 
@@ -122,7 +121,7 @@ path {
 }
 
 #buildings .p2 {
-	fill: gold;
+	fill: darkorange;
 }
 
 #buildings .p3 {
@@ -130,5 +129,5 @@ path {
 }
 
 #buildings .p4 {
-	fill: darkorange;
+	fill: gold;
 }

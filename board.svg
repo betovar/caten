@@ -12,21 +12,17 @@ points=" 476.3,275.0 0.0,550.0 -476.3,275.0 -476.3,-275.0 0.0,-550.0 476.3,-275.
 
 <g id="harbors">
 	<g id="wood-port" class="harbor" 
-		transform="translate(259.8, -150.0)">
+		transform="translate(259.8, -150.0) rotate(0)">
 		<circle cx="90" r="50" />
-		<g>
 			<rect x="110" y="-15" width="40" height="30" rx="3" />
-			<text x="130">2:1</text>
-		</g>
+			<text x="130" transform="rotate(0, 130,0)">2:1</text>
 	</g>
 	<g id="wheat-port" class="harbor" 
-		transform="translate(173.2, -300.0)">
-		<g transform="rotate(-60)">
+		transform="translate(173.2, -300.0) rotate(-60)">
 			<circle cx="90" r="50" />
 			<rect x="110" y="-15" width="40" height="30" rx="3" 
 				transform="rotate(60, 130,0)" />
 			<text x="130" transform="rotate(60, 130,0)">2:1</text>
-		</g>
 	</g>
 </g>
 
@@ -198,6 +194,14 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 </g>
 </g>
 </g>
+
+<g id="roads">
+	<g id="0" transform="rotate(-120)">
+		<path d="M 86.6 -35 L 86.6 35" stroke="white" stroke-width="16" />
+		<path d="M 86.6 -35 L 86.6 35" stroke="hotpink" stroke-width="10" />
+	</g>
+</g>
+
 <g id="buildings">
 <polygon id="0" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
