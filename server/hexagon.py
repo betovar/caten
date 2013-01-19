@@ -123,7 +123,7 @@ class Hexagon():
 		print '<g id="tiles">'
 		for i,c in enumerate(self.circ):
 			t = tiles[i]
-			print '<g id="%s" class="token"' % t['token']
+			print '<g class="tile"',
 			print 'transform="translate(%.1f, %.1f)">' % c
 			print '<polygon class="%s"' % t['resource']
 			print 'points="',
@@ -132,9 +132,17 @@ class Hexagon():
 				nodes.append( (round(c[0]+p[0],1),round(c[1]+p[1],1)) )
 			print '"/>'
 			if (t['token'] != 'X'):
+				print '<g id="%s" class="token">' % t['token']
 				print '<circle cx="0" cy="0" r="30" />'
-				print '<text x="0" y="-5">%s</text>' % tokens[t['token']]
-				print '<text x="0" y="5">%s</text>' % dots[tokens[t['token']]]
+				print '<text x="0" y="-5"',
+				if tokens[t['token']] in [6,8]:
+					print 'style="fill:maroon"',
+				print '>%s</text>' % tokens[t['token']]
+				print '<text x="0" y="5"',
+				if tokens[t['token']] in [6,8]:
+					print 'style="fill:maroon"',
+				print '>%s</text>' % dots[tokens[t['token']]]
+				print '</g>'
 			print '</g>'
 		print '</g>'
 		print '<g id="buildings">'

@@ -1,33 +1,36 @@
 html, body { margin:0; padding:0; overflow:hidden }
 svg { position:fixed; top:0; left:0; height:100%; width:100% }
 
-#resources polygon {
+#tiles polygon {
   	stroke: black;
-  	stroke-width: 10;
+  	stroke-width: 5;
 }
 
 .token {
-	fill: khaki;
 	stroke: black;
 	stroke-width: 3;
+}
+
+.token circle {
+	fill: khaki;
 }
 
 .token:hover {
 	opacity: .5;
 }
 
-text {
-	fill: black;
+.token text {
 	text-align: center;
 	text-anchor: middle;
 	dominant-baseline: central;
 	font-family: serif;
-	font-size: 30px;
+	font-size: 32px;
+	pointer-events: none;
 }
 
 path {
 	stroke-linecap: round;
-	stroke-width: 20;
+	stroke-width: 10;
 }
 
 .hills {
@@ -70,31 +73,20 @@ path {
 
 #buildings .unowned:hover {
 	opacity: 1;
-	fill: inherit;
-	stroke: inherit;
-	stroke-width: inherit;
 }
 
 #buildings .city-p1 {
 	fill: hotpink;
-	stroke: inherit;
-	stroke-width: inherit;
 }
 
 #buildings .city-p2 {
-	fill: blue;
-	stroke: inherit;
-	stroke-width: inherit;
+	fill: darkgreen;
 }
 
 #buildings .city-p3 {
-	fill: purple;
-	stroke: inherit;
-	stroke-width: inherit;
+	fill: darkpurple;
 }
 
 #buildings .city-p4 {
-	fill: orange;
-	stroke: inherit;
-	stroke-width: inherit;
+	fill: darkred;
 }
