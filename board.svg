@@ -1,15 +1,37 @@
 <?xml version="1.0" standalone="no" ?>
-<?xml-stylesheet href="default.css" type="text/css"?>
+<?xml-stylesheet href="default.css" type="text/css" ?>
 
 <svg xmlns="http://www.w3.org/2000/svg" 
+		 type="image/svg+xml"
 		 version="1.1"
 		 id="test"
-		 viewBox="0 0 1110 964" preserveAspectRatio="xMidYMid" >
+		 viewBox="-555 -500 1110 1000" preserveAspectRatio="xMidYMid meet" >
 
-<polygon id="ocean" transform="translate(555.0,481.3) rotate(30)"
+<polygon id="ocean" transform="rotate(30)"
 points=" 476.3,275.0 0.0,550.0 -476.3,275.0 -476.3,-275.0 0.0,-550.0 476.3,-275.0 "/>
+
+<g id="harbors">
+	<g id="wood-port" class="harbor" 
+		transform="translate(259.8, -150.0)">
+		<circle cx="90" r="50" />
+		<g>
+			<rect x="110" y="-15" width="40" height="30" rx="3" />
+			<text x="130">2:1</text>
+		</g>
+	</g>
+	<g id="wheat-port" class="harbor" 
+		transform="translate(173.2, -300.0)">
+		<g transform="rotate(-60)">
+			<circle cx="90" r="50" />
+			<rect x="110" y="-15" width="40" height="30" rx="3" 
+				transform="rotate(60, 130,0)" />
+			<text x="130" transform="rotate(60, 130,0)">2:1</text>
+		</g>
+	</g>
+</g>
+
 <g id="tiles">
-<g class="tile" transform="translate(381.8, 781.3)">
+<g class="tile" transform="translate(-173.2, 300.0)">
 <polygon class="quarry"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="A" class="token">
@@ -18,7 +40,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" >....</text>
 </g>
 </g>
-<g class="tile" transform="translate(555.0, 781.3)">
+<g class="tile" transform="translate(-0.0, 300.0)">
 <polygon class="fields"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="B" class="token">
@@ -27,7 +49,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" >.</text>
 </g>
 </g>
-<g class="tile" transform="translate(728.2, 781.3)">
+<g class="tile" transform="translate(173.2, 300.0)">
 <polygon class="forest"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="C" class="token">
@@ -36,7 +58,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" style="stroke:maroon" >.....</text>
 </g>
 </g>
-<g class="tile" transform="translate(814.8, 631.3)">
+<g class="tile" transform="translate(259.8, 150.0)">
 <polygon class="quarry"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="D" class="token">
@@ -45,7 +67,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" >..</text>
 </g>
 </g>
-<g class="tile" transform="translate(901.4, 481.3)">
+<g class="tile" transform="translate(346.4, 0.0)">
 <polygon class="fields"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="E" class="token">
@@ -54,7 +76,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" style="stroke:maroon" >.....</text>
 </g>
 </g>
-<g class="tile" transform="translate(814.8, 331.3)">
+<g class="tile" transform="translate(259.8, -150.0)">
 <polygon class="pasture"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="F" class="token">
@@ -63,7 +85,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" >...</text>
 </g>
 </g>
-<g class="tile" transform="translate(728.2, 181.3)">
+<g class="tile" transform="translate(173.2, -300.0)">
 <polygon class="fields"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="G" class="token">
@@ -72,7 +94,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" >....</text>
 </g>
 </g>
-<g class="tile" transform="translate(555.0, 181.3)">
+<g class="tile" transform="translate(-0.0, -300.0)">
 <polygon class="pasture"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="H" class="token">
@@ -81,7 +103,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" >.</text>
 </g>
 </g>
-<g class="tile" transform="translate(381.8, 181.3)">
+<g class="tile" transform="translate(-173.2, -300.0)">
 <polygon class="forest"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="I" class="token">
@@ -90,7 +112,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" >..</text>
 </g>
 </g>
-<g class="tile" transform="translate(295.2, 331.3)">
+<g class="tile" transform="translate(-259.8, -150.0)">
 <polygon class="hills"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="J" class="token">
@@ -99,11 +121,11 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" >...</text>
 </g>
 </g>
-<g class="tile" transform="translate(208.6, 481.3)">
+<g class="tile" transform="translate(-346.4, 0.0)">
 <polygon class="desert"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 </g>
-<g class="tile" transform="translate(295.2, 631.3)">
+<g class="tile" transform="translate(-259.8, 150.0)">
 <polygon class="hills"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="K" class="token">
@@ -112,7 +134,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" style="stroke:maroon" >.....</text>
 </g>
 </g>
-<g class="tile" transform="translate(468.4, 631.3)">
+<g class="tile" transform="translate(-86.6, 150.0)">
 <polygon class="pasture"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="L" class="token">
@@ -121,7 +143,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" >...</text>
 </g>
 </g>
-<g class="tile" transform="translate(641.6, 631.3)">
+<g class="tile" transform="translate(86.6, 150.0)">
 <polygon class="pasture"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="M" class="token">
@@ -130,7 +152,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" >....</text>
 </g>
 </g>
-<g class="tile" transform="translate(728.2, 481.3)">
+<g class="tile" transform="translate(173.2, 0.0)">
 <polygon class="forest"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="N" class="token">
@@ -139,7 +161,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" >...</text>
 </g>
 </g>
-<g class="tile" transform="translate(641.6, 331.3)">
+<g class="tile" transform="translate(86.6, -150.0)">
 <polygon class="hills"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="O" class="token">
@@ -148,7 +170,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" >....</text>
 </g>
 </g>
-<g class="tile" transform="translate(468.4, 331.3)">
+<g class="tile" transform="translate(-86.6, -150.0)">
 <polygon class="quarry"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="P" class="token">
@@ -157,7 +179,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" style="stroke:maroon" >.....</text>
 </g>
 </g>
-<g class="tile" transform="translate(381.8, 481.3)">
+<g class="tile" transform="translate(-173.2, 0.0)">
 <polygon class="forest"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="Q" class="token">
@@ -166,7 +188,7 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <text x="0" y="5" >..</text>
 </g>
 </g>
-<g class="tile" transform="translate(555.0, 481.3)">
+<g class="tile" transform="translate(0.0, 0.0)">
 <polygon class="fields"
 points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="R" class="token">
@@ -179,181 +201,172 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 <g id="buildings">
 <polygon id="0" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(728.2,581.3)" />
+transform="translate(173.2,400.0)" />
 <polygon id="1" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(555.0,581.3)" />
+transform="translate(-173.2,-200.0)" />
 <polygon id="2" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(381.8,281.3)" />
+transform="translate(-86.6,-250.0)" />
 <polygon id="3" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(641.6,231.3)" />
+transform="translate(-0.0,-200.0)" />
 <polygon id="4" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(901.4,581.3)" />
+transform="translate(259.8,-50.0)" />
 <polygon id="5" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(295.2,431.3)" />
+transform="translate(-259.8,-250.0)" />
 <polygon id="6" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(814.8,731.3)" />
+transform="translate(-173.2,-100.0)" />
 <polygon id="7" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(814.8,431.3)" />
+transform="translate(-86.6,350.0)" />
 <polygon id="8" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(901.4,681.3)" />
+transform="translate(-0.0,400.0)" />
 <polygon id="9" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(728.2,881.3)" />
+transform="translate(86.6,-50.0)" />
 <polygon id="10" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(641.6,431.3)" />
+transform="translate(-259.8,350.0)" />
 <polygon id="11" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(814.8,231.3)" />
+transform="translate(-346.4,-100.0)" />
 <polygon id="12" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(555.0,881.3)" />
+transform="translate(-0.0,200.0)" />
 <polygon id="13" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(555.0,281.3)" />
+transform="translate(433.0,-50.0)" />
 <polygon id="14" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(381.8,381.3)" />
+transform="translate(346.4,200.0)" />
 <polygon id="15" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(555.0,681.3)" />
+transform="translate(-86.6,-350.0)" />
 <polygon id="16" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(641.6,131.3)" />
+transform="translate(0.0,-100.0)" />
 <polygon id="17" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(295.2,531.3)" />
+transform="translate(433.0,50.0)" />
 <polygon id="18" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(208.6,281.3)" />
+transform="translate(-173.2,100.0)" />
 <polygon id="19" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(814.8,531.3)" />
+transform="translate(259.8,50.0)" />
 <polygon id="20" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(468.4,531.3)" />
+transform="translate(-259.8,-350.0)" />
 <polygon id="21" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(555.0,381.3)" />
+transform="translate(173.2,100.0)" />
 <polygon id="22" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(295.2,231.3)" />
+transform="translate(-86.6,250.0)" />
 <polygon id="23" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(381.8,581.3)" />
+transform="translate(86.6,50.0)" />
 <polygon id="24" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(988.0,531.3)" />
+transform="translate(-173.2,200.0)" />
 <polygon id="25" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(988.0,431.3)" />
+transform="translate(-259.8,250.0)" />
 <polygon id="26" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(728.2,281.3)" />
+transform="translate(-346.4,100.0)" />
 <polygon id="27" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(468.4,431.3)" />
+transform="translate(-0.0,-400.0)" />
 <polygon id="28" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(208.6,581.3)" />
+transform="translate(259.8,350.0)" />
 <polygon id="29" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(468.4,231.3)" />
+transform="translate(346.4,-200.0)" />
 <polygon id="30" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(295.2,831.3)" />
+transform="translate(173.2,-200.0)" />
 <polygon id="31" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(468.4,731.3)" />
+transform="translate(346.4,100.0)" />
 <polygon id="32" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(814.8,831.3)" />
+transform="translate(259.8,250.0)" />
 <polygon id="33" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(901.4,381.3)" />
+transform="translate(173.2,-400.0)" />
 <polygon id="34" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(468.4,831.3)" />
+transform="translate(-86.6,50.0)" />
 <polygon id="35" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(381.8,681.3)" />
+transform="translate(86.6,250.0)" />
 <polygon id="36" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(641.6,731.3)" />
+transform="translate(259.8,-350.0)" />
 <polygon id="37" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(381.8,81.3)" />
+transform="translate(-173.2,-400.0)" />
 <polygon id="38" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(901.4,281.3)" />
+transform="translate(-433.0,50.0)" />
 <polygon id="39" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(208.6,681.3)" />
+transform="translate(0.0,100.0)" />
 <polygon id="40" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(641.6,831.3)" />
+transform="translate(86.6,-350.0)" />
 <polygon id="41" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(468.4,131.3)" />
+transform="translate(173.2,200.0)" />
 <polygon id="42" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(728.2,381.3)" />
+transform="translate(-433.0,-50.0)" />
 <polygon id="43" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(208.6,381.3)" />
+transform="translate(346.4,-100.0)" />
 <polygon id="44" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(814.8,131.3)" />
+transform="translate(-86.6,-50.0)" />
 <polygon id="45" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(555.0,81.3)" />
+transform="translate(173.2,-100.0)" />
 <polygon id="46" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(295.2,131.3)" />
+transform="translate(86.6,350.0)" />
 <polygon id="47" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(728.2,681.3)" />
+transform="translate(259.8,-250.0)" />
 <polygon id="48" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(295.2,731.3)" />
+transform="translate(-259.8,-50.0)" />
 <polygon id="49" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(381.8,881.3)" />
+transform="translate(86.6,-250.0)" />
 <polygon id="50" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(641.6,531.3)" />
+transform="translate(-346.4,-200.0)" />
 <polygon id="51" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(728.2,81.3)" />
+transform="translate(-173.2,400.0)" />
 <polygon id="52" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(122.0,431.3)" />
+transform="translate(-259.8,50.0)" />
 <polygon id="53" class="unowned"
 points="-15,15 -15,-5 0,-15 15,-5 15,15"
-transform="translate(122.0,531.3)" />
+transform="translate(-346.4,200.0)" />
 
 	<polygon class="p2"
 		points="-15,-5 -15,-15 0,-25 15,-15 15,-5 30,-5 30,15 -30,15 -30,-5"
-		transform="translate(814.8,431.3)" />
+		transform="translate(-259.8,50.0)" />
 	<polygon class="p3"
 		points="-30,-5 -30,-15 -15,-25 0,-15 0,-5 30,-5 30,15 -30,15 -30,-5"
-		transform="translate(641.6,431.3)" />
-	</g>
-
-	<circle cx="208.6" cy="481.3" r="5" />
-	<g id="wood-port" class="harbor" 
-		transform="translate(208.6, 481.3)">
-		<g>
-			<rect x="100" y="-15" width="40" height="30" rx="3" />
-			<text x="120">2:1</text>
-		</g>
+		transform="translate(-346.4,200.0)" />
 	</g>
 </svg>

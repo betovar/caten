@@ -60,7 +60,7 @@ class Hexagon():
 	def __init__(self, radius=DEFAULT_GRID_SIZE):
 		self.r = radius											#piece radius
 		self.g = radius*math.sin(math.pi/3.)*2. 				#grid distance
-		self.circ = [( radius*5.5+5,radius*5.5*math.sin(math.pi/3.)+5 )]#first point
+		self.circ = [( 0.,0. )]#first point
 
 	def h1(self, t, r=DEFAULT_GRID_SIZE):
 		x,y = t
