@@ -8,31 +8,25 @@
 		 id="test"
 		 viewBox="-555 -500 1110 1000" preserveAspectRatio="xMidYMid meet" >
 
+<desc>A web-based board game based on Settlers of Catan</desc>
 <def>
-	<polygon id="settlement" points="-15,15 -15,-5 0,-15 15,-5 15,15" />
-	<polygon id="city"
+	<polygon id="settlement" style="stroke:white;"
+		points="-15,15 -15,-5 0,-15 15,-5 15,15" />
+	<polygon id="city" style="stroke:white;"
 		points="-15,-5 -15,-15 0,-25 15,-15 15,-5 30,-5 30,15 -30,15 -30,-5" />
-	<polygon id="city-b"
+	<polygon id="city-b" style="stroke:white;"
 		points="-30,-5 -30,-15 -15,-25 0,-15 0,-5 30,-5 30,15 -30,15 -30,-5" />
+	<g id="road" >
+		<path d="M 0 -35 L 0 35" style="stroke:white; stroke-width:16;" />
+		<path d="M 0 -35 L 0 35" style="stroke-width:10;" />
+	</g>
 </def>
 
 <polygon id="ocean" transform="rotate(30)"
 points=" 476.3,275.0 0.0,550.0 -476.3,275.0 -476.3,-275.0 0.0,-550.0 476.3,-275.0 "/>
 
 <g id="harbors">
-	<g id="wood-port" class="harbor" 
-		transform="translate(259.8, -150.0) rotate(0)">
-		<circle cx="90" r="50" />
-			<rect x="110" y="-15" width="40" height="30" rx="3" />
-			<text x="130" transform="rotate(0, 130,0)">2:1</text>
-	</g>
-	<g id="wheat-port" class="harbor" 
-		transform="translate(173.2, -300.0) rotate(-60)">
-			<circle cx="90" r="50" />
-			<rect x="110" y="-15" width="40" height="30" rx="3" 
-				transform="rotate(60, 130,0)" />
-			<text x="130" transform="rotate(60, 130,0)">2:1</text>
-	</g>
+
 </g>
 
 <g id="tiles">
@@ -205,68 +199,331 @@ points=" 86.6,50.0 0.0,100.0 -86.6,50.0 -86.6,-50.0 0.0,-100.0 86.6,-50.0 "/>
 </g>
 
 <g id="roads">
-	<g id="0" transform="rotate(0)">
-		<path d="M 86.6 -35 L 86.6 35" stroke="white" stroke-width="16" />
-		<path d="M 86.6 -35 L 86.6 35" stroke="hotpink" stroke-width="10" />
-	</g>
+<use id="0" xlink:href="#road"
+x="-433.0" y="0.0" transform="rotate(0 -433.0,0.0)" class="unowned" />
+<text x="-433.0" y="0.0" >0</text>
+<use id="1" xlink:href="#road"
+x="-389.7" y="-75.0" transform="rotate(60 -389.7,-75.0)" class="unowned" />
+<text x="-389.7" y="-75.0" >1</text>
+<use id="2" xlink:href="#road"
+x="-389.7" y="75.0" transform="rotate(-60 -389.7,75.0)" class="unowned" />
+<text x="-389.7" y="75.0" >2</text>
+<use id="3" xlink:href="#road"
+x="-346.4" y="-150.0" transform="rotate(0 -346.4,-150.0)" class="unowned" />
+<text x="-346.4" y="-150.0" >3</text>
+<use id="4" xlink:href="#road"
+x="-346.4" y="150.0" transform="rotate(0 -346.4,150.0)" class="unowned" />
+<text x="-346.4" y="150.0" >4</text>
+<use id="5" xlink:href="#road"
+x="-303.1" y="-225.0" transform="rotate(60 -303.1,-225.0)" class="unowned" />
+<text x="-303.1" y="-225.0" >5</text>
+<use id="6" xlink:href="#road"
+x="-303.1" y="-75.0" transform="rotate(-60 -303.1,-75.0)" class="unowned" />
+<text x="-303.1" y="-75.0" >6</text>
+<use id="7" xlink:href="#road"
+x="-303.1" y="75.0" transform="rotate(60 -303.1,75.0)" class="unowned" />
+<text x="-303.1" y="75.0" >7</text>
+<use id="8" xlink:href="#road"
+x="-303.1" y="225.0" transform="rotate(-60 -303.1,225.0)" class="unowned" />
+<text x="-303.1" y="225.0" >8</text>
+<use id="9" xlink:href="#road"
+x="-259.8" y="-300.0" transform="rotate(0 -259.8,-300.0)" class="unowned" />
+<text x="-259.8" y="-300.0" >9</text>
+<use id="10" xlink:href="#road"
+x="-259.8" y="0.0" transform="rotate(0 -259.8,0.0)" class="unowned" />
+<text x="-259.8" y="0.0" >10</text>
+<use id="11" xlink:href="#road"
+x="-259.8" y="300.0" transform="rotate(0 -259.8,300.0)" class="unowned" />
+<text x="-259.8" y="300.0" >11</text>
+<use id="12" xlink:href="#road"
+x="-216.5" y="-375.0" transform="rotate(60 -216.5,-375.0)" class="unowned" />
+<text x="-216.5" y="-375.0" >12</text>
+<use id="13" xlink:href="#road"
+x="-216.5" y="-225.0" transform="rotate(-60 -216.5,-225.0)" class="unowned" />
+<text x="-216.5" y="-225.0" >13</text>
+<use id="14" xlink:href="#road"
+x="-216.5" y="-75.0" transform="rotate(60 -216.5,-75.0)" class="unowned" />
+<text x="-216.5" y="-75.0" >14</text>
+<use id="15" xlink:href="#road"
+x="-216.5" y="75.0" transform="rotate(-60 -216.5,75.0)" class="unowned" />
+<text x="-216.5" y="75.0" >15</text>
+<use id="16" xlink:href="#road"
+x="-216.5" y="225.0" transform="rotate(60 -216.5,225.0)" class="unowned" />
+<text x="-216.5" y="225.0" >16</text>
+<use id="17" xlink:href="#road"
+x="-216.5" y="375.0" transform="rotate(-60 -216.5,375.0)" class="unowned" />
+<text x="-216.5" y="375.0" >17</text>
+<use id="18" xlink:href="#road"
+x="-173.2" y="-150.0" transform="rotate(0 -173.2,-150.0)" class="unowned" />
+<text x="-173.2" y="-150.0" >18</text>
+<use id="19" xlink:href="#road"
+x="-173.2" y="150.0" transform="rotate(0 -173.2,150.0)" class="unowned" />
+<text x="-173.2" y="150.0" >19</text>
+<use id="20" xlink:href="#road"
+x="-129.9" y="-375.0" transform="rotate(-60 -129.9,-375.0)" class="unowned" />
+<text x="-129.9" y="-375.0" >20</text>
+<use id="21" xlink:href="#road"
+x="-129.9" y="-225.0" transform="rotate(60 -129.9,-225.0)" class="unowned" />
+<text x="-129.9" y="-225.0" >21</text>
+<use id="22" xlink:href="#road"
+x="-129.9" y="-75.0" transform="rotate(-60 -129.9,-75.0)" class="unowned" />
+<text x="-129.9" y="-75.0" >22</text>
+<use id="23" xlink:href="#road"
+x="-129.9" y="75.0" transform="rotate(60 -129.9,75.0)" class="unowned" />
+<text x="-129.9" y="75.0" >23</text>
+<use id="24" xlink:href="#road"
+x="-129.9" y="225.0" transform="rotate(-60 -129.9,225.0)" class="unowned" />
+<text x="-129.9" y="225.0" >24</text>
+<use id="25" xlink:href="#road"
+x="-129.9" y="375.0" transform="rotate(60 -129.9,375.0)" class="unowned" />
+<text x="-129.9" y="375.0" >25</text>
+<use id="26" xlink:href="#road"
+x="-86.6" y="-300.0" transform="rotate(0 -86.6,-300.0)" class="unowned" />
+<text x="-86.6" y="-300.0" >26</text>
+<use id="27" xlink:href="#road"
+x="-86.6" y="0.0" transform="rotate(0 -86.6,0.0)" class="unowned" />
+<text x="-86.6" y="0.0" >27</text>
+<use id="28" xlink:href="#road"
+x="-86.6" y="300.0" transform="rotate(0 -86.6,300.0)" class="unowned" />
+<text x="-86.6" y="300.0" >28</text>
+<use id="29" xlink:href="#road"
+x="-43.3" y="-375.0" transform="rotate(60 -43.3,-375.0)" class="unowned" />
+<text x="-43.3" y="-375.0" >29</text>
+<use id="30" xlink:href="#road"
+x="-43.3" y="-225.0" transform="rotate(-60 -43.3,-225.0)" class="unowned" />
+<text x="-43.3" y="-225.0" >30</text>
+<use id="31" xlink:href="#road"
+x="-43.3" y="-75.0" transform="rotate(60 -43.3,-75.0)" class="unowned" />
+<text x="-43.3" y="-75.0" >31</text>
+<use id="32" xlink:href="#road"
+x="-43.3" y="75.0" transform="rotate(-60 -43.3,75.0)" class="unowned" />
+<text x="-43.3" y="75.0" >32</text>
+<use id="33" xlink:href="#road"
+x="-43.3" y="225.0" transform="rotate(60 -43.3,225.0)" class="unowned" />
+<text x="-43.3" y="225.0" >33</text>
+<use id="34" xlink:href="#road"
+x="-43.3" y="375.0" transform="rotate(-60 -43.3,375.0)" class="unowned" />
+<text x="-43.3" y="375.0" >34</text>
+<use id="35" xlink:href="#road"
+x="-0.0" y="-150.0" transform="rotate(0 -0.0,-150.0)" class="unowned" />
+<text x="-0.0" y="-150.0" >35</text>
+<use id="36" xlink:href="#road"
+x="0.0" y="150.0" transform="rotate(0 0.0,150.0)" class="unowned" />
+<text x="0.0" y="150.0" >36</text>
+<use id="37" xlink:href="#road"
+x="43.3" y="-375.0" transform="rotate(-60 43.3,-375.0)" class="unowned" />
+<text x="43.3" y="-375.0" >37</text>
+<use id="38" xlink:href="#road"
+x="43.3" y="-225.0" transform="rotate(60 43.3,-225.0)" class="unowned" />
+<text x="43.3" y="-225.0" >38</text>
+<use id="39" xlink:href="#road"
+x="43.3" y="-75.0" transform="rotate(-60 43.3,-75.0)" class="unowned" />
+<text x="43.3" y="-75.0" >39</text>
+<use id="40" xlink:href="#road"
+x="43.3" y="75.0" transform="rotate(60 43.3,75.0)" class="unowned" />
+<text x="43.3" y="75.0" >40</text>
+<use id="41" xlink:href="#road"
+x="43.3" y="225.0" transform="rotate(-60 43.3,225.0)" class="unowned" />
+<text x="43.3" y="225.0" >41</text>
+<use id="42" xlink:href="#road"
+x="43.3" y="375.0" transform="rotate(60 43.3,375.0)" class="unowned" />
+<text x="43.3" y="375.0" >42</text>
+<use id="43" xlink:href="#road"
+x="86.6" y="-300.0" transform="rotate(0 86.6,-300.0)" class="unowned" />
+<text x="86.6" y="-300.0" >43</text>
+<use id="44" xlink:href="#road"
+x="86.6" y="0.0" transform="rotate(0 86.6,0.0)" class="unowned" />
+<text x="86.6" y="0.0" >44</text>
+<use id="45" xlink:href="#road"
+x="86.6" y="300.0" transform="rotate(0 86.6,300.0)" class="unowned" />
+<text x="86.6" y="300.0" >45</text>
+<use id="46" xlink:href="#road"
+x="129.9" y="-375.0" transform="rotate(60 129.9,-375.0)" class="unowned" />
+<text x="129.9" y="-375.0" >46</text>
+<use id="47" xlink:href="#road"
+x="129.9" y="-225.0" transform="rotate(-60 129.9,-225.0)" class="unowned" />
+<text x="129.9" y="-225.0" >47</text>
+<use id="48" xlink:href="#road"
+x="129.9" y="-75.0" transform="rotate(60 129.9,-75.0)" class="unowned" />
+<text x="129.9" y="-75.0" >48</text>
+<use id="49" xlink:href="#road"
+x="129.9" y="75.0" transform="rotate(-60 129.9,75.0)" class="unowned" />
+<text x="129.9" y="75.0" >49</text>
+<use id="50" xlink:href="#road"
+x="129.9" y="225.0" transform="rotate(60 129.9,225.0)" class="unowned" />
+<text x="129.9" y="225.0" >50</text>
+<use id="51" xlink:href="#road"
+x="129.9" y="375.0" transform="rotate(-60 129.9,375.0)" class="unowned" />
+<text x="129.9" y="375.0" >51</text>
+<use id="52" xlink:href="#road"
+x="173.2" y="-150.0" transform="rotate(0 173.2,-150.0)" class="unowned" />
+<text x="173.2" y="-150.0" >52</text>
+<use id="53" xlink:href="#road"
+x="173.2" y="150.0" transform="rotate(0 173.2,150.0)" class="unowned" />
+<text x="173.2" y="150.0" >53</text>
+<use id="54" xlink:href="#road"
+x="216.5" y="-375.0" transform="rotate(-60 216.5,-375.0)" class="unowned" />
+<text x="216.5" y="-375.0" >54</text>
+<use id="55" xlink:href="#road"
+x="216.5" y="-225.0" transform="rotate(60 216.5,-225.0)" class="unowned" />
+<text x="216.5" y="-225.0" >55</text>
+<use id="56" xlink:href="#road"
+x="216.5" y="-75.0" transform="rotate(-60 216.5,-75.0)" class="unowned" />
+<text x="216.5" y="-75.0" >56</text>
+<use id="57" xlink:href="#road"
+x="216.5" y="75.0" transform="rotate(60 216.5,75.0)" class="unowned" />
+<text x="216.5" y="75.0" >57</text>
+<use id="58" xlink:href="#road"
+x="216.5" y="225.0" transform="rotate(-60 216.5,225.0)" class="unowned" />
+<text x="216.5" y="225.0" >58</text>
+<use id="59" xlink:href="#road"
+x="216.5" y="375.0" transform="rotate(60 216.5,375.0)" class="unowned" />
+<text x="216.5" y="375.0" >59</text>
+<use id="60" xlink:href="#road"
+x="259.8" y="-300.0" transform="rotate(0 259.8,-300.0)" class="unowned" />
+<text x="259.8" y="-300.0" >60</text>
+<use id="61" xlink:href="#road"
+x="259.8" y="0.0" transform="rotate(0 259.8,0.0)" class="unowned" />
+<text x="259.8" y="0.0" >61</text>
+<use id="62" xlink:href="#road"
+x="259.8" y="300.0" transform="rotate(0 259.8,300.0)" class="unowned" />
+<text x="259.8" y="300.0" >62</text>
+<use id="63" xlink:href="#road"
+x="303.1" y="-225.0" transform="rotate(-60 303.1,-225.0)" class="unowned" />
+<text x="303.1" y="-225.0" >63</text>
+<use id="64" xlink:href="#road"
+x="303.1" y="-75.0" transform="rotate(60 303.1,-75.0)" class="unowned" />
+<text x="303.1" y="-75.0" >64</text>
+<use id="65" xlink:href="#road"
+x="303.1" y="75.0" transform="rotate(-60 303.1,75.0)" class="unowned" />
+<text x="303.1" y="75.0" >65</text>
+<use id="66" xlink:href="#road"
+x="303.1" y="225.0" transform="rotate(60 303.1,225.0)" class="unowned" />
+<text x="303.1" y="225.0" >66</text>
+<use id="67" xlink:href="#road"
+x="346.4" y="-150.0" transform="rotate(0 346.4,-150.0)" class="unowned" />
+<text x="346.4" y="-150.0" >67</text>
+<use id="68" xlink:href="#road"
+x="346.4" y="150.0" transform="rotate(0 346.4,150.0)" class="unowned" />
+<text x="346.4" y="150.0" >68</text>
+<use id="69" xlink:href="#road"
+x="389.7" y="-75.0" transform="rotate(-60 389.7,-75.0)" class="unowned" />
+<text x="389.7" y="-75.0" >69</text>
+<use id="70" xlink:href="#road"
+x="389.7" y="75.0" transform="rotate(60 389.7,75.0)" class="unowned" />
+<text x="389.7" y="75.0" >70</text>
+<use id="71" xlink:href="#road"
+x="433.0" y="0.0" transform="rotate(0 433.0,0.0)" class="unowned" />
+<text x="433.0" y="0.0" >71</text>
 </g>
-
 <g id="buildings">
-<use id="0" xlink:href="#settlement" x="173.2" y="400.0" class="unowned" />
-<use id="1" xlink:href="#settlement" x="-173.2" y="-200.0" class="unowned" />
-<use id="2" xlink:href="#settlement" x="-86.6" y="-250.0" class="unowned" />
-<use id="3" xlink:href="#settlement" x="-0.0" y="-200.0" class="unowned" />
-<use id="4" xlink:href="#settlement" x="259.8" y="-50.0" class="unowned" />
-<use id="5" xlink:href="#settlement" x="-259.8" y="-250.0" class="unowned" />
-<use id="6" xlink:href="#settlement" x="-173.2" y="-100.0" class="unowned" />
-<use id="7" xlink:href="#settlement" x="-86.6" y="350.0" class="unowned" />
-<use id="8" xlink:href="#settlement" x="-0.0" y="400.0" class="unowned" />
-<use id="9" xlink:href="#settlement" x="86.6" y="-50.0" class="unowned" />
-<use id="10" xlink:href="#settlement" x="-259.8" y="350.0" class="unowned" />
-<use id="11" xlink:href="#settlement" x="-346.4" y="-100.0" class="unowned" />
-<use id="12" xlink:href="#settlement" x="-0.0" y="200.0" class="unowned" />
-<use id="13" xlink:href="#settlement" x="433.0" y="-50.0" class="unowned" />
-<use id="14" xlink:href="#settlement" x="346.4" y="200.0" class="unowned" />
-<use id="15" xlink:href="#settlement" x="-86.6" y="-350.0" class="unowned" />
-<use id="16" xlink:href="#settlement" x="0.0" y="-100.0" class="unowned" />
-<use id="17" xlink:href="#settlement" x="433.0" y="50.0" class="unowned" />
-<use id="18" xlink:href="#settlement" x="-173.2" y="100.0" class="unowned" />
-<use id="19" xlink:href="#settlement" x="259.8" y="50.0" class="unowned" />
-<use id="20" xlink:href="#settlement" x="-259.8" y="-350.0" class="unowned" />
-<use id="21" xlink:href="#settlement" x="173.2" y="100.0" class="unowned" />
-<use id="22" xlink:href="#settlement" x="-86.6" y="250.0" class="unowned" />
-<use id="23" xlink:href="#settlement" x="86.6" y="50.0" class="p1" />
-<use id="24" xlink:href="#settlement" x="-173.2" y="200.0" class="unowned" />
-<use id="25" xlink:href="#settlement" x="-259.8" y="250.0" class="unowned" />
-<use id="26" xlink:href="#settlement" x="-346.4" y="100.0" class="unowned" />
-<use id="27" xlink:href="#settlement" x="-0.0" y="-400.0" class="unowned" />
-<use id="28" xlink:href="#settlement" x="259.8" y="350.0" class="unowned" />
-<use id="29" xlink:href="#settlement" x="346.4" y="-200.0" class="unowned" />
-<use id="30" xlink:href="#settlement" x="173.2" y="-200.0" class="unowned" />
-<use id="31" xlink:href="#settlement" x="346.4" y="100.0" class="unowned" />
-<use id="32" xlink:href="#settlement" x="259.8" y="250.0" class="unowned" />
-<use id="33" xlink:href="#settlement" x="173.2" y="-400.0" class="unowned" />
-<use id="34" xlink:href="#settlement" x="-86.6" y="50.0" class="unowned" />
-<use id="35" xlink:href="#settlement" x="86.6" y="250.0" class="unowned" />
-<use id="36" xlink:href="#settlement" x="259.8" y="-350.0" class="unowned" />
-<use id="37" xlink:href="#settlement" x="-173.2" y="-400.0" class="unowned" />
-<use id="38" xlink:href="#settlement" x="-433.0" y="50.0" class="unowned" />
-<use id="39" xlink:href="#settlement" x="0.0" y="100.0" class="unowned" />
-<use id="40" xlink:href="#settlement" x="86.6" y="-350.0" class="unowned" />
-<use id="41" xlink:href="#settlement" x="173.2" y="200.0" class="unowned" />
-<use id="42" xlink:href="#settlement" x="-433.0" y="-50.0" class="unowned" />
-<use id="43" xlink:href="#settlement" x="346.4" y="-100.0" class="unowned" />
-<use id="44" xlink:href="#settlement" x="-86.6" y="-50.0" class="unowned" />
-<use id="45" xlink:href="#settlement" x="173.2" y="-100.0" class="unowned" />
-<use id="46" xlink:href="#settlement" x="86.6" y="350.0" class="unowned" />
-<use id="47" xlink:href="#settlement" x="259.8" y="-250.0" class="unowned" />
-<use id="48" xlink:href="#settlement" x="-259.8" y="-50.0" class="unowned" />
-<use id="49" xlink:href="#settlement" x="86.6" y="-250.0" class="unowned" />
-<use id="50" xlink:href="#settlement" x="-346.4" y="-200.0" class="unowned" />
-<use id="51" xlink:href="#settlement" x="-173.2" y="400.0" class="unowned" />
-<use id="52" xlink:href="#settlement" x="-259.8" y="50.0" class="unowned" />
-<use id="53" xlink:href="#settlement" x="-346.4" y="200.0" class="unowned" />
-	<use x="-259.8" y="50.0" xlink:href="#city" />
-	<use x="-346.4" y="200.0" xlink:href="#city-b" />
-	</g>
+<use id="0" xlink:href="#settlement" x="433.0" y="50.0" class="unowned" />
+<text x="433.0" y="50.0" >72</text>
+<use id="1" xlink:href="#settlement" x="433.0" y="-50.0" class="unowned" />
+<text x="433.0" y="-50.0" >73</text>
+<use id="2" xlink:href="#settlement" x="346.4" y="200.0" class="unowned" />
+<text x="346.4" y="200.0" >74</text>
+<use id="3" xlink:href="#settlement" x="346.4" y="100.0" class="unowned" />
+<text x="346.4" y="100.0" >75</text>
+<use id="4" xlink:href="#settlement" x="346.4" y="-100.0" class="unowned" />
+<text x="346.4" y="-100.0" >76</text>
+<use id="5" xlink:href="#settlement" x="346.4" y="-200.0" class="unowned" />
+<text x="346.4" y="-200.0" >77</text>
+<use id="6" xlink:href="#settlement" x="259.8" y="350.0" class="unowned" />
+<text x="259.8" y="350.0" >78</text>
+<use id="7" xlink:href="#settlement" x="259.8" y="250.0" class="unowned" />
+<text x="259.8" y="250.0" >79</text>
+<use id="8" xlink:href="#settlement" x="259.8" y="50.0" class="unowned" />
+<text x="259.8" y="50.0" >80</text>
+<use id="9" xlink:href="#settlement" x="259.8" y="-50.0" class="unowned" />
+<text x="259.8" y="-50.0" >81</text>
+<use id="10" xlink:href="#settlement" x="259.8" y="-250.0" class="unowned" />
+<text x="259.8" y="-250.0" >82</text>
+<use id="11" xlink:href="#settlement" x="259.8" y="-350.0" class="unowned" />
+<text x="259.8" y="-350.0" >83</text>
+<use id="12" xlink:href="#settlement" x="173.2" y="400.0" class="unowned" />
+<text x="173.2" y="400.0" >84</text>
+<use id="13" xlink:href="#settlement" x="173.2" y="200.0" class="unowned" />
+<text x="173.2" y="200.0" >85</text>
+<use id="14" xlink:href="#settlement" x="173.2" y="100.0" class="unowned" />
+<text x="173.2" y="100.0" >86</text>
+<use id="15" xlink:href="#settlement" x="173.2" y="-100.0" class="unowned" />
+<text x="173.2" y="-100.0" >87</text>
+<use id="16" xlink:href="#settlement" x="173.2" y="-200.0" class="unowned" />
+<text x="173.2" y="-200.0" >88</text>
+<use id="17" xlink:href="#settlement" x="173.2" y="-400.0" class="unowned" />
+<text x="173.2" y="-400.0" >89</text>
+<use id="18" xlink:href="#settlement" x="86.6" y="350.0" class="unowned" />
+<text x="86.6" y="350.0" >90</text>
+<use id="19" xlink:href="#settlement" x="86.6" y="250.0" class="unowned" />
+<text x="86.6" y="250.0" >91</text>
+<use id="20" xlink:href="#settlement" x="86.6" y="50.0" class="unowned" />
+<text x="86.6" y="50.0" >92</text>
+<use id="21" xlink:href="#settlement" x="86.6" y="-50.0" class="unowned" />
+<text x="86.6" y="-50.0" >93</text>
+<use id="22" xlink:href="#settlement" x="86.6" y="-250.0" class="unowned" />
+<text x="86.6" y="-250.0" >94</text>
+<use id="23" xlink:href="#settlement" x="86.6" y="-350.0" class="unowned" />
+<text x="86.6" y="-350.0" >95</text>
+<use id="24" xlink:href="#settlement" x="-0.0" y="400.0" class="unowned" />
+<text x="-0.0" y="400.0" >96</text>
+<use id="25" xlink:href="#settlement" x="-0.0" y="200.0" class="unowned" />
+<text x="-0.0" y="200.0" >97</text>
+<use id="26" xlink:href="#settlement" x="0.0" y="100.0" class="unowned" />
+<text x="0.0" y="100.0" >98</text>
+<use id="27" xlink:href="#settlement" x="0.0" y="-100.0" class="unowned" />
+<text x="0.0" y="-100.0" >99</text>
+<use id="28" xlink:href="#settlement" x="-0.0" y="-200.0" class="unowned" />
+<text x="-0.0" y="-200.0" >100</text>
+<use id="29" xlink:href="#settlement" x="-0.0" y="-400.0" class="unowned" />
+<text x="-0.0" y="-400.0" >101</text>
+<use id="30" xlink:href="#settlement" x="-86.6" y="350.0" class="unowned" />
+<text x="-86.6" y="350.0" >102</text>
+<use id="31" xlink:href="#settlement" x="-86.6" y="250.0" class="unowned" />
+<text x="-86.6" y="250.0" >103</text>
+<use id="32" xlink:href="#settlement" x="-86.6" y="50.0" class="unowned" />
+<text x="-86.6" y="50.0" >104</text>
+<use id="33" xlink:href="#settlement" x="-86.6" y="-50.0" class="unowned" />
+<text x="-86.6" y="-50.0" >105</text>
+<use id="34" xlink:href="#settlement" x="-86.6" y="-250.0" class="unowned" />
+<text x="-86.6" y="-250.0" >106</text>
+<use id="35" xlink:href="#settlement" x="-86.6" y="-350.0" class="unowned" />
+<text x="-86.6" y="-350.0" >107</text>
+<use id="36" xlink:href="#settlement" x="-173.2" y="400.0" class="unowned" />
+<text x="-173.2" y="400.0" >108</text>
+<use id="37" xlink:href="#settlement" x="-173.2" y="200.0" class="unowned" />
+<text x="-173.2" y="200.0" >109</text>
+<use id="38" xlink:href="#settlement" x="-173.2" y="100.0" class="unowned" />
+<text x="-173.2" y="100.0" >110</text>
+<use id="39" xlink:href="#settlement" x="-173.2" y="-100.0" class="unowned" />
+<text x="-173.2" y="-100.0" >111</text>
+<use id="40" xlink:href="#settlement" x="-173.2" y="-200.0" class="unowned" />
+<text x="-173.2" y="-200.0" >112</text>
+<use id="41" xlink:href="#settlement" x="-173.2" y="-400.0" class="unowned" />
+<text x="-173.2" y="-400.0" >113</text>
+<use id="42" xlink:href="#settlement" x="-259.8" y="350.0" class="unowned" />
+<text x="-259.8" y="350.0" >114</text>
+<use id="43" xlink:href="#settlement" x="-259.8" y="250.0" class="unowned" />
+<text x="-259.8" y="250.0" >115</text>
+<use id="44" xlink:href="#settlement" x="-259.8" y="50.0" class="unowned" />
+<text x="-259.8" y="50.0" >116</text>
+<use id="45" xlink:href="#settlement" x="-259.8" y="-50.0" class="unowned" />
+<text x="-259.8" y="-50.0" >117</text>
+<use id="46" xlink:href="#settlement" x="-259.8" y="-250.0" class="unowned" />
+<text x="-259.8" y="-250.0" >118</text>
+<use id="47" xlink:href="#settlement" x="-259.8" y="-350.0" class="unowned" />
+<text x="-259.8" y="-350.0" >119</text>
+<use id="48" xlink:href="#settlement" x="-346.4" y="200.0" class="unowned" />
+<text x="-346.4" y="200.0" >120</text>
+<use id="49" xlink:href="#settlement" x="-346.4" y="100.0" class="unowned" />
+<text x="-346.4" y="100.0" >121</text>
+<use id="50" xlink:href="#settlement" x="-346.4" y="-100.0" class="unowned" />
+<text x="-346.4" y="-100.0" >122</text>
+<use id="51" xlink:href="#settlement" x="-346.4" y="-200.0" class="unowned" />
+<text x="-346.4" y="-200.0" >123</text>
+<use id="52" xlink:href="#settlement" x="-433.0" y="50.0" class="unowned" />
+<text x="-433.0" y="50.0" >124</text>
+<use id="53" xlink:href="#settlement" x="-433.0" y="-50.0" class="unowned" />
+<text x="-433.0" y="-50.0" >125</text>
+</g>
 </svg>

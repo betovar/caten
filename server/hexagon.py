@@ -149,13 +149,46 @@ class Hexagon():
 				print '</g>'
 			print '</g>'
 		print '</g>'
+
+		print '<g id="roads">'
+		roads = []
+		radius = DEFAULT_GRID_SIZE*math.cos(math.pi*30/180.)
+		for i,c in enumerate(self.circ):
+			for k in range(0,360, 60):
+				x=radius*math.cos(math.pi*k/180.)+c[0]
+				y=radius*math.sin(math.pi*k/180.)+c[1]
+				roads.append( (round(x,1),round(y,1)) )
+		roads = list(set(roads)) #remove duplicates
+		roads.sort()
+		for i,p in enumerate(roads):
+			print '<use id="%s" xlink:href="#road"' % i
+			print 'x="%.1f" y="%.1f"' % p,
+			print 'transform="rotate(%s' % (rota(p)*(60)),
+			print '%.1f,%.1f)" class="unowned" />' % p
+			print '<text x="%.1f" y="%.1f"' % p,
+			print '>%s</text>' % i
+		print '</g>'
+
 		print '<g id="buildings">'
 		nodes = list(set(nodes)) #remove duplicates
-		for i,b in enumerate(nodes):
+		nodes.sort()
+		nodes.reverse()
+		for i,p in enumerate(nodes):
 			print '<use id="%s" xlink:href="#settlement"' % i,
-			print 'x="%.1f" y="%.1f" class="unowned" />' % b
+			print 'x="%.1f" y="%.1f" class="unowned" />' % p
+			print '<text x="%.1f" y="%.1f"' % p,
+			print '>%s</text>' % (i+len(roads))
 		print '</g>'
+
 		
+def rota((x,y)):
+	j=int(x/43.3)+10
+	k=int(y/75.)+10
+	z=(j*k)%2
+	return z*((j%4+k%4)%4-1)
+#	return math.fmod((j^2-k^2+(j*k)),2)
+#	return (j*k)%2
+
 
 def hex((x,y), r):
 	local = []

@@ -1,133 +1,36 @@
-html, body { margin:0; padding:0; overflow:hidden }
-svg { position:fixed; top:0; left:0; height:100%; width:100% }
+#ocean { stroke:black; stroke-width:10; fill:dodgerblue; }
+#tiles polygon { stroke:black stroke-width:5; }
+#road path { stroke-linecap:round; }
+#wood-port { fill:green; }
+#wheat-port { fill:goldenrod; }
 
-#tiles polygon {
-	stroke: black;
-  	stroke-width: 5;
-}
+.hills { fill:#EBB; }
+.forest { fill:#BEB; }
+.fields { fill:#EEB; }
+.pasture { fill:#BEE; }
+.quarry { fill:#BBB; }
+.desert { fill:#EEE; }
 
-#ocean {
-	stroke: black;
-	stroke-width: 10;
-	fill: dodgerblue;
-}
+.p1 { fill:deeppink; stroke:deeppink; }
+.p2 { fill:darkorange; stroke:darkorange; }
+.p3 { fill:darkviolet; stroke:darkviolet; }
+.p4 { fill:gold; stroke:gold; }
 
-.token {
-	stroke: black;
-	stroke-width: 3;
-}
+.token { stroke:black; stroke-width:3; }
+.token circle { fill:khaki; }
+.token:hover { opacity:.5; }
+.token text { text-align:center; text-anchor:middle; 
+	dominant-baseline:central; font-family:serif; 
+	font-size:24px; pointer-events:none; }
 
-.token circle {
-	fill: khaki;
-}
+.harbor { stroke:black;	stroke-width:3; }
+.harbor:hover { opacity:.5; }
+.harbor circle { fill:inherit; stroke:white; }
+.harbor rect { fill:lightgrey; }
+.harbor text { text-align:center; text-anchor:middle; 
+	dominant-baseline:central; font-family:serif; 
+	fill:black; font-size:20px; pointer-events:none; }
 
-.token:hover {
-	opacity: .5;
-}
 
-.token text {
-	text-align: center;
-	text-anchor: middle;
-	dominant-baseline: central;
-	font-family: serif;
-	font-size: 24px;
-	pointer-events: none;
-}
-
-#roads path {
-	stroke-linecap: round;
-}
-
-.hills {
-  	fill: #EBB;
-}
-
-.forest {
-  	fill: #BEB;
-}
-
-.fields {
-  	fill: #EEB;
-}
-
-.pasture {
-  	fill: #BEE;
-}
-
-.quarry {
-  	fill: #BBB;
-}
-
-.desert {
-  	fill: #EEE;
-}
-
-.harbor {
-	stroke: black;
-	stroke-width: 3;
-}
-
-#wood-port {
-	fill: green;
-}
-
-#wheat-port {
-	fill: goldenrod;
-}
-
-.harbor circle {
-	fill: inherit;
-	stroke: white;
-}
-
-.harbor rect {
-	fill: lightgrey;
-}
-
-.harbor:hover {
-	opacity: .5;
-}
-
-.harbor text {
-	text-align: center;
-	text-anchor: middle;
-	dominant-baseline: central;
-	font-family: serif;
-	fill: black;
-	font-size: 20px;
-	pointer-events: none;
-}
-
-#buildings {
-	fill: grey;
-	stroke: white;
-	stroke-width: 3;
-}
-
-#buildings .unowned {
-	opacity: 0;
-}
-
-#buildings .unowned:hover {
-	opacity: 1;
-}
-
-#buildings .city {
-	fill: grey;
-}
-
-#buildings .p1 {
-	fill: deeppink;
-}
-
-#buildings .p2 {
-	fill: darkorange;
-}
-
-#buildings .p3 {
-	fill: darkviolet;
-}
-
-#buildings .p4 {
-	fill: gold;
-}
+.unowned { xopacity:0; fill:grey; stroke:grey; stroke-width:3; }
+.unowned:hover { opacity:1; }
