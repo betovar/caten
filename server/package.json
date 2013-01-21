@@ -1,0 +1,22 @@
+{
+  "name": "caten-server",
+  "author": {
+    "name": "Brian E Tovar",
+    "email": "betovar@leaflabs.com"
+  },
+  "version": "0.0.1",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "3.0.x",
+    "jade": ">= 0.27.0"
+  },
+  "analyze": false,
+  "readme": "This is a work in progress of an board game using node-jitsu",
+  "description": "A web-based Settlers of Catan game using node.js",
+  "subdomain": "betovar.caten",
+  "engines": {
+    "node": "0.8.x"
+  }
+}

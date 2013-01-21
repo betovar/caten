@@ -1,5 +1,5 @@
 #ocean { stroke:black; stroke-width:10; fill:dodgerblue; }
-#tiles polygon { stroke:black stroke-width:5; }
+#tiles polygon { xstroke:black; stroke-width:5; }
 #road path { stroke-linecap:round; }
 #wood-port { fill:green; }
 #wheat-port { fill:goldenrod; }
@@ -31,6 +31,5 @@
 	dominant-baseline:central; font-family:serif; 
 	fill:black; font-size:20px; pointer-events:none; }
 
-
-.unowned { xopacity:0; fill:grey; stroke:grey; stroke-width:3; }
-.unowned:hover { opacity:1; }
+.unowned { opacity:0; fill:grey; stroke:grey; stroke-width:3; }
+.unowned:hover { xopacity:1; }
