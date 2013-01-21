@@ -5,12 +5,19 @@
     "email": "betovar@leaflabs.com"
   },
   "version": "0.0.1",
+  "private": "true",
+  "homepage": "http;//betovar.caten.jit.su",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/betovar/caten.git"
+  },
   "scripts": {
     "start": "node server.js"
   },
   "dependencies": {
     "express": "3.0.x",
-    "jade": ">= 0.27.0"
+    "jade": ">= 0.27.0",
+    "qrand": "0.0.1"
   },
   "analyze": false,
   "readme": "This is a work in progress of an board game using node-jitsu",

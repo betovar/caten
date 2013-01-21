@@ -1,8 +1,6 @@
 #ocean { stroke:black; stroke-width:10; fill:dodgerblue; }
 #tiles polygon { xstroke:black; stroke-width:5; }
 #road path { stroke-linecap:round; }
-#wood-port { fill:green; }
-#wheat-port { fill:goldenrod; }
 
 .hills { fill:#EBB; }
 .forest { fill:#BEB; }
@@ -23,6 +21,12 @@
 	dominant-baseline:central; font-family:serif; 
 	font-size:24px; pointer-events:none; }
 
+#ore-port { fill:darkgrey; }
+#wool-port { fill:steelblue; }
+#wood-port { fill:forestgreen; }
+#wheat-port { fill:goldenrod; }
+#brick-port { fill:darkred; }
+#generic-port { fill:none; }
 .harbor { stroke:black;	stroke-width:3; }
 .harbor:hover { opacity:.5; }
 .harbor circle { fill:inherit; stroke:white; }

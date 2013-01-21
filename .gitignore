@@ -1,6 +1,7 @@
 *.jpg
+*.gif
 *.pdf
 *.pyc
 *.log
-server/node_modules/
+node_modules/
 misc/

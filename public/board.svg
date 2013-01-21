@@ -1,5 +1,5 @@
 <?xml version="1.0" standalone="no" ?>
-<?xml-stylesheet href="default.css" type="text/css" ?>
+<?xml-stylesheet href="stylesheets/default.css" type="text/css" ?>
 
 <svg xmlns="http://www.w3.org/2000/svg" 
 		 xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -26,7 +26,69 @@
 points=" 476.3,275.0 0.0,550.0 -476.3,275.0 -476.3,-275.0 0.0,-550.0 476.3,-275.0 "/>
 
 <g id="harbors">
-
+	<g id="generic-port" class="harbor" 
+		transform="translate(-173.2, 300.0) rotate(120)">
+		<circle cx="90" r="50" />
+			<rect x="110" y="-15" width="40" height="30" rx="3"
+				transform="rotate(-120, 130,0)" />
+			<text x="130" transform="rotate(-120, 130,0)">3:1</text>
+	</g>
+	<g id="wood-port" class="harbor" 
+		transform="translate(0.0, 300.0) rotate(60)">
+			<circle cx="90" r="50" />
+			<rect x="110" y="-15" width="40" height="30" rx="3" 
+				transform="rotate(-60, 130,0)" />
+			<text x="130" transform="rotate(-60, 130,0)">2:1</text>
+	</g>
+	<g id="brick-port" class="harbor" 
+		transform="translate(259.8, 150.0) rotate(60)">
+		<circle cx="90" r="50" />
+			<rect x="110" y="-15" width="40" height="30" rx="3"
+				transform="rotate(-60, 130,0)" />
+			<text x="130" transform="rotate(-60, 130,0)">2:1</text>
+	</g>
+	<g id="generic-port" class="harbor" 
+		transform="translate(346.4, 0.0) rotate(0)">
+			<circle cx="90" r="50" />
+			<rect x="110" y="-15" width="40" height="30" rx="3" 
+				transform="rotate(0, 130,0)" />
+			<text x="130" transform="rotate(0, 130,0)">3:1</text>
+	</g>
+	<g id="generic-port" class="harbor" 
+		transform="translate(259.8, -150.0) rotate(-60)">
+		<circle cx="90" r="50" />
+			<rect x="110" y="-15" width="40" height="30" rx="3"
+				transform="rotate(60, 130,0)" />
+			<text x="130" transform="rotate(60, 130,0)">3:1</text>
+	</g>
+	<g id="wool-port" class="harbor" 
+		transform="translate(0.0, -300.0) rotate(-60)">
+			<circle cx="90" r="50" />
+			<rect x="110" y="-15" width="40" height="30" rx="3" 
+				transform="rotate(60, 130,0)" />
+			<text x="130" transform="rotate(60, 130,0)">2:1</text>
+	</g>
+	<g id="generic-port" class="harbor" 
+		transform="translate(-173.2, -300.0) rotate(-120)">
+			<circle cx="90" r="50" />
+			<rect x="110" y="-15" width="40" height="30" rx="3" 
+				transform="rotate(120, 130,0)" />
+			<text x="130" transform="rotate(120, 130,0)">3:1</text>
+	</g>
+	<g id="ore-port" class="harbor" 
+		transform="translate(-259.8, -150.0) rotate(180)">
+			<circle cx="90" r="50" />
+			<rect x="110" y="-15" width="40" height="30" rx="3" 
+				transform="rotate(180, 130,0)" />
+			<text x="130" transform="rotate(180, 130,0)">2:1</text>
+	</g>
+	<g id="wheat-port" class="harbor" 
+		transform="translate(-259.8, 150.0) rotate(180)">
+			<circle cx="90" r="50" />
+			<rect x="110" y="-15" width="40" height="30" rx="3" 
+				transform="rotate(180, 130,0)" />
+			<text x="130" transform="rotate(180, 130,0)">2:1</text>
+	</g>
 </g>
 
 <g id="tiles">
