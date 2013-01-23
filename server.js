@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
 /**
- * Module dependencies.
+ * Starts web server
  */
 
 var express = require('express')
@@ -15,9 +15,9 @@ var app = express();
 
 app.configure(function(){
   app.set('port', 8080);
-  app.set('views', __dirname + '/views');
+  app.set('views', path.join(__dirname, '/views'));
   app.set('view engine', 'jade');
-  app.use(express.favicon(__dirname + '/public/favicon.svg')); 
+  app.use(express.favicon(path.join(__dirname, '/public/favicon.svg'))); 
   app.use(express.logger('dev'));
   app.use(express.bodyParser());
   app.use(express.methodOverride());
@@ -33,7 +33,9 @@ app.configure('production', function(){
   app.use(express.errorHandler());
 });
 
-
+app.get('/game', function(req, res) {
+  res.render('game', { title: 'Caten', gameid: 'bdd81dc887d84899cf3b' });
+});
 app.get('/', routes.index);
 
 http.createServer(app).listen(app.get('port'), function(){
