@@ -1,8 +1,14 @@
 extends layout
 
 block content
-	h1 Welcome to #{title} 
-	#game-board.row
+	h1(align="center") Settlers of Catan
+	.row
 		.span10.offset1
-			|	<embed src="board.svg" type="image/svg+xml" />
-	p The game-id is #{gameid}
+			svg#board
+				g#seaframe
+				g#harbors
+				g#hexes
+				g#roads
+				g#buildings
+	p This is the standard basic game.
+	script(type="text/javascript", src="build.js")

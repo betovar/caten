@@ -1,0 +1,33 @@
+extends layout
+
+block content
+	|	<script src="/socket.io/socket.io.js"></script>
+	.row
+		.span6
+			h1 Welcome to Caten!
+			.alert.alert-info
+				button.close(type="button",data-dismiss="alert")
+					&times;
+				p This is the game staging area. Start your own game or join one.
+				p Remember to login if you haven't already done so.
+	.row
+		.span2
+			.btn-group
+				button.btn.btn-primary START
+				button.btn.btn-primary.dropdown-toggle(data-toggle="dropdown")
+					span.caret
+				ul.dropdown-menu
+					li: first
+					li: second
+					li: third
+					li: last
+		.span2
+			button.btn.btn-primary JOIN
+			ul.unstyled
+				li: span.badge.badge-success Alice
+				li:	span.badge.badge-inverse Bob
+				li:	span.badge ?
+				li:	span.badge.badge-inverse Dave
+	|	<script>
+	|	  var socket = io.connect('http://localhost');
+	|	</script>

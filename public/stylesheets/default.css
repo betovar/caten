@@ -1,4 +1,4 @@
-#ocean { stroke:black; stroke-width:10; fill:dodgerblue; }
+#seaframe { stroke:black; stroke-width:2; fill:dodgerblue; }
 #tiles polygon { xstroke:black; stroke-width:5; }
 #road path { stroke-linecap:round; }
 
@@ -14,23 +14,22 @@
 .p3 { fill:darkviolet; stroke:darkviolet; }
 .p4 { fill:gold; stroke:gold; }
 
-.token { stroke:black; stroke-width:3; }
-.token circle { fill:khaki; }
-.token:hover { opacity:.5; }
-.token text { text-align:center; text-anchor:middle; 
+.chit { stroke:black; stroke-width:3; }
+.chit circle { fill:khaki; }
+.chit text { text-align:center; text-anchor:middle; 
 	dominant-baseline:central; font-family:serif; 
 	font-size:24px; pointer-events:none; }
 
-#ore-port { fill:darkgrey; }
-#wool-port { fill:steelblue; }
-#wood-port { fill:forestgreen; }
-#wheat-port { fill:goldenrod; }
-#brick-port { fill:darkred; }
-#generic-port { fill:none; }
+.ore { fill:grey; }
+.wool { fill:steelblue; }
+.lumber { fill:forestgreen; }
+.grain { fill:goldenrod; }
+.brick { fill:darkred; }
+.generic { fill:dodgerblue; }
 .harbor { stroke:black;	stroke-width:3; }
-.harbor:hover { opacity:.5; }
+.harbor:hover { opacity:0.5; }
 .harbor circle { fill:inherit; stroke:white; }
-.harbor rect { fill:lightgrey; }
+.harbor rect { fill:white; }
 .harbor text { text-align:center; text-anchor:middle; 
 	dominant-baseline:central; font-family:serif; 
 	fill:black; font-size:20px; pointer-events:none; }
