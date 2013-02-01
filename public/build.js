@@ -23,21 +23,28 @@ function build() {
 		.data(data.tile.reverse())
 		.enter()
 		.append("g")
-		.attr("class", "tile");
-	tiles.append("polygon")
-		.attr("points", data.geometry.hexagon)
 		.attr("class", function(d) { return d.resource; });
+	tiles.append("polygon")
+		.attr("class", "hex")
+		.attr("points", data.geometry.hexagon);
 	tiles.append("circle")
 		.attr("class", "chit")
 		.attr("r", 30);
 	tiles.append("text")
 		.attr("y", -5)
-		.text(function(d) { return d.chit; });
+		.text(function(d) { return d.chit; })
+		.style("stroke", function(d) { return d.color });
 	tiles.append("text")
 		.attr("y", 5)
 		.text(function(d) { 
 			return dots[Math.abs(d.chit-7)-1]
-		});
+		})
+		.style("stroke", function(d) { return d.color });
+
+	tiles.select(".desert circle")
+		.remove();
+	tiles.selectAll(".desert text")
+		.remove();
 
 	tiles.transition()
 		.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
