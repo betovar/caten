@@ -38,6 +38,10 @@ server.listen(app.get('port'), function() {
     app.get('port'), app.settings.env);
 });
 
+/**
+ * Defines routing
+ */
+
 app.get('/lobby', function(req, res) {
   res.render('lobby');
 });

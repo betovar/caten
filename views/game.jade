@@ -2,13 +2,12 @@ extends layout
 
 block content
 	h1(align="center") Settlers of Catan
-	.row
+	.row-fluid
 		.span10.offset1
 			svg#board
-				g#seaframe
+				g#ocean
 				g#harbors
 				g#hexes
 				g#roads
 				g#buildings
-	p This is the standard basic game.
 	script(type="text/javascript", src="build.js")

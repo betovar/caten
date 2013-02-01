@@ -1,31 +1,25 @@
-#seaframe { stroke:black; stroke-width:2; fill:dodgerblue; }
-#tiles polygon { xstroke:black; stroke-width:5; }
+#hexes { stroke:black; stroke-width:3; }
 #road path { stroke-linecap:round; }
+#ocean { stroke:black; stroke-width:5; fill:dodgerblue; }
 
-.hills { fill:#EBB; }
-.forest { fill:#BEB; }
-.fields { fill:#EEB; }
-.pasture { fill:#BEE; }
-.quarry { fill:#BBB; }
-.desert { fill:#EEE; }
-
-.p1 { fill:deeppink; stroke:deeppink; }
-.p2 { fill:darkorange; stroke:darkorange; }
-.p3 { fill:darkviolet; stroke:darkviolet; }
-.p4 { fill:gold; stroke:gold; }
-
-.chit { stroke:black; stroke-width:3; }
-.chit circle { fill:khaki; }
-.chit text { text-align:center; text-anchor:middle; 
-	dominant-baseline:central; font-family:serif; 
-	font-size:24px; pointer-events:none; }
-
+.generic { fill:dodgerblue; }
 .ore { fill:grey; }
 .wool { fill:steelblue; }
 .lumber { fill:forestgreen; }
 .grain { fill:goldenrod; }
 .brick { fill:darkred; }
-.generic { fill:dodgerblue; }
+.desert { fill:#EEE; }
+.hills { fill:#EBB; }
+.forest { fill:#BEB; }
+.fields { fill:#EEB; }
+.pasture { fill:#BEE; }
+.quarry { fill:#BBB; }
+
+.chit { stroke:black; stroke-width:3; fill:khaki; }
+text { text-align:center; text-anchor:middle; 
+	dominant-baseline:central; font-family:serif; 
+	font-size:24px; pointer-events:none; }
+
 .harbor { stroke:black;	stroke-width:3; }
 .harbor:hover { opacity:0.5; }
 .harbor circle { fill:inherit; stroke:white; }
@@ -36,3 +30,7 @@
 
 .unowned { opacity:0; fill:grey; stroke:grey; stroke-width:3; }
 .unowned:hover { xopacity:1; }
+.p1 { fill:deeppink; stroke:deeppink; }
+.p2 { fill:darkorange; stroke:darkorange; }
+.p3 { fill:darkviolet; stroke:darkviolet; }
+.p4 { fill:gold; stroke:gold; }
