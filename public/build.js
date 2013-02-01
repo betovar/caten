@@ -20,7 +20,7 @@ function build() {
 	var ports = d3.select("#harbors");
 
 	var tiles = d3.select("#hexes").selectAll("g")
-		.data(data.tile)
+		.data(data.tile.reverse())
 		.enter()
 		.append("g")
 		.attr("class", "tile");
@@ -41,6 +41,6 @@ function build() {
 
 	tiles.transition()
 		.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
-		.delay(function(d, i) { return i * 50; })
-		.duration(250)
+		.delay(function(d, i) { return (19-i) * 250; })
+		.duration(1000)
 }

@@ -1,7 +1,7 @@
 extends layout
 
 block content
-	|	<script src="/socket.io/socket.io.js"></script>
+	script src="/socket.io/socket.io.js"
 	.row
 		.span6
 			h1 Welcome to Caten!
@@ -28,6 +28,5 @@ block content
 				li:	span.badge.badge-inverse Bob
 				li:	span.badge ?
 				li:	span.badge.badge-inverse Dave
-	|	<script>
-	|	  var socket = io.connect('http://localhost');
-	|	</script>
+	script
+		var socket = io.connect('http://localhost');

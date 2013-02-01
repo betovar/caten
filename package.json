@@ -4,7 +4,7 @@
     "name": "Brian E Tovar",
     "email": "betovar@leaflabs.com"
   },
-  "version": "0.0.1",
+  "version": "0.0.2-1",
   "private": "true",
   "homepage": "http;//betovar.caten.jit.su",
   "repository": {
@@ -12,19 +12,19 @@
     "url": "git://github.com/betovar/caten.git"
   },
   "scripts": {
-    "start": "node server.js"
+    "start": "node app.js"
   },
   "dependencies": {
-    "express": "3.0.x"
-    , "jade": "~0.27.0"
-    , "socket.io": "~0.9.13"
+    "express": "3.0.x",
+    "jade": "~0.27.0",
+    "socket.io": "~0.9.13"
   },
   "analyze": false,
-  "readme": "This is a work in progress of an board game using node-jitsu",
-  "description": "A web-based Settlers of Catan game using node.js",
+  "readme": "This is a work in progress of an board game using d3js",
+  "description": "A web-based Settlers of Catan game using nodejs",
   "subdomain": "betovar.caten",
   "engines": {
     "node": "0.8.x",
-    "npm":  "1.0.x"
+    "npm": "1.0.x"
   }
 }

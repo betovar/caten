@@ -42,7 +42,4 @@ server.listen(app.get('port'), function() {
  * Defines routing
  */
 
-app.get('/lobby', function(req, res) {
-  res.render('lobby');
-});
 app.get('/', routes.index);
