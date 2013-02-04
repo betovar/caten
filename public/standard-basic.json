@@ -1,11 +1,4 @@
 { 
-	"game": { 
-		"id": "bdd81dc887d84899cf3b", 
-		"title": "The Standard Basic-Game Demo",
-		"size": "basic", 
-		"locale": "en",
-		"start": "Thu Jan 31 2013 03:10:32 GMT-0500 (EST)"
-	},
 	"tile": [
 		{ "x": -173.2, "y": 300, "chit": 5, "resource": "quarry" },
 		{ "x": 0, "y": 300, "chit": 2, "resource": "fields" },
@@ -28,30 +21,23 @@
 		{ "x": 0, "y": 0, "chit": 11, "resource": "fields" }
 	],
 	"harbor": [
-		{ "x": -173.2, "y": 300, "angle": 120, "type": "generic", "flavor": "any" },
-		{ "x": 0, "y": 300, "angle": 60, "type": "special", "flavor": "lumber" },
-		{ "x": 259.8, "y": 150, "angle": 60, "type": "special", "flavor": "brick" },
-		{ "x": 346.4, "y": 0, "angle": 0, "type": "generic", "flavor": "any" },
-		{ "x": 259.8, "y": -150, "angle": -60, "type": "generic", "flavor": "any" },
-		{ "x": 0, "y": -300, "angle": -60, "type": "special", "flavor": "wool" },
-		{ "x": -173.2, "y": -300, "angle": -120, "type": "generic", "flavor": "any" },
-		{ "x": -259.8, "y": -150, "angle": 180, "type": "special", "flavor": "ore" },
-		{ "x": -259.8, "y": 150, "angle": 180, "type": "special", "flavor": "grain" }
+		{ "x": -173.2, "y": 300, "angle": 120, "exchange": "generic", "flavor": "any" },
+		{ "x": 0, "y": 300, "angle": 60, "exchange": "special", "flavor": "lumber" },
+		{ "x": 259.8, "y": 150, "angle": 60, "exchange": "special", "flavor": "brick" },
+		{ "x": 346.4, "y": 0, "angle": 0, "exchange": "generic", "flavor": "any" },
+		{ "x": 259.8, "y": -150, "angle": -60, "exchange": "generic", "flavor": "any" },
+		{ "x": 0, "y": -300, "angle": -60, "exchange": "special", "flavor": "wool" },
+		{ "x": -173.2, "y": -300, "angle": -120, "exchange": "generic", "flavor": "any" },
+		{ "x": -259.8, "y": -150, "angle": 180, "exchange": "special", "flavor": "ore" },
+		{ "x": -259.8, "y": 150, "angle": 180, "exchange": "special", "flavor": "grain" }
 	],
 	"geometry": {
-		"hexagon": "86.6,50 0,100 -86.6,50 -86.6,-50 0,-100 86.6,-50",
-		"settlement": "-15,15 -15,-5 0,-15 15,-5 15,15",
-		"city": "-15,-5 -15,-15 0,-25 15,-15 15,-5 30,-5 30,15 -30,15 -30,-5",
-		"road": "",
-		"harbor": "",
+		"viewbox": "-555 -500 1110 1000",
 		"seaframe": "275,476.3 550,0 275,-476.3 -275,-476.3 -550,0 -275,476.3",
-		"viewbox": "-555 -500 1110 1000"
-	}, 
-	"cards": {
-		"brick": {},
-		"lumber": {},
-		"grain": {},
-		"wool": {},
-		"ore": {}
+		"harbor": "",
+		"hexagon": "86.6,50 0,100 -86.6,50 -86.6,-50 0,-100 86.6,-50",
+		"road": "",
+		"settlement": "-15,15 -15,-5 0,-15 15,-5 15,15",
+		"city": "-15,-5 -15,-15 0,-25 15,-15 15,-5 30,-5 30,15 -30,15 -30,-5"
 	}
 }

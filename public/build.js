@@ -1,13 +1,18 @@
-var data;
-var dots = [".....", "....", "...", "..", "."];
+var hand = { 
+	"development": [],
+	"brick": 0,
+	"lumber": 0,
+	"grain": 0,
+	"wool": 0,
+	"ore": 0
+};
 
-d3.json("/standard-basic.json", function(err, json) {
-  if (err) return console.warn(err);
-  data = json;
-  build();
+jQuery.getJSON("/newgame", function(json) {
+	build(json);
 });
 
-function build() {
+function build(data) {
+	var dots = [".....", "....", "...", "..", "."];
 	var board = d3.select("#board")
 		.attr("viewBox", data.geometry.viewbox)
 		.attr("type", "image/svg+xml")
@@ -41,13 +46,11 @@ function build() {
 		})
 		.style("stroke", function(d) { return d.color });
 
-	tiles.select(".desert circle")
-		.remove();
-	tiles.selectAll(".desert text")
-		.remove();
+	tiles.select(".desert circle").remove();
+	tiles.selectAll(".desert text").remove();
 
 	tiles.transition()
 		.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
-		.delay(function(d, i) { return (19-i) * 250; })
-		.duration(1000)
+		.delay(function(d, i) { return (19-i) * 100; })
+		.duration(2000);
 }
