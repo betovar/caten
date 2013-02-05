@@ -62,8 +62,8 @@ exports.newgame = function(req, res) {
 }
 
 function shuffle( list ) {
-	for (var i=0; i<(list.length-1); i++) {
-		var j = Math.floor( (i+1)*Math.random() );
+	for (var i=(list.length-1); i>0; i--) {
+		var j = Math.floor( i*Math.random() );
 		var temp = list[j];
 		list[j] = list[i];
 		list[i] = temp;
