@@ -4,7 +4,7 @@
     "name": "Brian E Tovar",
     "email": "betovar@leaflabs.com"
   },
-  "version": "0.0.4-1",
+  "version": "0.0.4-2",
   "private": "true",
   "homepage": "http;//betovar.caten.jit.su",
   "repository": {
@@ -17,7 +17,8 @@
   "dependencies": {
     "express": "3.0.x",
     "jade": "~0.27.0",
-    "socket.io": "~0.9.13"
+    "socket.io": "~0.9.13",
+    "node-random": "~0.0.2"
   },
   "analyze": false,
   "readme": "This is a work in progress of an board game using d3js",

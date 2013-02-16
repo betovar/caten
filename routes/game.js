@@ -1,3 +1,4 @@
+random = require("node-random");
 
 /*
  * GET newgame data
@@ -67,10 +68,24 @@ exports.newgame = function(req, res) {
 	http://bost.ocks.org/mike/shuffle/compare.html
 */
 function shuffle( list ) {
-	for (var i=0; i<(list.length); i++) {
+	for (var i=0; i<list.length; i++) {
 		var j = Math.floor( (i+1)*Math.random() );
 		var temp = list[j];
 		list[j] = list[i];
 		list[i] = temp;
 	}
+}
+
+exports.rolldice = function(req, res) {
+	//FIXME check whose turn it is
+	random.integers({
+		"number": 2, 
+		"minimum": 1, 
+		"maximum": 6,
+		"base": 10 }, 
+		function(err, data) {
+			if (err) throw err;
+			data.forEach( function(d) { console.log(d) });
+		}
+	);
 }

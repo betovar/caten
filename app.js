@@ -1,15 +1,15 @@
 #!/usr/bin/env node
 
-/**
- * Starts web server
- */
-
 Error.stackTraceLimit = Infinity;
+
+/**
+ * Web Server Initialization
+ */
 
 var express = require('express')
   , app = express()
   , server = require('http').createServer(app)
-//  , io = require('socket.io').listen(server)
+  , io = require('socket.io').listen(server)
   , path = require('path');
 
 //var dice = require('./node_modules/qrand/lib/qrand'); //FIXME
@@ -42,11 +42,24 @@ server.listen(app.get('port'), function() {
 });
 
 /**
- * Define routing
+ * Routes Definitions
  */
 
 var routes = require('./routes')
   , game = require('./routes/game.js');
 
 app.get('/newgame', game.newgame);
+app.get('/roll', game.rolldice);
 app.get('/', routes.index);
+
+/**
+ * Socket Handling
+ */
+
+var room = io
+  .of('/game')
+  .on('connection', function (socket) {
+    socket.broadcast.emit('message', {
+      test: 'works'
+    });
+  });
