@@ -42,24 +42,38 @@ server.listen(app.get('port'), function() {
 });
 
 /**
- * Routes Definitions
+ * Route Definitions
  */
 
 var routes = require('./routes')
-  , game = require('./routes/game.js');
+  , random = require('node-random')
+  , board = require('./routes/game.js').newgame({ hexes: 'shuffle' });
 
-app.get('/newgame', game.newgame);
-app.get('/roll', game.rolldice);
 app.get('/', routes.index);
 
 /**
  * Socket Handling
  */
 
-var room = io
-  .of('/game')
-  .on('connection', function (socket) {
-    socket.broadcast.emit('message', {
-      test: 'works'
-    });
+io.sockets.on('connection', function(socket) {
+  socket.emit('game', board);
+  socket.broadcast.emit('message', { game: 'start' });
+
+  socket.on('disconnect', function() {
+    console.log('player disconnected');
   });
+
+  socket.on('roll', function() {
+    //FIXME check whose turn it is
+    random.integers({
+      "number": 2, 
+      "minimum": 1, 
+      "maximum": 6,
+      "base": 10 }, 
+      function(err, data) {
+        if (err) throw err;
+        data.forEach( function(d) { console.log(d) });
+      }
+    );
+  });
+});

@@ -1,7 +1,7 @@
 extends layout
 
 block content
-	h1(align="center") Settlers of Catan
+	h1(align="center") Settlers of Caten
 	.row-fluid
 		.span10.offset1
 			svg#board
@@ -11,8 +11,7 @@ block content
 				g#roads
 				g#buildings
 	ul.unstyled.inline-block
-		li: a.btn.btn-inverse(href='/roll') Roll
+		li: a.btn.btn-inverse(onclick='rolldice()') Roll
 		li: button.btn.btn-inverse Build
 		li: button.btn.btn-inverse Pass
-	script(type="text/javascript", src="test.js")
-	script(type="text/javascript", src="build.js")
+	script(type="text/javascript", src="socks.js")

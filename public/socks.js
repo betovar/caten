@@ -1,17 +1,10 @@
-var hand = { 
-	"development": [],
-	"brick": 0,
-	"lumber": 0,
-	"grain": 0,
-	"wool": 0,
-	"ore": 0
-};
+var socket = io.connect('http://localhost:8080');
 
-jQuery.getJSON("/newgame", function(json) {
-	build(json);
+socket.on('message', function(data) {
+	console.log(data);
 });
 
-function build(data) {
+socket.on('game', function(data) {
 	var dots = [".....", "....", "...", "..", "."];
 	var board = d3.select("#board")
 		.attr("viewBox", data.geometry.viewbox)
@@ -53,4 +46,8 @@ function build(data) {
 		.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
 		.delay(function(d, i) { return (19-i) * 100; })
 		.duration(2000);
+});
+
+function rolldice() {
+	socket.emit('roll', {	my: 'data' });
 }

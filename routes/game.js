@@ -1,10 +1,8 @@
-random = require("node-random");
-
 /*
  * GET newgame data
  */
 
-exports.newgame = function(req, res) {
+exports.newgame = function( options ) {
 	var chitlist = [5, 2, 6, 3, 8, 10, 9, 12, 11, 4, 8, 10, 9, 4, 5, 6, 3, 11];
 	var hexlist = [	
 		"quarry",	"fields", "forest", "quarry",
@@ -47,8 +45,8 @@ exports.newgame = function(req, res) {
 	}
 };
 
-	shuffle(hexlist);
-	//shuffle(chitlist);
+	if (options.hexes) { shuffle(hexlist); }
+	if (options.chits) { shuffle(chitlist); }
 
 	var dsrt = 0;
 	for (var i=0; i<hexlist.length; i++) {
@@ -59,14 +57,14 @@ exports.newgame = function(req, res) {
 		if (chitlist[i-dsrt] == 8) { json.tile[i]["color"] = "maroon"; }
 	}
 
-	res.send(json);
+	return json;
 }
 
 
 /*
-	A Fisher-Yates shuffle. Selection bias checked with help from @mbostock:
-	http://bost.ocks.org/mike/shuffle/compare.html
-*/
+ *	A Fisher-Yates shuffle. Selection bias checked with help from @mbostock:
+ *	http://bost.ocks.org/mike/shuffle/compare.html
+ */
 function shuffle( list ) {
 	for (var i=0; i<list.length; i++) {
 		var j = Math.floor( (i+1)*Math.random() );
@@ -74,18 +72,4 @@ function shuffle( list ) {
 		list[j] = list[i];
 		list[i] = temp;
 	}
-}
-
-exports.rolldice = function(req, res) {
-	//FIXME check whose turn it is
-	random.integers({
-		"number": 2, 
-		"minimum": 1, 
-		"maximum": 6,
-		"base": 10 }, 
-		function(err, data) {
-			if (err) throw err;
-			data.forEach( function(d) { console.log(d) });
-		}
-	);
 }
