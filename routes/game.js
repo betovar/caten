@@ -2,74 +2,136 @@
  * GET newgame data
  */
 
-exports.newgame = function( options ) {
-	var chitlist = [5, 2, 6, 3, 8, 10, 9, 12, 11, 4, 8, 10, 9, 4, 5, 6, 3, 11];
-	var hexlist = [	
+var random = require('node-random') 
+	, chits = [5, 2, 6, 3, 8, 10, 9, 12, 11, 4, 8, 10, 9, 4, 5, 6, 3, 11] 
+	, tiles = [	
 		"quarry",	"fields", "forest", "quarry",
 		"fields", "pasture", "fields", "pasture",
 		"forest", "hills", "desert", "hills",
 		"pasture", "pasture", "forest", "hills",
 		"quarry", "forest", "fields"
-	];
+	]; 
 
-	var json = {	
-		"tile": [
-			{ "x": -173.2, "y": 300 },
-			{ "x": 0, "y": 300 },
-			{ "x": 173.2, "y": 300 },
-			{ "x": 259.8, "y": 150 },
-			{ "x": 346.4, "y": 0 },
-			{ "x": 259.8, "y": -150 },
-			{ "x": 173.2, "y": -300 },
-			{ "x": 0, "y": -300 },
-			{ "x": -173.2, "y": -300 },
-			{ "x": -259.8, "y": -150 },
-			{ "x": -346.4, "y": 0 },
-			{ "x": -259.8, "y": 150 },
-			{ "x": -86.6, "y": 150 },
-			{ "x": 86.6, "y": 150 },
-			{ "x": 173.2, "y": 0 },
-			{ "x": 86.6, "y": -150 },
-			{ "x": -86.6, "y": -150 },
-			{ "x": -173.2, "y": 0 },
-			{ "x": 0, "y": 0 }
-		],
-	"geometry": {
-		"viewbox": "-555 -500 1110 1000",
-		"seaframe": "275,476.3 550,0 275,-476.3 -275,-476.3 -550,0 -275,476.3",
-		"harbor": "",
-		"hexagon": "86.6,50 0,100 -86.6,50 -86.6,-50 0,-100 86.6,-50",
-		"road": "",
-		"settlement": "-15,15 -15,-5 0,-15 15,-5 15,15",
-		"city": "-15,-5 -15,-15 0,-25 15,-15 15,-5 30,-5 30,15 -30,15 -30,-5"
-	}
-};
+exports.newgame = function( options ) { 
+  var shasum = require('crypto').createHash('sha1') 
+  , game = {
+  	'id': 0,
+  	'start': new Date(),
+  	'title': "Settlers of Caten", 
+  	'size': "basic", 
+  	'lang': "en", 
+  	'geometry': {},
+  	'hex': []
+  }; 
 
-	if (options.hexes) { shuffle(hexlist); }
-	if (options.chits) { shuffle(chitlist); }
+	if (options.tiles) shuffle(tiles); 
+	if (options.chits) shuffle(chits); 
 
-	var dsrt = 0;
-	for (var i=0; i<hexlist.length; i++) {
-		json.tile[i]["resource"] = hexlist[i];
-		if (hexlist[i] != "desert") { json.tile[i]["chit"] = chitlist[i-dsrt]; }
-		else { dsrt += 1; }
-		if (chitlist[i-dsrt] == 6) { json.tile[i]["color"] = "maroon"; }
-		if (chitlist[i-dsrt] == 8) { json.tile[i]["color"] = "maroon"; }
+	random.strings({
+    "length": 20,
+    "number": 10 }, function(err, data) {
+      if (err) throw err;
+      game['id'] = shasum.update(data.join()).digest("hex");
+    });
+  game['geometry'] = { 
+		'viewbox': "-555 -500 1110 1000",
+		'seaframe': "275,476.3 550,0 275,-476.3 -275,-476.3 -550,0 -275,476.3",
+		'port': "",
+		'hex': "86.6,50 0,100 -86.6,50 -86.6,-50 0,-100 86.6,-50",
+		'road': "",
+		'town': "-15,15 -15,-5 0,-15 15,-5 15,15",
+		'city': "-15,-5 -15,-15 0,-25 15,-15 15,-5 30,-5 30,15 -30,15 -30,-5"
+	};
+	var temp = hexgrid([0,1]);
+	for (var i=0, len=temp.length; i<len; i++) { 
+		game['hex'].push({ 
+			'x': Math.round(temp[i].x*10)/10, 
+			'y': Math.round(temp[i].y*10)/10 
+		}); 
 	}
 
-	return json;
+	var dsrt = 0; 
+	for (var i=0, len=tiles.length; i<len; i++) { 
+		game.hex[i]['resource'] = tiles[i]; 
+		if (tiles[i] != 'desert') game.hex[i]['chit'] = chits[i-dsrt]; 
+		else dsrt += 1; 
+		if (chits[i-dsrt] == 6) game.hex[i]['color'] = "maroon"; 
+		if (chits[i-dsrt] == 8) game.hex[i]['color'] = "maroon"; 
+	}
+
+	return game; 
 }
 
+/*
+ *	Generates points for a hexagonal grid
+ */
+function hexgrid(layers) {
+	var hexes = [{ x:0, y:0 }]
+	, c = Math.cos(Math.PI/3.0)
+	, s = Math.sin(Math.PI/3.0)
+	, r=173.2;
+	for (var j in layers) { 
+		var last = hexes[0];
+		hexes.unshift({
+			'x': last.x-r,
+			'y': last.y
+		});
+		for (var i=0; i<=j-1; i++) { 
+			last = hexes[0];
+			hexes.unshift({
+				'x': last.x-r*c,
+				'y': last.y-r*s
+			});
+		}
+		for (var i=0; i<=j; i++) { 
+			last = hexes[0];
+			hexes.unshift({
+				'x': last.x+r*c,
+				'y': last.y-r*s
+			});
+		}
+		for (var i=0; i<=j; i++) { 
+			last = hexes[0];
+			hexes.unshift({
+				'x': last.x+r,
+				'y': last.y
+			});
+		}
+		for (var i=0; i<=j; i++) { 
+			if (i == 2) break;
+			last = hexes[0];
+			hexes.unshift({
+				'x': last.x+r*c,
+				'y': last.y+r*s
+			});
+		}
+		if (j == 2) break;
+		for (var i=0; i<=j; i++) { 
+			last = hexes[0];
+			hexes.unshift({
+				'x': last.x-r*c,
+				'y': last.y+r*s
+			});
+		}
+		for (var i=0; i<=j; i++) { 
+			last = hexes[0];
+			hexes.unshift({
+				'x': last.x-r,
+				'y': last.y
+			});
+		}
+	}
+	return hexes;
+}
 
 /*
- *	A Fisher-Yates shuffle. Selection bias checked with help from @mbostock:
- *	http://bost.ocks.org/mike/shuffle/compare.html
+ *	Fisher-Yates shuffle: http://bost.ocks.org/mike/shuffle/compare.html 
  */
-function shuffle( list ) {
-	for (var i=0; i<list.length; i++) {
-		var j = Math.floor( (i+1)*Math.random() );
-		var temp = list[j];
-		list[j] = list[i];
-		list[i] = temp;
+function shuffle( list ) { 
+	for (var i=list.length; i--; ) { 
+		var j = Math.floor( (i+1)*Math.random() ); 
+		var temp = list[j]; 
+		list[j] = list[i]; 
+		list[i] = temp; 
 	}
 }

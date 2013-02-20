@@ -12,8 +12,6 @@ var express = require('express')
   , io = require('socket.io').listen(server)
   , path = require('path');
 
-//var dice = require('./node_modules/qrand/lib/qrand'); //FIXME
-
 app.configure(function() {
   app.set('port', 8080);
   app.set('views', path.join(__dirname, '/views'));
@@ -45,20 +43,24 @@ server.listen(app.get('port'), function() {
  * Route Definitions
  */
 
-var routes = require('./routes')
-  , random = require('node-random')
-  , board = require('./routes/game.js').newgame({ hexes: 'shuffle' });
+var routes = require('./routes');
 
 app.get('/', routes.index);
+app.get('/newgame', function() {
+  board.newgame({ hexes: 'shuffle' });
+});
 
 /**
  * Socket Handling
  */
 
-io.sockets.on('connection', function(socket) {
-  socket.emit('game', board);
-  socket.broadcast.emit('message', { game: 'start' });
+var random = require('node-random')
+  , game = require('./routes/game.js');
 
+io.sockets.on('connection', function(socket) {
+  socket.emit('game', game.newgame({ hexes: 'shuffle' }) );
+  socket.broadcast.emit('message', { gameplay: 'start' });
+  
   socket.on('disconnect', function() {
     console.log('player disconnected');
   });
@@ -72,8 +74,7 @@ io.sockets.on('connection', function(socket) {
       "base": 10 }, 
       function(err, data) {
         if (err) throw err;
-        data.forEach( function(d) { console.log(d) });
-      }
-    );
+        console.log('%s', data);
+      });
   });
 });

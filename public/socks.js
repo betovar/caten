@@ -18,13 +18,13 @@ socket.on('game', function(data) {
 	var ports = d3.select("#harbors");
 
 	var tiles = d3.select("#hexes").selectAll("g")
-		.data(data.tile.reverse())
+		.data(data.hex.reverse())
 		.enter()
 		.append("g")
 		.attr("class", function(d) { return d.resource; });
 	tiles.append("polygon")
 		.attr("class", "hex")
-		.attr("points", data.geometry.hexagon);
+		.attr("points", data.geometry.hex);
 	tiles.append("circle")
 		.attr("class", "chit")
 		.attr("r", 30);
@@ -50,4 +50,8 @@ socket.on('game', function(data) {
 
 function rolldice() {
 	socket.emit('roll', {	my: 'data' });
+}
+
+function passdice() {
+	socket.emit('pass', {	my: 'data' });
 }

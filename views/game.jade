@@ -12,6 +12,7 @@ block content
 				g#buildings
 	ul.unstyled.inline-block
 		li: a.btn.btn-inverse(onclick='rolldice()') Roll
-		li: button.btn.btn-inverse Build
-		li: button.btn.btn-inverse Pass
+		li: button.btn.btn-inverse(onclick='buybuild()') Build
+		li: button.btn.btn-inverse(onclick='offertrade()') Trade
+		li: button.btn.btn-inverse(onclick='passdice()') Pass
 	script(type="text/javascript", src="socks.js")
