@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-
 Error.stackTraceLimit = Infinity;
 
 /**
@@ -46,9 +45,6 @@ server.listen(app.get('port'), function() {
 var routes = require('./routes');
 
 app.get('/', routes.index);
-app.get('/newgame', function() {
-  board.newgame({ hexes: 'shuffle' });
-});
 
 /**
  * Socket Handling

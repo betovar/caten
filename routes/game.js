@@ -4,7 +4,7 @@
 
 var random = require('node-random') 
 	, chits = [5, 2, 6, 3, 8, 10, 9, 12, 11, 4, 8, 10, 9, 4, 5, 6, 3, 11] 
-	, tiles = [	
+	, hexes = [	
 		"quarry",	"fields", "forest", "quarry",
 		"fields", "pasture", "fields", "pasture",
 		"forest", "hills", "desert", "hills",
@@ -20,20 +20,20 @@ exports.newgame = function( options ) {
   	'title': "Settlers of Caten", 
   	'size': "basic", 
   	'lang': "en", 
-  	'geometry': {},
-  	'hex': []
+  	'shapes': {},
+  	'grid': []
   }; 
 
-	if (options.tiles) shuffle(tiles); 
+	if (options.hexes) shuffle(hexes); 
 	if (options.chits) shuffle(chits); 
 
-	random.strings({
-    "length": 20,
-    "number": 10 }, function(err, data) {
-      if (err) throw err;
-      game['id'] = shasum.update(data.join()).digest("hex");
-    });
-  game['geometry'] = { 
+	random.strings({ 
+    "length": 20, 
+    "number": 10 }, function(err, data) { 
+      if (err) throw err; 
+      game['id'] = shasum.update(data.join()).digest("hex"); 
+    }); 
+  game['shapes'] = { 
 		'viewbox': "-555 -500 1110 1000",
 		'seaframe': "275,476.3 550,0 275,-476.3 -275,-476.3 -550,0 -275,476.3",
 		'port': "",
@@ -44,20 +44,20 @@ exports.newgame = function( options ) {
 	};
 	var temp = hexgrid([0,1]);
 	for (var i=0, len=temp.length; i<len; i++) { 
-		game['hex'].push({ 
+		game['grid'].push({ 
 			'x': Math.round(temp[i].x*10)/10, 
 			'y': Math.round(temp[i].y*10)/10 
 		}); 
-	}
+	} 
 
 	var dsrt = 0; 
-	for (var i=0, len=tiles.length; i<len; i++) { 
-		game.hex[i]['resource'] = tiles[i]; 
-		if (tiles[i] != 'desert') game.hex[i]['chit'] = chits[i-dsrt]; 
+	for (var i=0, len=hexes.length; i<len; i++) { 
+		game.grid[i]['resource'] = hexes[i]; 
+		if (hexes[i] != 'desert') game.grid[i]['chit'] = chits[i-dsrt]; 
 		else dsrt += 1; 
-		if (chits[i-dsrt] == 6) game.hex[i]['color'] = "maroon"; 
-		if (chits[i-dsrt] == 8) game.hex[i]['color'] = "maroon"; 
-	}
+		if (chits[i-dsrt] == 6) game.grid[i]['color'] = "maroon"; 
+		if (chits[i-dsrt] == 8) game.grid[i]['color'] = "maroon"; 
+	} 
 
 	return game; 
 }
