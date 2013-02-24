@@ -4,30 +4,28 @@ block content
   .container-fluid
     .navbar.navbar-inverse
       .navbar-inner
-        ul.unstyled.nav
+        ul.unstyled.nav.pull-left
           li: a(href="#roll",onclick="rolldice()") Roll
           li: a(href="#buy",onclick="buybuild()") Build
           li: a(href="#offer",onclick="offertrade()") Trade
           li: a(href="#pass",onclick="passdice()") Pass
-        a.brand(style="position:absolute;text-align:center;width:50%;left:25%;") Settlers of Caten
-        ul.unstyled.nav(style="float:right;")
-          li: input.input-medium.search-query(type="text",placeholder="Chat")
-          li: a(href="#modal-credits") Credits
+        a.brand(style="position:absolute;text-align:center;width:50%;left:25%;",
+          href="#modal-credits") Settlers of Caten
+        form.navbar-search.pull-right
+          input.search-query(type="text",placeholder="Chat")
     .row-fluid
-      .span2
-        #player-north(style="position:absolute;width:15%;")
-          include stats
-        #player-south(style="position:absolute;width:15%;bottom:0;")
-          include stats
-      .span8
+      .span8.offset2
         svg#board
           g#ocean
           g#harbors
           g#hexes
           g#roads
           g#buildings
-      .span2
-        #player-east(style="position:absolute;width:15%;")
-          include stats
-        #player-west(style="position:absolute;width:15%;bottom:0;")
-          include stats
+      #player-northwest.pull-NW
+        include stats
+      #player-southwest.pull-SW
+        include stats
+      #player-northeast.pull-NE
+        include stats
+      #player-southeast.pull-SE
+        include stats

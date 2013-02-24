@@ -34,3 +34,8 @@ text { text-align:center; text-anchor:middle;
 .p2 { fill:darkorange; stroke:darkorange; }
 .p3 { fill:darkviolet; stroke:darkviolet; }
 .p4 { fill:gold; stroke:gold; }
+
+.pull-NW {	position:absolute; width:25%; left:0; }
+.pull-NE {	position:absolute; width:25%; right:0; }
+.pull-SE {	position:absolute; width:25%; right:0; bottom:0; }
+.pull-SW {	position:absolute; width:25%; left:0; bottom:0; }
