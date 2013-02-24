@@ -12,7 +12,7 @@ var random = require('node-random')
 		"quarry", "forest", "fields"
 	]; 
 
-exports.newgame = function( options ) { 
+exports.new = function( options ) { 
   var shasum = require('crypto').createHash('sha1') 
   , game = {
   	'id': 0,

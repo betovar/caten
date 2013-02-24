@@ -18,7 +18,7 @@ socket.on('game', function(data) {
 	var ports = d3.select("#harbors");
 
 	var tiles = d3.select("#hexes").selectAll("g")
-		.data(data.grid.reverse())
+		.data(data.grid)
 		.enter()
 		.append("g")
 		.attr("class", function(d) { return d.resource; });
@@ -48,7 +48,7 @@ socket.on('game', function(data) {
 });
 
 function rolldice() {
-	socket.emit('roll', {	my: 'data' }); 
+	socket.emit('roll'); 
 }
 
 function buybuild(item) {
@@ -60,5 +60,5 @@ function offertrade(cards) {
 }
 
 function passdice() {
-	socket.emit('pass', {	my: 'data' }); 
+	socket.emit('pass'); 
 }
