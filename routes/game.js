@@ -34,7 +34,7 @@ exports.new = function( options ) {
       game['id'] = shasum.update(data.join()).digest("hex"); 
     }); 
   game['shapes'] = { 
-		'viewbox': "-555 -500 1110 1000",
+		'viewbox': "-555 -481 1110 962",
 		'seaframe': "275,476.3 550,0 275,-476.3 -275,-476.3 -550,0 -275,476.3",
 		'port': "",
 		'hex': "86.6,50 0,100 -86.6,50 -86.6,-50 0,-100 86.6,-50",

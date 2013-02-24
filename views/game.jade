@@ -1,20 +1,25 @@
 extends layout
 
-block append head 
-  style(type="text/css") html, body {height: 100%;}
-
 block content
   .container-fluid
-    .navbar
+    .navbar.navbar-inverse
       .navbar-inner
         ul.unstyled.nav
-          li: a(onclick="rolldice()") Roll
-          li: a(onclick="buybuild()") Build
-          li: a(onclick="offertrade()") Trade
-          li: a(onclick="passdice()") Pass
+          li: a(href="#roll",onclick="rolldice()") Roll
+          li: a(href="#buy",onclick="buybuild()") Build
+          li: a(href="#offer",onclick="offertrade()") Trade
+          li: a(href="#pass",onclick="passdice()") Pass
+        a.brand(style="position:absolute;text-align:center;width:50%;left:25%;") Settlers of Caten
+        ul.unstyled.nav(style="float:right;")
+          li: input.input-medium.search-query(type="text",placeholder="Chat")
           li: a(href="#modal-credits") Credits
     .row-fluid
-      .span10
+      .span2
+        #player-north(style="position:absolute;width:15%;")
+          include stats
+        #player-south(style="position:absolute;width:15%;bottom:0;")
+          include stats
+      .span8
         svg#board
           g#ocean
           g#harbors
@@ -22,7 +27,7 @@ block content
           g#roads
           g#buildings
       .span2
-        include stats
-        include stats
-        include stats
-        include stats
+        #player-east(style="position:absolute;width:15%;")
+          include stats
+        #player-west(style="position:absolute;width:15%;bottom:0;")
+          include stats
