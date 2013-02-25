@@ -30,12 +30,9 @@ text { text-align:center; text-anchor:middle;
 
 .unowned { opacity:0; fill:grey; stroke:grey; stroke-width:3; }
 .unowned:hover { xopacity:1; }
-.p1 { fill:deeppink; stroke:deeppink; }
-.p2 { fill:darkorange; stroke:darkorange; }
-.p3 { fill:darkviolet; stroke:darkviolet; }
-.p4 { fill:gold; stroke:gold; }
+.nw { fill:deeppink; stroke:deeppink; }
+.ne { fill:darkorange; stroke:darkorange; }
+.se { fill:darkviolet; stroke:darkviolet; }
+.sw { fill:gold; stroke:gold; }
 
-.pull-NW {	position:absolute; width:25%; left:0; }
-.pull-NE {	position:absolute; width:25%; right:0; }
-.pull-SE {	position:absolute; width:25%; right:0; bottom:0; }
-.pull-SW {	position:absolute; width:25%; left:0; bottom:0; }
+.pull {	position:absolute; width:20%; }

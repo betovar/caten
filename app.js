@@ -1,5 +1,4 @@
 #!/usr/bin/env node
-Error.stackTraceLimit = Infinity;
 
 /**
  * Web Server Initialization

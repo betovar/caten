@@ -4,16 +4,11 @@ block content
   .container-fluid
     .navbar.navbar-inverse
       .navbar-inner
-        ul.unstyled.nav.pull-left
-          li: a(href="#roll",onclick="rolldice()") Roll
-          li: a(href="#buy",onclick="buybuild()") Build
-          li: a(href="#offer",onclick="offertrade()") Trade
-          li: a(href="#pass",onclick="passdice()") Pass
-        a.brand(style="position:absolute;text-align:center;width:50%;left:25%;",
-          href="#modal-credits") Settlers of Caten
+        a.brand(href="#modal-credits", data-toggle="modal", 
+          role="button") Settlers of Caten
         form.navbar-search.pull-right
           input.search-query(type="text",placeholder="Chat")
-    .row-fluid
+    .row-fluid(style="position:relative;")
       .span8.offset2
         svg#board
           g#ocean
@@ -21,11 +16,38 @@ block content
           g#hexes
           g#roads
           g#buildings
-      #player-northwest.pull-NW
+      #northwest.pull(style="left:0; top:0;")
         include stats
-      #player-southwest.pull-SW
+      #northeast.pull(style="right:0; top:0;")
         include stats
-      #player-northeast.pull-NE
+      #southeast.pull(style="right:0; bottom:0;")
         include stats
-      #player-southeast.pull-SE
+      #southwest.pull(style="left:0; bottom:0;")
         include stats
+  .container-fluid
+    .navbar.navbar-inverse
+      .navbar-inner
+        ul.unstyled.nav.pull-left
+          li: a(href="#roll",onclick="rolldice()") Roll
+          li: a(href="#play",onclick="playcard()") Play
+          li: a(href="#offer",onclick="offertrade()") Trade
+          li: a(href="#buy",onclick="buybuild()") Build
+          li: a(href="#pass",onclick="passdice()") Pass
+        ul.unstyled.nav.pull-right
+          li: a
+            span.badge.badge-important 0 
+              i.icon-white.icon-heart
+          li: a
+            span.badge.badge-success 0 
+              i.icon-white.icon-leaf
+          li: a
+            span.badge.badge-info 0 
+              i.icon-white.icon-tint
+          li: a
+            span.badge.badge-warning 0 
+              i.icon-white.icon-fire
+          li: a
+            span.badge.badge-inverse 0 
+              i.icon-white.icon-globe
+  #modal-credits.modal.hide.fade
+    include credits
