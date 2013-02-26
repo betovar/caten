@@ -1,19 +1,14 @@
 #hexes { stroke:black; stroke-width:3; }
 #road path { stroke-linecap:round; }
-#ocean { stroke:black; stroke-width:5; fill:dodgerblue; }
+#ocean { stroke:black; stroke-width:5; }
 
-.generic { fill:dodgerblue; }
-.ore { fill:grey; }
-.wool { fill:steelblue; }
-.lumber { fill:forestgreen; }
-.grain { fill:goldenrod; }
-.brick { fill:darkred; }
-.desert { fill:#EEE; }
-.hills { fill:#EBB; }
-.forest { fill:#BEB; }
-.fields { fill:#EEB; }
-.pasture { fill:#BEE; }
-.quarry { fill:#BBB; }
+.generic, #ocean { fill:#06C; }
+.brick, .hills { fill:#da4f49; }
+.lumber, .forest { fill:#5bb75b; }
+.wool, .pasture { fill:#49afcd; }
+.grain, .fields { fill:#faa732; }
+.ore, .quarry { fill:#666; }
+.desert { fill:#BBB; }
 
 .chit { stroke:black; stroke-width:3; fill:khaki; }
 text { text-align:center; text-anchor:middle; 

@@ -4,7 +4,8 @@ block content
   .container-fluid
     .navbar.navbar-inverse
       .navbar-inner
-        a.brand(href="#modal-credits", data-toggle="modal", 
+        a.brand(data-toggle="modal", 
+          data-target="#credits",
           role="button") Settlers of Caten
         form.navbar-search.pull-right
           input.search-query(type="text",placeholder="Chat")
@@ -29,9 +30,24 @@ block content
       .navbar-inner
         ul.unstyled.nav.pull-left
           li: a(href="#roll",onclick="rolldice()") Roll
-          li: a(href="#play",onclick="playcard()") Play
-          li: a(href="#offer",onclick="offertrade()") Trade
-          li: a(href="#buy",onclick="buybuild()") Build
+          li: a(href="#play",id="devcards",
+            data-toggle="tooltip",
+            data-placement="top",
+            data-html="true",
+            data-trigger="click",
+            title='No cards') Play
+          li: a(href="#trade", id="trading",
+            data-toggle="tooltip",
+            data-placement="top",
+            data-html="true",
+            data-trigger="click",
+            title='Not ready') Trade
+          li: a(href="#build", id="buying",
+            data-toggle="tooltip",
+            data-placement="top",
+            data-html="true",
+            data-trigger="click",
+            title='Town City') Build
           li: a(href="#pass",onclick="passdice()") Pass
         ul.unstyled.nav.pull-right
           li: a
@@ -49,5 +65,5 @@ block content
           li: a
             span.badge.badge-inverse 0 
               i.icon-white.icon-globe
-  #modal-credits.modal.hide.fade
+  #credits.modal.hide.fade
     include credits
