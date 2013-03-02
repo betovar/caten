@@ -1,14 +1,13 @@
+#ocean { stroke:black; stroke-width:5; fill:#06C; }
 #hexes { stroke:black; stroke-width:3; }
 #road path { stroke-linecap:round; }
-#ocean { stroke:black; stroke-width:5; }
 
-.generic, #ocean { fill:#06C; }
-.brick, .hills { fill:#da4f49; }
-.lumber, .forest { fill:#5bb75b; }
-.wool, .pasture { fill:#49afcd; }
-.grain, .fields { fill:#faa732; }
-.ore, .quarry { fill:#666; }
-.desert { fill:#BBB; }
+.brick, .hills { fill:#da4f49; background-color:#da4f49 }
+.lumber, .forest { fill:#5bb75b; background-color:#5bb75b }
+.wool, .pasture { fill:#49afcd; background-color:#49afcd }
+.grain, .fields { fill:#faa732; background-color:#faa732 }
+.ore, .quarry { fill:#666; background-color:#666 }
+.generic, .desert { fill:#BBB; }
 
 .chit { stroke:black; stroke-width:3; fill:khaki; }
 text { text-align:center; text-anchor:middle; 
@@ -17,17 +16,16 @@ text { text-align:center; text-anchor:middle;
 
 .harbor { stroke:black;	stroke-width:3; }
 .harbor:hover { opacity:0.5; }
-.harbor circle { fill:inherit; stroke:white; }
-.harbor rect { fill:white; }
-.harbor text { text-align:center; text-anchor:middle; 
-	dominant-baseline:central; font-family:serif; 
-	fill:black; font-size:20px; pointer-events:none; }
+.harbor circle { fill:inherit; stroke:inherit; }
+.harbor rect { fill:inherit; }
+.harbor text { font-size:20px; }
 
-.unowned { opacity:0; fill:grey; stroke:grey; stroke-width:3; }
-.unowned:hover { xopacity:1; }
-.nw { fill:deeppink; stroke:deeppink; }
-.ne { fill:darkorange; stroke:darkorange; }
-.se { fill:darkviolet; stroke:darkviolet; }
-.sw { fill:gold; stroke:gold; }
+.settle { fill:grey; stroke:white; stroke-width:3; }
+.unowned { opacity:0; }
+.unowned:hover { opacity:1; }
+.p1 { fill:crimson; stroke:crimson; background-color:crimson; }
+.p2 { fill:limegreen; stroke:limegreen; background-color:limegreen; }
+.p3 { fill:darkviolet; stroke:darkviolet; background-color:darkviolet; }
+.p4 { fill:dodgerblue; stroke:dodgerblue; background-color:dodgerblue; }
 
-.pull {	position:absolute; width:20%; }
+.pull {	position:absolute; width:20%; margin:5px; }

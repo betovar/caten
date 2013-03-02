@@ -45,10 +45,23 @@ app.get('/', routes.index);
  */
 
 var random = require('node-random') 
-  , game = require('./routes/game.js')
-  , dealer = 0;
+  , game = require('./routes/game.js');
+
 io.sockets.on('connection', function(socket) { 
-  socket.emit('game', game.new({ hexes: 'shuffle' }) ); 
+  socket.on('join', function() {
+    var temp = [ 
+      { profile: 'northwest', username: 'Eduardo', style: 'p1' },
+      { profile: 'northeast', username: 'Paul', style: 'p2' },
+      { profile: 'southeast', username: 'Brian', style: 'p3' },
+      { profile: 'southwest', username: 'Andres', style: 'p4' } 
+    ];
+    console.log(temp);
+    socket.emit('joined', temp );
+//    socket.broadcast.emit('joined', temp );
+    socket.emit('start', game.new({}) );
+  });
+  //socket.emit('start', game.new({ hexes: 'shuffle' }) ); 
+  
   socket.on('roll', function() { 
     //FIXME check whose turn it is
     random.integers({ 
@@ -58,11 +71,13 @@ io.sockets.on('connection', function(socket) {
       "base": 10 }, function(err, data) { 
         if (err) throw err; 
         console.log('%s', data); 
+        socket.broadcast.emit('rolled', data);
       }); 
   }); 
   socket.on('buy', function(data) {
   });
   socket.on('disconnect', function() { 
-    console.log('player disconnected'); 
+    console.log(socket.id + ' disconnected'); 
+    socket.broadcast.emit('exited', socket.id);
   }); 
 }); 

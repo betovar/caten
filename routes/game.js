@@ -5,12 +5,15 @@
 var random = require('node-random') 
 	, chits = [5, 2, 6, 3, 8, 10, 9, 12, 11, 4, 8, 10, 9, 4, 5, 6, 3, 11] 
 	, hexes = [	
-		"quarry",	"fields", "forest", "quarry",
+		"quarry", "fields", "forest", "quarry",
 		"fields", "pasture", "fields", "pasture",
 		"forest", "hills", "desert", "hills",
 		"pasture", "pasture", "forest", "hills",
-		"quarry", "forest", "fields"
-	]; 
+		"quarry", "forest", "fields"] 
+	, ports = [
+		"generic", "lumber", "brick", "generic", 
+		"generic", "wool", "generic", "ore", "grain"
+	];
 
 exports.new = function( options ) { 
   var shasum = require('crypto').createHash('sha1') 
@@ -21,11 +24,25 @@ exports.new = function( options ) {
   	'size': "basic", 
   	'lang': "en", 
   	'shapes': {},
+  	'ports': [
+  		{x:-173.2, y:300, angle:120 }, 
+  		{x:0, y:300, angle:60 }, 
+  		{x:259.8, y:150, angle:60 }, 
+  		{x:346.4, y:0, angle:0 }, 
+  		{x:259.8, y:-150, angle:-60 }, 
+  		{x:0, y:-300, angle:-60 }, 
+  		{x:-173.2, y:-300, angle:-120 }, 
+  		{x:-259.8, y:-150, angle:180 }, 
+  		{x:-259.8, y:150, angle:180 } ],
   	'grid': []
   }; 
 
 	if (options.hexes) shuffle(hexes); 
 	if (options.chits) shuffle(chits); 
+	if (options.ports) shuffle(ports); 
+	for (var i in game.ports) { 
+		game.ports[i]['flavor'] = ports[i];
+	}
 
 	random.strings({ 
     "length": 20, 
@@ -34,9 +51,7 @@ exports.new = function( options ) {
       game['id'] = shasum.update(data.join()).digest("hex"); 
     }); 
   game['shapes'] = { 
-		'viewbox': "-555 -481 1110 962",
-		'seaframe': "275,476.3 550,0 275,-476.3 -275,-476.3 -550,0 -275,476.3",
-		'port': "",
+		'port': {cir:{cx:86,r:50},rec:{y:-20,w:50,h:40,rx:3}},
 		'hex': "86.6,50 0,100 -86.6,50 -86.6,-50 0,-100 86.6,-50",
 		'road': "",
 		'town': "-15,15 -15,-5 0,-15 15,-5 15,15",
@@ -65,7 +80,7 @@ exports.new = function( options ) {
 /*
  *	Generates points for a hexagonal grid
  */
-function hexgrid(layers) {
+function hexgrid( layers ) {
 	var hexes = [{ x:0, y:0 }]
 	, c = Math.cos(Math.PI/3.0)
 	, s = Math.sin(Math.PI/3.0)

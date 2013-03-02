@@ -11,59 +11,51 @@ block content
           input.search-query(type="text",placeholder="Chat")
     .row-fluid(style="position:relative;")
       .span8.offset2
-        svg#board
+        svg#board(style="height:100%;",
+          type="image/svg+xml", 
+          viewBox="-555 -481 1110 962", 
+          preserveAspectRatio="xMidYMid meet")
           g#ocean
-          g#harbors
+            polygon(points="275,476.3 550,0 275,-476.3 -275,-476.3 -550,0 -275,476.3")
+          g#ports
           g#hexes
           g#roads
-          g#buildings
+          g#settlements
       #northwest.pull(style="left:0; top:0;")
-        include stats
+        include profile
       #northeast.pull(style="right:0; top:0;")
-        include stats
+        include profile
       #southeast.pull(style="right:0; bottom:0;")
-        include stats
+        include profile
       #southwest.pull(style="left:0; bottom:0;")
-        include stats
+        include profile
   .container-fluid
     .navbar.navbar-inverse
       .navbar-inner
-        ul.unstyled.nav.pull-left
-          li: a(href="#roll",onclick="rolldice()") Roll
-          li: a(href="#play",id="devcards",
-            data-toggle="tooltip",
-            data-placement="top",
-            data-html="true",
-            data-trigger="click",
-            title='No cards') Play
-          li: a(href="#trade", id="trading",
-            data-toggle="tooltip",
-            data-placement="top",
-            data-html="true",
-            data-trigger="click",
-            title='Not ready') Trade
-          li: a(href="#build", id="buying",
-            data-toggle="tooltip",
-            data-placement="top",
-            data-html="true",
-            data-trigger="click",
-            title='Town City') Build
-          li: a(href="#pass",onclick="passdice()") Pass
+        ul.unstyled.nav.pull-left(data-toggle="buttons-radio")
+          li: a(href="#roll", onclick="rolldice()",
+            id="rolldice") Roll
+          li: a(href="#play", onclick="play()", 
+            id="devcards", data-placement="top") Play
+          li: a(href="#trade", id="trading") Trade
+          li: a(href="#build", id="buying") Build
+          li: a(href="#pass", onclick="passdice()") Pass
         ul.unstyled.nav.pull-right
           li: a
-            span.badge.badge-important 0 
+            span.badge.brick 0 
               i.icon-white.icon-heart
           li: a
-            span.badge.badge-success 0 
+            span.badge.lumber 0 
               i.icon-white.icon-leaf
           li: a
-            span.badge.badge-info 0 
+            span.badge.wool 0 
               i.icon-white.icon-tint
           li: a
-            span.badge.badge-warning 0 
+            span.badge.grain 0 
               i.icon-white.icon-fire
           li: a
-            span.badge.badge-inverse 0 
+            span.badge.ore 0 
               i.icon-white.icon-globe
   #credits.modal.hide.fade
     include credits
+    $('#devcards').tooltip('toggle');

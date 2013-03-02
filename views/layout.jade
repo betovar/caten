@@ -8,10 +8,6 @@ html
     script(src='bootstrap/js/bootstrap.min.js')
     script(src='d3/d3.min.js')
     script(src='/socket.io/socket.io.js')
-    style(type="text/css") svg {height:100%;}
   body
     block content
-    script(type="text/javascript", src="socks.js")
-    script(type="text/javascript") $('#devcards').tooltip('toggle')
-    script(type="text/javascript") $('#trading').tooltip('toggle')
-    script(type="text/javascript") $('#buying').tooltip('toggle')
+    script(type="text/javascript", src='clientside.js')
