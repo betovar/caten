@@ -10,9 +10,8 @@ Many other clones already exist out in the internet, but none are built with nod
 Dependencies
 ============
 
-node.js version 0.8.x and above
-
-node-jitsu
+* node.js (version 0.8.x and above)
+* node-jitsu
 
 
 Installation
@@ -20,19 +19,33 @@ Installation
 
 Install node and node package manager from [nodejs.org](http://nodejs.org)
 
-If you do not have `jitsu` installed you can install it via `npm install jitsu -g`
+To deploy publically on node-jitsu you must have `jitsu` installed
+Install it via `npm install jitsu -g`
 
 Usage
 =====
 
-Starting application locally
+Start application locally:
 
     node app.js
 
-*Now you can visit http://localhost:8080 to view your application*
+Now you can visit http://localhost:8080 to play your caten game
 
-Deploy to nodejitsu
+Deploy to nodejitsu:
 
     jitsu deploy
 
-*Now you can visit http://username.appname.jit.su to view your application*
+Now you can visit `http://username.appname.jit.su` to play your caten game
+
+Gameplay
+========
+
+A player joins a game by being one of the first four clients to connect to the caten game server.
+This connection is tracked by socket.io, so no authentication is in place at this time (March 2013).
+The game begins when the fourth and final player joins.
+Every client after that who connects is merely an observer.
+
+Demo in Development
+===================
+
+Check out the demo at http://betovar.caten.jit.su
