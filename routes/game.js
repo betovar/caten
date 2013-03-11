@@ -12,7 +12,26 @@ var random = require('node-random')
 		"quarry", "forest", "fields"] 
 	, ports = [
 		"generic", "lumber", "brick", "generic", 
-		"generic", "wool", "generic", "ore", "grain"
+		"generic", "wool", "generic", "ore", "grain"]
+	, dev = [ 
+		{type:"knight"}, {type:"knight"}, 
+		{type:"knight"}, {type:"knight"}, 
+		{type:"knight"}, {type:"knight"}, 
+		{type:"knight"}, {type:"knight"}, 
+		{type:"knight"}, {type:"knight"}, 
+		{type:"knight"}, {type:"knight"}, 
+		{type:"knight"}, {type:"knight"}, 
+		{type:"progress", title:"monopoly"},
+		{type:"progress", title:"monopoly"},
+		{type:"progress", title:"invention"},
+		{type:"progress", title:"invention"},
+		{type:"progress", title:"construction"},
+		{type:"progress", title:"construction"},
+		{type:"victory", title:"chapel"},
+		{type:"victory", title:"library"},
+		{type:"victory", title:"market"},
+		{type:"victory", title:"palace"},
+		{type:"victory", title:"university"}
 	];
 
 exports.new = function( options ) { 
@@ -53,7 +72,7 @@ exports.new = function( options ) {
   game['shapes'] = { 
 		'port': {cir:{cx:86,r:50},rec:{y:-20,w:50,h:40,rx:3}},
 		'hex': "86.6,50 0,100 -86.6,50 -86.6,-50 0,-100 86.6,-50",
-		'road': "",
+		'road': "M 0 -35 L 0 35",
 		'town': "-15,15 -15,-5 0,-15 15,-5 15,15",
 		'city': "-15,-5 -15,-15 0,-25 15,-15 15,-5 30,-5 30,15 -30,15 -30,-5"
 	};
