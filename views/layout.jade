@@ -1,13 +1,13 @@
 doctype 5
 html
-  head
-    title= title
-    link(rel='stylesheet', href='bootstrap/css/bootstrap.css')
-    link(rel='stylesheet', href='stylesheets/default.css')
-    script(src='jquery/jquery-1.9.0.min.js')
-    script(src='bootstrap/js/bootstrap.min.js')
-    script(src='d3/d3.min.js')
-    script(src='/socket.io/socket.io.js')
-  body
-    block content
-    script(type="text/javascript", src='clientside.js')
+	head
+		title= title
+		link(rel='stylesheet', href='stylesheets/default.css')
+		link(rel='stylesheet', href='bootstrap/css/bootstrap.css')
+		link(rel='stylesheet', href='bootstrap/css/bootstrap-responsive.css')
+		script(src='jquery/jquery-1.9.0.min.js')
+		script(src='d3/d3.min.js')
+		script(src='/socket.io/socket.io.js')
+	body
+		block content
+		script(type="text/javascript", src='clientside.js')

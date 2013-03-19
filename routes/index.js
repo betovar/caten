@@ -3,6 +3,5 @@
  * GET home page.
  */
 
-exports.index = function(req, res){
-  res.render('game', { title: 'Caten' });
-};
+require('./home');
+require('./game');
