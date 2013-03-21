@@ -1,28 +1,29 @@
 extends layout
 
 block content
-	.container-narrow
-		.masthead
-			ul.nav.nav-pills.pull-right
-				li.active: a(href='#') Home
-				li: a(href='#credits') Credits
-				li: a(href='#login') Log In
-			h3.muted #{title}
-		hr 
-		.jumbotron
-			h1 Welcome to Caten!
-			p.lead Hey! This is the frontpage for the caten project. Look around for a brief while, then join in on the fun!
-			.btn-toolbar
-				button.btn.btn-large.btn-success(href="#create") New game
-				button.btn.btn-large.btn-primary(href="#join") Join game
-		hr
-	.footer
-		.container-narrow
-			p.muted.credit
-				a(href='http://www.github.com/betovar/caten#license',
-				style='text-decoration:none;') © Brian Tovar 2013
-	link(rel='stylesheet', href='stylesheets/homepage.css')
-	#credits.modal.hide.fade
-		include credits
-	#login.modal.hide.fade
-		//- this is a login modal
+  .container-narrow
+    .masthead
+      ul.nav.nav-pills.pull-right
+        li.active: a(href='/') Home
+        li: a(href='#credits') Credits
+        li: a(href='#login') Log In
+      h3.muted #{title}
+    hr 
+    .jumbotron
+      h1 Welcome to Caten!
+      p.lead This is the frontpage for the caten project. <br>Look around for a brief while, then join in on the fun!
+      .btn-toolbar
+        button.btn.btn-large.btn-success(href="#create") New game
+        button.btn.btn-large.btn-primary(href="/g/demo") Join game
+    hr
+  .footer
+    .container-narrow
+      p.muted.credit
+        a(href='http://www.github.com/betovar/caten#license',
+        style='text-decoration:none;') © Brian Tovar 2013
+  link(rel='stylesheet', href='stylesheets/homepage.css')
+  script(src='jquery/jquery-1.9.0.min.js')
+  #credits.modal.hide.fade
+    include credits
+  #login.modal.hide.fade
+    include login
