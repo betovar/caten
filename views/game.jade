@@ -43,24 +43,24 @@ block content
         ul.unstyled.nav.pull-right
           li: a
             span.badge.brick 0 
-              i.icon-white.icon-heart
+              i.icon-white.icon-heart(alt='Brick')
           li: a
             span.badge.lumber 0 
-              i.icon-white.icon-leaf
+              i.icon-white.icon-leaf(alt='Lumber')
           li: a
             span.badge.wool 0 
-              i.icon-white.icon-tint
+              i.icon-white.icon-tint(alt='Wool')
           li: a
             span.badge.grain 0 
-              i.icon-white.icon-fire
+              i.icon-white.icon-fire(alt='Grain')
           li: a
             span.badge.ore 0 
-              i.icon-white.icon-globe
+              i.icon-white.icon-globe(alt='Ore')
   #credits.modal.hide.fade
     include credits
     $('#devcards').tooltip('toggle');
-  link(rel='stylesheet', href='stylesheets/default.css')
+  link(rel='stylesheet', href='/stylesheets/default.css')
   script(src='/socket.io/socket.io.js')
-  script(src='jquery/jquery-1.9.0.min.js')
-  script(src='clientside.js')
-  script(src='d3/d3.min.js')
+  script(src='/jquery/jquery-1.9.0.min.js')
+  script(src='/clientside.js')
+  script(src='/d3/d3.min.js')

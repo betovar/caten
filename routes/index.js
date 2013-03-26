@@ -3,8 +3,11 @@
  */
 
 module.exports = function(app) { 
-  app.get('/g/:gameid', function(req, res) { 
-    res.render('game', {title:'Work in Progress', gameid: req.id}); 
+  app.get('/test/:id', function(req, res) { 
+    res.render('test', {title:'Testing', gameid: req.params.id}); 
+  }); 
+  app.get('/g/:id', function(req, res) { 
+    res.render('game', {title:'Settlers of Caten', gameid: req.params.id}); 
   }); 
   app.get('/', function(req, res) { 
     res.render('home', {title: 'Settlers of Caten'}); 
