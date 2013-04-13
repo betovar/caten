@@ -42,7 +42,7 @@ var twitter = require('passport-twitter').Strategy;
 passport.use(new twitter({
   consumerKey: process.env.TWITTER_CONSUMER_KEY,
   consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
-  callbackURL: process.env.TWITTER_CALLBACK
+  callbackURL: process.env.TWITTER_CALLBACK_URL
 }, function(token, tokenSecret, profile, done) {
   // asynchronous verification, for effect...
   process.nextTick(function () {
