@@ -1,10 +1,2 @@
-.modal-header: h3(align="center") Log In
-.modal-body
-	.container
-		form.form-signin
-			input.input-block-level(type='text', placeholder='Username')
-			input.input-block-level(type='password', placeholder='Password')
-			.btn-toolbar
-				button.btn.btn-large.btn-warning(type='submit') Dismiss
-				button.btn.btn-large.btn-success(type='submit') Accept!
-.modal-footer: button.btn(data-dismiss="modal",aria-hidden="true") Dismiss
+a(href='#login', rel='popover', data-toggle='popover', data-placement='bottom', data-trigger='click', data-original-title='Choose a Username', data-html='true',
+data-content='<a href="/auth/twitter"><img src="/auth/twitter.png"></img></a>') Log In

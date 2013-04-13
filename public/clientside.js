@@ -1,9 +1,11 @@
 var socket = io.connect();
+	, gameid = document.URL.split("/")[4];
 
-socket.emit('join', function(data) { 
+socket.of('game').on('connect', function() {
+	socket.of('game').emit('join', gameid);
 }); 
 
-socket.on('joined', function(data) {
+socket.of('game').in(gameid).on('joined', function(data) {
 	console.log(data);
 	for (var d in data) {
 		if (data.hasOwnProperty(d)) {
@@ -14,7 +16,7 @@ socket.on('joined', function(data) {
 	}
 });
 
-socket.on('message', function(data) {
+socket.of('game').in(gameid).on('message', function(data) {
 	console.log(data);
 });
 
@@ -41,7 +43,7 @@ $('body').tooltip({
     }
 });
 
-socket.on('start', function(data) {
+socket.of('game').in(gameid).on('start', function(data) {
 //render all hexes 
 	var hexes = d3.select("#hexes").selectAll("g")
 		.data(data.grid)
@@ -111,17 +113,17 @@ socket.on('start', function(data) {
 });
 
 function roll() {
-	socket.emit('roll'); 
+	socket.in(gameid).emit('roll'); 
 }
 
 function buy(item) {
-	socket.emit('buy', item ); 
+	socket.in(gameid).emit('buy', item ); 
 }
 
 function offer(cards) {
-	socket.emit('offer', cards ); 
+	socket.in(gameid).emit('offer', cards ); 
 }
 
 function pass() {
-	socket.emit('pass'); 
+	socket.in(gameid).emit('pass'); 
 }

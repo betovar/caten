@@ -17,7 +17,10 @@
   "dependencies": {
     "express": "3.0.x",
     "jade": "*",
+    "redis": "*",
     "socket.io": "*",
+    "passport": "*",
+    "passport-twitter": "*",
     "node-random": "*"
   },
   "analyze": false,

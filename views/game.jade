@@ -4,43 +4,10 @@ block content
   .container-fluid
     .navbar.navbar-inverse
       .navbar-inner
-        a.brand(data-toggle="modal", 
+        a#game.brand(data-toggle="modal", 
           data-target="#credits",
           role="button") Settlers of Caten
-        form.navbar-search.pull-right
-          input.search-query(type="text",placeholder="Chat")
-    .row-fluid(style="position:relative;")
-      .span8.offset2
-        svg#board(style="height:100%;",
-          type="image/svg+xml", 
-          viewBox="-555 -481 1110 962", 
-          preserveAspectRatio="xMidYMid meet")
-          g#ocean
-            polygon(points="275,476.3 550,0 275,-476.3 -275,-476.3 -550,0 -275,476.3")
-          g#ports
-          g#hexes
-          g#roads
-          g#settlements
-      #northwest.pull(style="left:0; top:0;")
-        include profile
-      #northeast.pull(style="right:0; top:0;")
-        include profile
-      #southeast.pull(style="right:0; bottom:0;")
-        include profile
-      #southwest.pull(style="left:0; bottom:0;")
-        include profile
-  .container-fluid
-    .navbar.navbar-inverse
-      .navbar-inner
-        ul.unstyled.nav.pull-left(data-toggle="buttons-radio")
-          li: a(href="#roll", onclick="rolldice()",
-            id="rolldice") Roll
-          li: a(href="#play", onclick="play()", 
-            id="devcards", data-placement="top") Play
-          li: a(href="#trade", id="trading") Trade
-          li: a(href="#build", id="buying") Build
-          li: a(href="#pass", onclick="passdice()") Pass
-        ul.unstyled.nav.pull-right
+        ul#hand.unstyled.nav.pull-right
           li: a
             span.badge.brick 0 
               i.icon-white.icon-heart(alt='Brick')
@@ -56,11 +23,42 @@ block content
           li: a
             span.badge.ore 0 
               i.icon-white.icon-globe(alt='Ore')
-  #credits.modal.hide.fade
-    include credits
-    $('#devcards').tooltip('toggle');
+    .row-fluid(style="position:relative;")
+      .span8.offset2
+        svg#board(style="height:100%;",
+          type="image/svg+xml", 
+          viewBox="-555 -481 1110 962", 
+          preserveAspectRatio="xMidYMid meet")
+          g#ocean
+            polygon(points="275,476.3 550,0 275,-476.3 -275,-476.3 -550,0 -275,476.3")
+          g#ports
+          g#hexes
+          g#roads
+          g#settlements
+      #northwest.pull(style="left:0; top:0;")
+        include stats
+      #northeast.pull(style="right:0; top:0;")
+        include stats
+      #southeast.pull(style="right:0; bottom:0;")
+        include stats
+      #southwest.pull(style="left:0; bottom:0;")
+        include stats
+  .container-fluid
+    .navbar.navbar-inverse
+      .navbar-inner
+        ul#controls.unstyled.nav.pull-left(data-toggle="buttons-radio")
+          li: a(href="#roll", onclick="rolldice()",
+            id="rolldice") Roll
+          li: a(href="#play", onclick="play()", 
+            id="devcards", data-placement="top") Play
+          li: a(href="#trade", id="trading") Trade
+          li: a(href="#build", id="buying") Build
+          li: a(href="#pass", onclick="passdice()") Pass
+        form#chat.navbar-search.pull-right.hidden-phone
+          input.search-query(type="text",placeholder="Chat")
+  include credits
+  $('#devcards').tooltip('toggle');
   link(rel='stylesheet', href='/stylesheets/default.css')
-  script(src='/socket.io/socket.io.js')
-  script(src='/jquery/jquery-1.9.0.min.js')
-  script(src='/clientside.js')
   script(src='/d3/d3.min.js')
+  //-script(src='/socket.io/socket.io.js')
+  //-script(src='/clientside.js')

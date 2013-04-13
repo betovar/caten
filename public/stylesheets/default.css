@@ -29,3 +29,7 @@ text { text-align:center; text-anchor:middle;
 .p4 { fill:dodgerblue; stroke:dodgerblue; background-color:dodgerblue; }
 
 .pull {	position:absolute; width:20%; margin:5px; }
+
+@media (max-width: 320px) {
+	#controls { width:100%; }
+}
