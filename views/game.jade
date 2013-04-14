@@ -35,14 +35,16 @@ block content
           g#hexes
           g#roads
           g#settlements
-      #northwest.pull(style="left:0; top:0;")
-        include stats
-      #northeast.pull(style="right:0; top:0;")
-        include stats
-      #southeast.pull(style="right:0; bottom:0;")
-        include stats
-      #southwest.pull(style="left:0; bottom:0;")
-        include stats
+    .row-fluid#slider.swipe
+      .swipe-wrap
+        #northwest.profile
+          include profile
+        #northeast.profile
+          include profile
+        #southeast.profile
+          include profile
+        #southwest.profile
+          include profile
   .container-fluid
     .navbar.navbar-inverse
       .navbar-inner
@@ -57,8 +59,10 @@ block content
         form#chat.navbar-search.pull-right.hidden-phone
           input.search-query(type="text",placeholder="Chat")
   include credits
-  $('#devcards').tooltip('toggle');
+  //-script $('#devcards').tooltip('toggle');
   link(rel='stylesheet', href='/stylesheets/default.css')
   script(src='/d3/d3.min.js')
   //-script(src='/socket.io/socket.io.js')
   //-script(src='/clientside.js')
+  //-script $('#username').append('<i alt="dealer" class="icon icon-hand-right"></i>')
+  script window.mySwipe = new Swipe(document.getElementById('slider'), { startSlide:1, speed:400, auto:3000});

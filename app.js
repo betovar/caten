@@ -73,27 +73,21 @@ function ensureAuthenticated(req, res, next) {
 
 // Route Definitions
 app.get('/auth/twitter/callback', 
-  passport.authenticate('twitter', { failureRedirect: '/login' }),
-  function(req, res) { 
-    res.redirect('/');
-});
+  passport.authenticate('twitter', { 
+    failureRedirect: '/login' 
+  }), function(req, res) { 
+    console.log(req.query.oauth_token); 
+    res.redirect('/'); 
+  }
+);
 app.get('/auth/twitter', passport.authenticate('twitter'));
-app.get('/login', function(req, res){
-  res.render('login', { user: req.user, message: req.flash('error') });
+app.get('/login', function(req, res) {
+  res.render('/', { user: req.user });
 });
-app.post('/login', 
-  passport.authenticate('local', 
-    { failureRedirect: '/login', failureFlash: true }),
-    function(req, res) {
-      res.redirect('/');
-  });
 app.get('/logout', function(req, res) { 
   req.session = null; 
   req.logout(); 
   res.redirect('/'); 
-}); 
-app.get('/demo', function(req, res) { 
-  res.render('demo', {title: 'Settlers of Caten Demo'}); 
 }); 
 app.get('/:id', function(req, res) { 
   res.render('game', {title:'Settlers of Caten', gameid: req.params.id}); 
