@@ -23,28 +23,34 @@ block content
           li: a
             span.badge.ore 0 
               i.icon-white.icon-globe(alt='Ore')
-    .row-fluid(style="position:relative;")
-      .span8.offset2
-        svg#board(style="height:100%;",
-          type="image/svg+xml", 
-          viewBox="-555 -481 1110 962", 
-          preserveAspectRatio="xMidYMid meet")
-          g#ocean
-            polygon(points="275,476.3 550,0 275,-476.3 -275,-476.3 -550,0 -275,476.3")
-          g#ports
-          g#hexes
-          g#roads
-          g#settlements
-    .row-fluid#slider.swipe
-      .swipe-wrap
-        #northwest.profile
+  .row-fluid
+    .span8.offset2
+      svg#board(style="height:100%;",
+        type="image/svg+xml", 
+        viewBox="-555 -481 1110 962", 
+        preserveAspectRatio="xMidYMid meet")
+        g#ocean
+          polygon(points="275,476.3 550,0 275,-476.3 -275,-476.3 -550,0 -275,476.3")
+        g#ports
+        g#hexes
+        g#roads
+        g#settlements
+  .row-fluid
+    #slider.carousel.slide.swipe.visible-phone
+      .carousel-inner.swipe-wrap
+        #northwest.profile(data-index='0').item.active
           include profile
-        #northeast.profile
+        #northeast.profile(data-index='1').item
           include profile
-        #southeast.profile
+        #southeast.profile(data-index='2').item
           include profile
-        #southwest.profile
+        #southwest.profile(data-index='3').item
           include profile
+      ol.carousel-indicators
+        li(data-slide-to='0', data-target='#slider').active
+        li(data-slide-to='1', data-target='#slider')
+        li(data-slide-to='2', data-target='#slider')
+        li(data-slide-to='3', data-target='#slider')
   .container-fluid
     .navbar.navbar-inverse
       .navbar-inner
@@ -65,4 +71,5 @@ block content
   //-script(src='/socket.io/socket.io.js')
   //-script(src='/clientside.js')
   //-script $('#username').append('<i alt="dealer" class="icon icon-hand-right"></i>')
-  script window.mySwipe = new Swipe(document.getElementById('slider'), { startSlide:1, speed:400, auto:3000});
+  //-script.visible-phone window.mySwipe = new Swipe(document.getElementById('slider'), { startSlide:1, speed:100, auto:3000});
+  script $('.carousel').carousel({ interval:2000 });
