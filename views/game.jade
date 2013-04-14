@@ -36,9 +36,9 @@ block content
         g#roads
         g#settlements
   .row-fluid
-    #slider.carousel.slide.swipe.visible-phone
-      .carousel-inner.swipe-wrap
-        #northwest.profile(data-index='0').item.active
+    #slider.carousel.slide
+      .carousel-inner
+        #northwest.profile(data-index='0').item
           include profile
         #northeast.profile(data-index='1').item
           include profile
@@ -46,11 +46,13 @@ block content
           include profile
         #southwest.profile(data-index='3').item
           include profile
-      ol.carousel-indicators
-        li(data-slide-to='0', data-target='#slider').active
-        li(data-slide-to='1', data-target='#slider')
-        li(data-slide-to='2', data-target='#slider')
-        li(data-slide-to='3', data-target='#slider')
+      ol.carousel-indicators(style='text-align:center;')
+        li(data-target='#slider', data-slide-to='0')
+        li(data-target='#slider', data-slide-to='1')
+        li(data-target='#slider', data-slide-to='2')
+        li(data-target='#slider', data-slide-to='3')
+      //-a.carousel-control.left(href='slider', data-slide='prev') &lsaquo;
+      //-a.carousel-control.right(href='slider', data-slide='next') &rsaquo;
   .container-fluid
     .navbar.navbar-inverse
       .navbar-inner
@@ -65,11 +67,11 @@ block content
         form#chat.navbar-search.pull-right.hidden-phone
           input.search-query(type="text",placeholder="Chat")
   include credits
-  //-script $('#devcards').tooltip('toggle');
   link(rel='stylesheet', href='/stylesheets/default.css')
-  script(src='/d3/d3.min.js')
+  //-script $('#devcards').tooltip('toggle');
   //-script(src='/socket.io/socket.io.js')
   //-script(src='/clientside.js')
   //-script $('#username').append('<i alt="dealer" class="icon icon-hand-right"></i>')
   //-script.visible-phone window.mySwipe = new Swipe(document.getElementById('slider'), { startSlide:1, speed:100, auto:3000});
-  script $('.carousel').carousel({ interval:2000 });
+  //-script window.mySwipe = $('#slider').Swipe().data('Swipe');
+  script $(document).ready(function(){ $('#slider').carousel({ interval:2000, pause:'hover' }); });
