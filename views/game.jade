@@ -35,10 +35,16 @@ block content
         g#hexes
         g#roads
         g#settlements
-  .row-fluid
+  .row-fixed.carousel-seats
+    ul.unstyled
+      li: span.badge Seat1
+      li: span.badge Seat2
+      li: span.badge Seat3
+      li: span.badge Seat4
+  .row-fixed
     #slider.carousel.slide
       .carousel-inner
-        #northwest.profile(data-index='0').item
+        #northwest.profile(data-index='0').item.active
           include profile
         #northeast.profile(data-index='1').item
           include profile
@@ -46,17 +52,12 @@ block content
           include profile
         #southwest.profile(data-index='3').item
           include profile
-      ol.carousel-indicators(style='text-align:center;')
-        li(data-target='#slider', data-slide-to='0')
-        li(data-target='#slider', data-slide-to='1')
-        li(data-target='#slider', data-slide-to='2')
-        li(data-target='#slider', data-slide-to='3')
-      //-a.carousel-control.left(href='slider', data-slide='prev') &lsaquo;
-      //-a.carousel-control.right(href='slider', data-slide='next') &rsaquo;
+      a.carousel-control.left(href='slider', data-slide='prev') &lsaquo;
+      a.carousel-control.right(href='slider', data-slide='next') &rsaquo;
   .container-fluid
     .navbar.navbar-inverse
       .navbar-inner
-        ul#controls.unstyled.nav.pull-left(data-toggle="buttons-radio")
+        ul#controls.unstyled.nav(data-toggle="buttons-radio")
           li: a(href="#roll", onclick="rolldice()",
             id="rolldice") Roll
           li: a(href="#play", onclick="play()", 
@@ -72,6 +73,4 @@ block content
   //-script(src='/socket.io/socket.io.js')
   //-script(src='/clientside.js')
   //-script $('#username').append('<i alt="dealer" class="icon icon-hand-right"></i>')
-  //-script.visible-phone window.mySwipe = new Swipe(document.getElementById('slider'), { startSlide:1, speed:100, auto:3000});
-  //-script window.mySwipe = $('#slider').Swipe().data('Swipe');
   script $(document).ready(function(){ $('#slider').carousel({ interval:2000, pause:'hover' }); });

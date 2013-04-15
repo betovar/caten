@@ -28,19 +28,20 @@ text { text-align:center; text-anchor:middle;
 .p3 { fill:darkviolet; stroke:darkviolet; background-color:darkviolet; }
 .p4 { fill:dodgerblue; stroke:dodgerblue; background-color:dodgerblue; }
 
+.profile { position:absolute; width:100%; margin:5px; }
 #northwest { left:0; top:0; }
 #northeast { right:0; top:0; }
 #southeast { right:0; bottom:0; }
 #southwest { left:0; bottom:0; }
-.profile { position:absolute; width:100%; margin:5px; }
 #username { text-align:center; }
-#stats>ul>li { float:left; display:inline; padding:2px 0; text-align:center; width:33.333%; }
-
-.swipe { overflow:hidden; visibility:hidden; position:relative; }
-.swipe-wrap { overflow:hidden; position:relative; }
-.swipe-wrap>div { float:left; width:100%; position:relative; }
+.carousel-seats ul { position:relative; width:100%; display:table; }
+.stats ul { position:relative; width:60%; left:20%; display:table; }
+.stats ul li, .carousel-seats ul li {
+	display:table-cell; padding:2px 0; text-align:center; 
+	width:20%; list-style:none;
+}
 
 @media (max-width: 320px) {
 #controls { width:100%; }
-#hand>li>a { margin:10px; }
+#hand li a { margin:10px; }
 }
