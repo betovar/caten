@@ -4,9 +4,9 @@ block content
   .container-fluid
     .navbar.navbar-inverse
       .navbar-inner
-        a#game.brand(data-toggle="modal", 
+        a#game.brand(data-toggle="modal",
           data-target="#credits",
-          role="button") Settlers of Caten
+          role="button") Caten
         ul#hand.unstyled.nav.pull-right
           li: a
             span.badge.brick 0 
@@ -26,8 +26,8 @@ block content
   .row-fluid
     .span8.offset2
       svg#board(style="height:100%;",
-        type="image/svg+xml", 
-        viewBox="-555 -481 1110 962", 
+        type="image/svg+xml",
+        viewBox="-555 -481 1110 962",
         preserveAspectRatio="xMidYMid meet")
         g#ocean
           polygon(points="275,476.3 550,0 275,-476.3 -275,-476.3 -550,0 -275,476.3")
@@ -60,7 +60,7 @@ block content
         ul#controls.unstyled.nav(data-toggle="buttons-radio")
           li: a(href="#roll", onclick="rolldice()",
             id="rolldice") Roll
-          li: a(href="#play", onclick="play()", 
+          li: a(href="#play", onclick="play()",
             id="devcards", data-placement="top") Play
           li: a(href="#trade", id="trading") Trade
           li: a(href="#build", id="buying") Build

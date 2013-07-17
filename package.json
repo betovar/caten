@@ -4,9 +4,9 @@
     "name": "Brian E Tovar",
     "email": "betovar@leaflabs.com"
   },
-  "version": "0.0.7",
+  "version": "0.0.8-1",
   "private": "true",
-  "homepage": "http;//betovar.caten.jit.su",
+  "homepage": "http://betovar.caten.jit.su",
   "repository": {
     "type": "git",
     "url": "git://github.com/betovar/caten.git"
@@ -16,12 +16,17 @@
   },
   "dependencies": {
     "express": "3.0.x",
-    "jade": "*",
-    "redis": "*",
-    "socket.io": "*",
-    "passport": "*",
-    "passport-twitter": "*",
-    "node-random": "*"
+    "jade": "0.33.x",
+    "redis": "0.8.x",
+    "socket.io": "0.9.x",
+    "passport": "0.1.x",
+    "passport-twitter": "0.1.x",
+    "node-random": "0.0.x"
+  },
+  "devDependencies": {
+    "karma": "0.8.x",
+    "cucumber": "0.3.x",
+    "should": "1.2.x"
   },
   "analyze": false,
   "readme": "This is a work in progress of an board game using d3js",

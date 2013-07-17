@@ -4,17 +4,18 @@ block content
   .container-narrow
     .masthead
       ul.nav.nav-pills.pull-right
-        li.active: a(href='/') Home
-        li: a(data-toggle='modal', data-target='#credits') Credits
-        li: include login
-      h3.muted #{title}
-    hr 
+        li: a(href='/login') Login
+      h3.muted
+        a.brand(data-toggle="modal",
+          data-target="#credits",
+          role="button") #{title}
+    hr
     .jumbotron
-      h1 Welcome to Caten!
-      p.lead This is the frontpage for the caten project. <br>Look around for a brief while, then join in on the fun!
+      h1 Welcome!
+      p.lead This is the frontpage for the Caten project. <br>Look around for a brief while, then join in on the fun!
       .btn-toolbar
-        button.btn.btn-large.btn-success(href="#new") New game
-        button.btn.btn-large.btn-primary(href="/demo") Join game
+        a.btn.btn-large.btn-primary(href="/demo") Demo
+        a.btn.btn-large.btn-success(href="/form") New game
     hr
   .footer
     .container-narrow
@@ -23,4 +24,3 @@ block content
         style='text-decoration:none;') © Brian Tovar 2013
   link(rel='stylesheet', href='stylesheets/homepage.css')
   include credits
-  script $(document).ready(function() {$('a[rel=popover]').popover();});
