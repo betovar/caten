@@ -1,32 +1,35 @@
 extends layout
 
 block content
-	script src="/socket.io/socket.io.js"
-	.row
-		.span6
+	//script(src="/socket.io/socket.io.js")
+	.row-fluid
+		.span12
 			h1 Welcome to Caten!
-			.alert.alert-info
+			.alert.alert-info.span6.offset3
 				button.close(type="button",data-dismiss="alert")
 					&times;
 				p This is the game staging area. Start your own game or join one.
 				p Remember to login if you haven't already done so.
-	.row
-		.span2
-			.btn-group
-				button.btn.btn-primary START
-				button.btn.btn-primary.dropdown-toggle(data-toggle="dropdown")
-					span.caret
-				ul.dropdown-menu
-					li: first
-					li: second
-					li: third
-					li: last
-		.span2
-			button.btn.btn-primary JOIN
+	.row-fluid
+		.span3
+			button.btn.btn-primary.pull-right JOIN
 			ul.unstyled
 				li: span.badge.badge-success Alice
 				li:	span.badge.badge-inverse Bob
 				li:	span.badge ?
 				li:	span.badge.badge-inverse Dave
-	script
+	#junk
+		ul.unstyled
+			li #{board}
+			li #{player}
+			li #{victory}
+			li #{visibility}
+			li #{password}
+			li #{placement}
+			li #{seats}
+			li #{architect}
+			li #{sidekick}
+			li #{sheriff}
+			li #{timer}
+	script.
 		var socket = io.connect('http://localhost');

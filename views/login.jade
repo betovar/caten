@@ -1,7 +1,7 @@
 extends layout
 
 block content
-  .container-narrow
+  .container-narrow.span4.offset4
     .masthead
         ul.nav.nav-pills.pull-right
           li: a(href='/') Home
@@ -12,9 +12,9 @@ block content
     ul.unstyled
       li: a.btn.btn-block(href="/auth/twitter")
         img(src="/auth/sign-in-with-twitter-link.png") Twitter
-      li: a.btn.btn-block(href="/auth/twitter")
-        img(src="/auth/sign-in-with-twitter-link.png") Twitter
-      li: a.btn.btn-block(href="/auth/twitter")
-        img(src="/auth/sign-in-with-twitter-link.png") Twitter
-      li: a.btn.btn-block(href="/auth/twitter")
-        img(src="/auth/sign-in-with-twitter-link.png") Twitter
+      li: a.btn.btn-block(href="/auth/instagram", disabled="")
+        img(src="") Instagram
+      li: a.btn.btn-block(href="/auth/facebook", disabled="")
+        img(src="") Facebook
+      li: a.btn.btn-block(href="/auth/google", disabled="")
+        img(src="") Google

@@ -86,8 +86,15 @@ app.get('/logout', function(req, res) {
   req.logout();
   res.redirect('/');
 });
-app.get('/form', function(req, res) {
-  res.render('form', {title: 'Create Game'});
+app.get('/lobby', function(req, res) {
+  res.render('lobby', {title: 'Lobby'});
+});
+app.get('/new', function(req, res) {
+  res.render('newgame', {title: 'New Game'});
+});
+app.post('/new', function(req, res) {
+  console.log(req.body);
+  res.redirect('/lobby');
 });
 app.get('/:id', function(req, res) {
   res.render('game', {title:'Caten', gameid: req.params.id});

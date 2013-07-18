@@ -58,8 +58,6 @@ block content
     .navbar.navbar-inverse
       .navbar-inner
         ul#controls.unstyled.nav(data-toggle="buttons-radio")
-          li: a(href="#roll", onclick="rolldice()",
-            id="rolldice") Roll
           li: a(href="#play", onclick="play()",
             id="devcards", data-placement="top") Play
           li: a(href="#trade", id="trading") Trade
@@ -71,6 +69,6 @@ block content
   link(rel='stylesheet', href='/stylesheets/default.css')
   //-script $('#devcards').tooltip('toggle');
   //-script(src='/socket.io/socket.io.js')
-  //-script(src='/clientside.js')
+  //-script(src='/gamelogic.js')
   //-script $('#username').append('<i alt="dealer" class="icon icon-hand-right"></i>')
   script $(document).ready(function(){ $('#slider').carousel({ interval:2000, pause:'hover' }); });

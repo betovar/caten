@@ -134,17 +134,19 @@ exports.newForm = function( form ) {
   var gameid = newGameID();
   if (db.exists(gameid)) { return new Error("Game already exists"); }
   db.hmset(gameid+':form',
-    'board', form.boardsize,
-    'player', form.playercount,
-    'victory', form.victorycondition,
-    'security', form.securitylevel,
-    'placement', form.placementorder,
-    'seat', form.seatorder,
-    'chat', form.keyboardchat,
-    'assist', form.turnassist,
-    'timer', form.turntimer,
-    'title', form.webtitle,
-    'profile', form.profile
+    'board', form.board,
+    'player', form.player,
+    'victory', form.victory,
+    'visibility', form.visibility,
+    'password', form.password,
+    'placement', form.placement,
+    'seats', form.seats,
+    'architect', form.architect,
+    'sidekick', form.sidekick,
+    'sheriff', form.sheriff,
+    'timer', form.timer,
+    'chat', "Keyboard",
+    'title', "Caten"
   );
 };
 
