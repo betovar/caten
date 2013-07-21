@@ -3,151 +3,124 @@ extends layout
 append head
   script(src='bootstrap/js/bootstrap.min.js')
 block content
-  form.form-horizontal(action='/new', method='post')
-    legend Create New Game
-    .control-group
-      label.control-label: a.unstyled(data-original-title='Both game sizes are free to play!',
-        data-toggle='tooltip', data-placement='top',
-        style='text-decoration:none;') Board Size
-      .controls
-        label.radio.inline
-          input(type='radio', name='board', value='Basic', checked='') Basic
-        label.radio.inline
-          input(type='radio', name='board', value='Expansion') Expansion
-    .control-group
-      label.control-label: a.unstyled(data-original-title='Basic games can host 3 or 4 players, while expanded games can have 5 or 6',
-        data-toggle='tooltip', data-placement='top',
-        style='text-decoration:none;') Player Count
-      .controls
-        label.radio.inline
-          input(type='radio', name='players', value='Large', checked='') 4 or 6
-        label.radio.inline
-          input(type='radio', name='players', value='Small') 3 or 5
-    .control-group
-      label.control-label: a.unstyled(data-original-title='Only games with small player counts can choose to play for an extended objective',
-        data-toggle='tooltip', data-placement='top',
-        style='text-decoration:none;') Victory Condition
-      .controls
-        label.radio.inline
-          input(type='radio', name='victory', value='Standard', checked='') 10
-        label.radio.inline
-          input(type='radio', name='victory', value='Extended') 12
-    .control-group
-      label.control-label: a.unstyled(data-original-title='Choose to place this game in the lobby or hide it from prying eyes',
-        data-toggle='tooltip', data-placement='top',
-        style='text-decoration:none;') Visibility Level
-      .controls
-        label.radio.inline
-          input(type='radio', name='visibility', value='Public', checked='') Public
-        label.radio.inline
-          input(type='radio', name='visibility', value='Private', disabled='') Private
-    .control-group
-      label.control-label: a.unstyled(data-original-title='A simple password can secure public and private games alike',
-        data-toggle='tooltip', data-placement='top',
-        style='text-decoration:none;') Password Protection
-      .controls
-        input#password.span3(name='password',
-        type='text',
-        placeholder='password')
-    .control-group
-      label.control-label: a.unstyled(data-original-title='Determine the order during the initial building rounds, if distinct from seats',
-        data-toggle='tooltip', data-placement='top',
-        style='text-decoration:none;') Placement Order
-      .controls
-        select#placementorder.span3(name='placement')
-          option(selected='') Randomized
-          option Ordered by Join
-          option Reverse by Join
-          option Ordered by Seat
-    .control-group
-      label.control-label: a.unstyled(data-original-title='',
-        data-toggle='tooltip', data-placement='top',
-        style='text-decoration:none;') Seat Sequence
-      .controls
-        select#seatsequence.span3(name='seats')
-          option(selected='') Randomized
-          option Ordered by Join
-          option Reverse by Join
-          option Select
-    .control-group
-      label.control-label: a.unstyled(data-original-title='The game designer can be mad as a hatter at times',
-        data-toggle='tooltip', data-placement='top',
-        style='text-decoration:none;') Map Architect
-      .controls
-        select#architect.span3(name='architect')
-          option Beginner
-          option Classic
-          option(selected='') Random
-          option Maverick
-          option Full Metal Jacket
-    .control-group
-      label.control-label: a.unstyled(data-original-title='Performs menial tasks for you, like raising an alert on your turn, or by rolling automatically for you',
-        data-toggle='tooltip', data-placement='top',
-        style='text-decoration:none;') Turn Sidekick
-      .controls
-        select#turnsidekick.span3(name='sidekick')
-          option Alert
-          option(selected='') Automatic
-          option Disable
-    .control-group
-      label.control-label: a.unstyled(data-original-title='The lawman of turn managment has varying degrees of enforcement',
-        data-toggle='tooltip', data-placement='top',
-        style='text-decoration:none;') Turn Sheriff
-      .controls
-        select#turnsheriff.span3(name='sheriff')
-          option(selected='') None
-          option Alert
-          option Voting
-          option Strict
-    .control-group
-      label.control-label: a.unstyled(data-original-title='Time until the sheriff starts enforcing the law',
-        data-toggle='tooltip', data-placement='top',
-        style='text-decoration:none;') Turn Timer
-      .controls
-        .container-row.span3
-          input#turntimer.span1(name='timer', type='tel', value='0')
-          select.span2
-            option seconds
-            option(selected='') minutes
-            option hours
-            option days
-    //-.control-group
-      label.control-label Invite
-      .controls
-        .input-prepend
-          span.add-on @
-          input#invitation.span3(name='invite-user', placeholder='twitter', type='text', data-provide='typeahead')
-      p.help-block Invite players to private, hidden game
-    //-.control-group
-      label.control-label Shuffle
-      .controls
-        input#seed.span3(name='gameseed', type='text', placeholder='random seed')
-        p.help-block Shuffle development cards
-    //-.control-group
-      label.control-label Webpage Title
-      .controls
-        input#webtitle.span3(name='title', type='text', placeholder='Settlers of Caten')
-    //-.control-group
-      label.control-label Tweets
-      .controls
-        .btn-group(data-toggle='buttons-checkbox')
-          button#hubris.btn(type='button', disabled='') Hubris
-          button#shame.btn(type='button', disabled='') Shame
-          button#social.btn(type='button', disabled='') Social
-    //-.control-group
-      label.control-label Chat
-      .controls
-        .btn-toolbar
-          .btn-group(data-toggle='buttons-checkbox')
-          button#keyboard.btn(type='button') Keyboard
-          button#voice.btn(type='button', disabled='') Voice
-          .btn-group
-          button#silence.btn(type='button', data-toggle='radio') Silence
-    .control-group
-      label.control-label Ready? Set?
-      .controls
-      button#submitform.btn.btn-info.span3(name='submitform',
-        type='submit') Go!
+  .row-fixed
+    form.form-horizontal(action='/new', method='post')
+      .control-group
+        label.control-label: a.unstyled(data-toggle='tooltip', data-placement='top',
+          data-original-title='Both game sizes are free to play!',
+          style='text-decoration:none;') Board Size
+        .controls
+          label.radio.inline
+            input(type='radio', name='board', value='Basic', checked='')
+            | Basic
+          label.radio.inline
+            input(type='radio', name='board', value='Expansion')
+            | Expansion
+      .control-group
+        label.control-label: a.unstyled(data-toggle='tooltip', data-placement='top',
+          data-original-title='Basic games can host 3 or 4 players, while expanded games can have 5 or 6',
+          style='text-decoration:none;') Player Count
+        .controls
+          label.radio.inline
+            input(type='radio', name='players', value='Large', checked='')
+            | 4 or 6
+          label.radio.inline
+            input(type='radio', name='players', value='Small')
+            | 3 or 5
+      .control-group
+        label.control-label: a.unstyled(data-toggle='tooltip', data-placement='top',
+          data-original-title='Only games with small player counts can choose to play for an extended objective',
+          style='text-decoration:none;') Victory Condition
+        .controls
+          label.radio.inline
+            input(type='radio', name='victory', value='Standard', checked='')
+            | 10
+          label.radio.inline
+            input(type='radio', name='victory', value='Extended')
+            | 12
+      .control-group
+        label.control-label: a.unstyled(data-toggle='tooltip', data-placement='top',
+          data-original-title='Choose to place this game in the lobby or hide it from prying eyes',
+          style='text-decoration:none;') Visibility Level
+        .controls
+          label.radio.inline
+            input(type='radio', name='visibility', value='Public', checked='')
+            | Public
+          label.radio.inline
+            input(type='radio', name='visibility', value='Private', disabled='')
+            | Private
+      .control-group
+        label.control-label: a.unstyled(data-toggle='tooltip', data-placement='top',
+          data-original-title='A simple password can secure public and private games alike',
+          style='text-decoration:none;') Password Protection
+        .controls
+          input#password.span3(name='password', type='text', placeholder='password')
+      .control-group
+        label.control-label: a.unstyled(data-toggle='tooltip', data-placement='top',
+          data-original-title='Determine the order during the initial building rounds, if distinct from seats',
+          style='text-decoration:none;') Placement Order
+        .controls
+          select#placementorder.span3(name='placement')
+            option(selected='') Randomized
+            option Ordered by Join
+            option Reverse by Join
+            option Ordered by Seat
+      .control-group
+        label.control-label: a.unstyled(data-toggle='tooltip', data-placement='top',
+          data-original-title='',
+          style='text-decoration:none;') Seat Sequence
+        .controls
+          select#seatsequence.span3(name='seats')
+            option(selected='') Randomized
+            option Ordered by Join
+            option Reverse by Join
+            option Select
+      .control-group
+        label.control-label: a.unstyled(data-toggle='tooltip', data-placement='top',
+          data-original-title='The game designer can be mad as a hatter at times',
+          style='text-decoration:none;') Map Architect
+        .controls
+          select#architect.span3(name='architect')
+            option Beginner
+            option Classic
+            option(selected='') Random
+            option Maverick
+            option Full Metal Jacket
+      .control-group
+        label.control-label: a.unstyled(data-toggle='tooltip', data-placement='top',
+          data-original-title='Performs menial tasks for you, like raising an alert on your turn, or by rolling automatically for you',
+          style='text-decoration:none;') Turn Sidekick
+        .controls
+          select#turnsidekick.span3(name='sidekick')
+            option Alert
+            option(selected='') Automatic
+            option Disable
+      .control-group
+        label.control-label: a.unstyled(data-toggle='tooltip', data-placement='top',
+          data-original-title='The lawman of turn managment has varying degrees of enforcement',
+          style='text-decoration:none;') Turn Sheriff
+        .controls
+          select#turnsheriff.span3(name='sheriff')
+            option(selected='') None
+            option Alert
+            option Voting
+            option Strict
+      .control-group
+        label.control-label: a.unstyled(data-toggle='tooltip', data-placement='top',
+          data-original-title='Time until the sheriff starts enforcing the law',
+          style='text-decoration:none;') Turn Timer
+        .controls
+          .row.span3
+            input#turntimer.span1(name='timer', type='tel', value='0')
+            select.span2
+              option seconds
+              option(selected='') minutes
+              option hours
+              option days
+      .control-group
+        label.control-label Ready? Set?
+        .controls
+          input#submitbtn.btn.btn-info.span3(type='submit', value='Go!') Go!
 block scripts
   script.
     $("[data-toggle='tooltip']").tooltip();

@@ -49,7 +49,10 @@ app.get('/auth/twitter/callback',
   });
 app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/login', function(req, res) {
-  res.render('login', {title: 'Login'});
+  res.render('login', {
+    title: 'Login',
+    menu: [{name: 'Home', link: '/'}]
+  });
 });
 app.post('/login',
   passport.authenticate('twitter'),
@@ -64,13 +67,27 @@ app.get('/logout', function(req, res) {
   res.redirect('/');
 });
 app.get('/account', function(req, res) {
-  res.render('account', {title: 'User Account', user: req.user});
+  res.render('account', {
+    title: 'User Account',
+    menu: [
+      {name: 'Lobby', link: '/lobby'},
+      {name: 'Home', link: '/'}],
+    user: req.user
+  });
 });
 app.get('/lobby', function(req, res) {
-  res.render('lobby', {title: 'Lobby'});
+  res.render('lobby', {
+    title: 'Lobby',
+    menu: [{name: 'Home', link: '/'}]
+  });
 });
 app.get('/new', function(req, res) {
-  res.render('newgame', {title: 'New Game'});
+  res.render('newgame', {
+    title: 'New Game',
+    menu: [
+      {name: 'Lobby', link: '/lobby'},
+      {name: 'Home', link: '/'}]
+  });
 });
 app.post('/new', function(req, res) {
   console.log(req.body);
@@ -80,7 +97,11 @@ app.get('/home', function(req, res) {
   res.redirect('/');
 });
 app.get('/:id', function(req, res) {
-  res.render('game', {title:'Caten', gameid: req.params.id});
+  res.render('game', {
+    title:'Caten',
+    menu: [{name: 'Home', link: '/'}],
+    gameid: req.params.id
+  });
 });
 app.get('/', function(req, res) {
   res.render('home', {title: 'Settlers of Caten',

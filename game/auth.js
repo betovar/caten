@@ -7,13 +7,10 @@ var db = require('./database.js'),
   twitter = require('passport-twitter').Strategy;
   /*
   google = require('passport-google-oauth').Strategy,
-  facebook = require('passport-facebook').Strategy,
   instagram = require('passport-instagram').Strategy,
   dropbox = require('passport-dropbox').Strategy,
   github = require('passport-github').Strategy,
-  tumblr = require('passport-tumblr').Strategy,
   trello = require('passport-trello').Strategy,
-  flickr = require('passport-flickr').Strategy,
   pocket = require('passport-pocket').Strategy;*/
 
 module.exports = function( app ) {
