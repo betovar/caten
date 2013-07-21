@@ -1,28 +1,33 @@
 extends layout
 
+append head
+  link(rel='stylesheet', href='/stylesheets/game.css')
+  script(src='bootstrap/js/bootstrap.min.js')
+  script(src='/d3/d3.min.js')
+  script(src='swipe/swipe.js')
+block menu
+  .navbar.navbar-inverse
+    .navbar-inner
+      a#game.brand(data-toggle='modal',
+        data-target='#credits',
+        role='button') Caten
+      ul#hand.unstyled.nav.pull-right
+        li: a
+          span.badge.brick 0 
+            i.icon-white.icon-heart(alt='Brick')
+        li: a
+          span.badge.lumber 0 
+            i.icon-white.icon-leaf(alt='Lumber')
+        li: a
+          span.badge.wool 0 
+            i.icon-white.icon-tint(alt='Wool')
+        li: a
+          span.badge.grain 0 
+            i.icon-white.icon-fire(alt='Grain')
+        li: a
+          span.badge.ore 0 
+            i.icon-white.icon-globe(alt='Ore')
 block content
-  .container-fluid
-    .navbar.navbar-inverse
-      .navbar-inner
-        a#game.brand(data-toggle="modal",
-          data-target="#credits",
-          role="button") Caten
-        ul#hand.unstyled.nav.pull-right
-          li: a
-            span.badge.brick 0 
-              i.icon-white.icon-heart(alt='Brick')
-          li: a
-            span.badge.lumber 0 
-              i.icon-white.icon-leaf(alt='Lumber')
-          li: a
-            span.badge.wool 0 
-              i.icon-white.icon-tint(alt='Wool')
-          li: a
-            span.badge.grain 0 
-              i.icon-white.icon-fire(alt='Grain')
-          li: a
-            span.badge.ore 0 
-              i.icon-white.icon-globe(alt='Ore')
   .row-fluid
     .span8.offset2
       svg#board(style="height:100%;",
@@ -57,18 +62,18 @@ block content
   .container-fluid
     .navbar.navbar-inverse
       .navbar-inner
-        ul#controls.unstyled.nav(data-toggle="buttons-radio")
-          li: a(href="#play", onclick="play()",
-            id="devcards", data-placement="top") Play
-          li: a(href="#trade", id="trading") Trade
-          li: a(href="#build", id="buying") Build
-          li: a(href="#pass", onclick="passdice()") Pass
+        ul#commands.unstyled.nav
+          li: a(href='#play', id='devcards') Play
+          li: a(href='#trade', id='trading') Trade
+          li: a(href='#build', id='buying') Build
+          li: a(href='#pass', id='endturn') Pass
         form#chat.navbar-search.pull-right.hidden-phone
-          input.search-query(type="text",placeholder="Chat")
-  include credits
-  link(rel='stylesheet', href='/stylesheets/default.css')
-  //-script $('#devcards').tooltip('toggle');
-  //-script(src='/socket.io/socket.io.js')
-  //-script(src='/gamelogic.js')
-  //-script $('#username').append('<i alt="dealer" class="icon icon-hand-right"></i>')
-  script $(document).ready(function(){ $('#slider').carousel({ interval:2000, pause:'hover' }); });
+          input.search-query(type='text',placeholder='Chat')
+block license
+block scripts
+  script(src='/socket.io/socket.io.js')
+  script(src='/gamelogic.js')
+  script.
+    $(document).ready(function(){
+      $('#slider').carousel({ interval:2000, pause:'hover' });
+    });

@@ -3,7 +3,7 @@ var socket = io.connect();
 
 socket.of('game').on('connect', function() {
 	socket.of('game').emit('join', gameid);
-}); 
+});
 
 socket.of('game').in(gameid).on('joined', function(data) {
 	console.log(data);
@@ -44,7 +44,7 @@ $('body').tooltip({
 });
 
 socket.of('game').in(gameid).on('start', function(data) {
-//render all hexes 
+//render all hexes
 	var hexes = d3.select("#hexes").selectAll("g")
 		.data(data.grid)
 		.enter()
@@ -100,7 +100,7 @@ socket.of('game').in(gameid).on('start', function(data) {
 			.attr("transform", function(d) {
 				return "rotate("+(-1*d.angle)+", "+ctrrot+",0)"
 			})
-			.text(function(d) { 
+			.text(function(d) {
 				if (d.flavor === "generic") { return "3:1"; }
 				else { return "2:1"; }
 			});
@@ -113,17 +113,17 @@ socket.of('game').in(gameid).on('start', function(data) {
 });
 
 function roll() {
-	socket.in(gameid).emit('roll'); 
+	socket.in(gameid).emit('roll');
 }
 
 function buy(item) {
-	socket.in(gameid).emit('buy', item ); 
+	socket.in(gameid).emit('buy', item );
 }
 
 function offer(cards) {
-	socket.in(gameid).emit('offer', cards ); 
+	socket.in(gameid).emit('offer', cards );
 }
 
 function pass() {
-	socket.in(gameid).emit('pass'); 
+	socket.in(gameid).emit('pass');
 }

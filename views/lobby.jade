@@ -1,7 +1,9 @@
 extends layout
 
+append head
+	script(src="/socket.io/socket.io.js")
+
 block content
-	//script(src="/socket.io/socket.io.js")
 	.row-fluid
 		.span12
 			h1 Welcome to Caten!
@@ -11,25 +13,15 @@ block content
 				p This is the game staging area. Start your own game or join one.
 				p Remember to login if you haven't already done so.
 	.row-fluid
-		.span3
-			button.btn.btn-primary.pull-right JOIN
-			ul.unstyled
-				li: span.badge.badge-success Alice
-				li:	span.badge.badge-inverse Bob
-				li:	span.badge ?
-				li:	span.badge.badge-inverse Dave
-	#junk
-		ul.unstyled
-			li #{board}
-			li #{player}
-			li #{victory}
-			li #{visibility}
-			li #{password}
-			li #{placement}
-			li #{seats}
-			li #{architect}
-			li #{sidekick}
-			li #{sheriff}
-			li #{timer}
+		include samplegame
+		include samplegame
+		include samplegame
+		include samplegame
+		include samplegame
+		include samplegame
+		include samplegame
+		include samplegame
+
+block scripts
 	script.
-		var socket = io.connect('http://localhost');
+		var socket = io.connect();

@@ -2,12 +2,25 @@ doctype 5
 html
 	head
 		title= title
+		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		link(rel='stylesheet', href='/bootstrap/css/bootstrap.css')
 		link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.css')
-		script(src='jquery/jquery-1.9.1.min.js')
-		script(src='bootstrap/js/bootstrap.min.js')
-		script(src='swipe/swipe.js')
-		script(src='/d3/d3.min.js')
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
+		block head
+			script(src='jquery/jquery-1.9.1.min.js')
 	body
-		block content
+		.container-fluid
+			block menu
+				.masthead
+					ul.nav.nav-pills.pull-right
+						each item in menu
+							li: a(href='#{item.link}') #{item.name}
+					h3.muted
+						a.brand(data-toggle="modal",
+							data-target="#credits",
+							role="button") #{title}
+					hr
+			block content
+			block license
+				include license
+		block scripts
+		include credits

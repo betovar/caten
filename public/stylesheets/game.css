@@ -41,7 +41,7 @@ text { text-align:center; text-anchor:middle;
 	width:20%; list-style:none;
 }
 
-@media (max-width: 320px) {
+@media (max-width: 480px) {
 #controls { width:100%; }
-#hand li a { margin:10px; }
+#hand li a { padding:10px; }
 }

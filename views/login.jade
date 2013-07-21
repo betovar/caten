@@ -1,20 +1,28 @@
 extends layout
 
+block menu
+  .masthead
+    ul.nav.nav-pills.pull-right
+      li: a(href='/') Home
+    h3.muted
+      a.brand(data-toggle="modal",
+        data-target="#credits",
+        role="button") #{title}
+    hr
+
 block content
-  .container-narrow.span4.offset4
-    .masthead
-        ul.nav.nav-pills.pull-right
-          li: a(href='/') Home
-        h3.muted
-          a.brand(data-toggle="modal",
-            data-target="#credits",
-            role="button") #{title}
-    ul.unstyled
-      li: a.btn.btn-block(href="/auth/twitter")
+  .row-fluid
+    .span4.offset4
+      a.btn.btn-block(href="/auth/twitter")
         img(src="/auth/sign-in-with-twitter-link.png") Twitter
-      li: a.btn.btn-block(href="/auth/instagram", disabled="")
-        img(src="") Instagram
-      li: a.btn.btn-block(href="/auth/facebook", disabled="")
-        img(src="") Facebook
-      li: a.btn.btn-block(href="/auth/google", disabled="")
-        img(src="") Google
+      a.btn.btn-block(href="/auth/dropbox", disabled="") Dropbox
+      a.btn.btn-block(href="/auth/github", disabled="") Github
+      a.btn.btn-block(href="/auth/instagram", disabled="") Instagram
+      a.btn.btn-block(href="/auth/facebook", disabled="") Facebook
+      a.btn.btn-block(href="/auth/google", disabled="") Google
+      a.btn.btn-block(href="/auth/tumblr", disabled="") Tumblr
+      a.btn.btn-block(href="/auth/flickr", disabled="") Flickr
+      a.btn.btn-block(href="/auth/pocket", disabled="") Pocket
+
+block license
+  include license
