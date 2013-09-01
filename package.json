@@ -4,7 +4,7 @@
     "name": "Brian E Tovar",
     "email": "betovar@leaflabs.com"
   },
-  "version": "0.0.9",
+  "version": "0.0.9-1",
   "private": "true",
   "homepage": "http://betovar.caten.jit.su",
   "repository": {
@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "express": "3.0.x",
-    "jade": "0.33.x",
+    "jade": "0.35.x",
     "redis": "0.8.x",
     "socket.io": "0.9.x",
     "passport": "0.1.x",

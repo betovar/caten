@@ -9,8 +9,6 @@ database.auth(process.env.REDIS_PASS, function (err) {
 });
 
 database.on('ready', function () {
-	console.log('db is ready');
-	database.info(function (err, reply) {
-        console.log(reply);
-    });
+	console.log('database is ready');
+	//database.info(function (err, reply) { console.log(reply); });
 });

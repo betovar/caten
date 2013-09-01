@@ -3,7 +3,7 @@ extends layout
 append head
   link(href='/game.css', rel='stylesheet')
   link(href='/swipe/style.css', rel='stylesheet')
-  style |
+  style.
     .swipe {
       overflow: hidden;
       visibility: hidden;
@@ -30,7 +30,7 @@ block menu
       ul.nav.navbar-nav.navbar-right
         each item in menu
           li: a(href='#{item.link}') #{item.name}
-  #hand.btn-toolbar.col-xs-6.col-xs-offset-3
+  #hand.btn-toolbar.col-sm-4.col-sm-offset-4
     .btn-group.btn-group-justified
       a.btn.badge.brick 0 
           span.glyphicon.glyphicon-heart(alt='Brick')
