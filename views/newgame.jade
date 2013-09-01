@@ -3,125 +3,122 @@ extends layout
 block content
   .row
     .container
-      form.form-horizontal(role='form', action='/new', method='post')
-        .form-group.col-sm-8.col-sm-offset2
-          label(for='size'): a.unstyled(data-toggle='tooltip', data-placement='top',
+      form.form-horizontal.col-sm-8.col-sm-offset2(role='form', action='/new', method='post')
+        .form-group
+          label.control-label.col-sm-4(for='size'): a.unstyled(data-toggle='tooltip', data-placement='top',
             data-original-title='Both game sizes are free to play!',
             style='text-decoration:none;') Board Size
-          .radio
-            label
+          .col-sm-6
+            label.radio
               input(type='radio', name='size', value='Basic', checked='')
               | Basic
-          .radio
-            label
+            label.radio
               input(type='radio', name='size', value='Expansion')
               | Expansion
-        .form-group.col-sm-8.col-sm-offset2
-          label(for='count'): a.unstyled(data-toggle='tooltip', data-placement='top',
+        .form-group
+          label.control-label.col-sm-4(for='count'): a.unstyled(data-toggle='tooltip', data-placement='top',
             data-original-title='Basic games can host 3 or 4 players, while expanded games can have 5 or 6',
             style='text-decoration:none;') Player Count
-          .radio
-            label
+          .col-sm-6
+            label.radio
               input(type='radio', name='count', value='Large', checked='')
               | Large
-          .radio
-            label
+            label.radio
               input(type='radio', name='count', value='Small')
               | Small
-        .form-group.col-sm-8.col-sm-offset2
-          label(for='victory'): a.unstyled(data-toggle='tooltip', data-placement='top',
+        .form-group
+          label.control-label.col-sm-4(for='victory'): a.unstyled(data-toggle='tooltip', data-placement='top',
             data-original-title='Only games with small player counts can choose to play for an extended objective',
             style='text-decoration:none;') Victory Condition
-          .radio
-            label
+          .col-sm-6
+            label.radio
               input(type='radio', name='victory', value='Standard', checked='')
               | Standard
-          .radio
-            label
+            label.radio
               input(type='radio', name='victory', value='Extended')
               | Extended
-        .form-group.col-sm-8.col-sm-offset2
-          label(for='visibility'): a.unstyled(data-toggle='tooltip', data-placement='top',
+        .form-group
+          label.control-label.col-sm-4(for='visibility'): a.unstyled(data-toggle='tooltip', data-placement='top',
             data-original-title='Choose to place this game in the lobby or hide it from prying eyes',
             style='text-decoration:none;') Visibility Level
-          .radio
-            label
+          .col-sm-6
+            label.radio
               input(type='radio', name='visibility', value='Public', checked='')
               | Public
-          .radio
-            label
+            label.radio
               input(type='radio', name='visibility', value='Private', disabled='')
               | Private
-        .form-group.col-sm-8.col-sm-offset2
-          label(for='password'): a.unstyled(data-toggle='tooltip', data-placement='top',
+        .form-group
+          label.control-label.col-sm-4(for='password'): a.unstyled(data-toggle='tooltip', data-placement='top',
             data-original-title='A simple password can secure public and private games alike',
             style='text-decoration:none;') Password Protection
-          .controls
+          .col-sm-6
             input.form-control#password(name='password', type='text', placeholder='password')
-        .form-group.col-sm-8.col-sm-offset2
-          label(for='placement'): a.unstyled(data-toggle='tooltip', data-placement='top',
+        .form-group
+          label.control-label.col-sm-4(for='placement'): a.unstyled(data-toggle='tooltip', data-placement='top',
             data-original-title='Determine the order during the initial building rounds, if distinct from seats',
             style='text-decoration:none;') Placement Order
-          .controls
+          .col-sm-6
             select.form-control#placement(name='placement')
               option(selected='') Randomized
               option Ordered by Join
               option Reverse by Join
               option Ordered by Seat
-        .form-group.col-sm-8.col-sm-offset2
-          label(for='sequence'): a.unstyled(data-toggle='tooltip', data-placement='top',
-            data-original-title='',
+        .form-group
+          label.control-label.col-sm-4(for='sequence'): a.unstyled(data-toggle='tooltip', data-placement='top',
+            data-original-title='The seats at the table go clockwise',
             style='text-decoration:none;') Seat Sequence
-          .controls
+          .col-sm-6
             select.form-control#sequence(name='sequence')
               option(selected='') Randomized
               option Ordered by Join
               option Reverse by Join
               option Select
-        .form-group.col-sm-8.col-sm-offset2
-          label(for='srchitect'): a.unstyled(data-toggle='tooltip', data-placement='top',
+        .form-group
+          label.control-label.col-sm-4(for='srchitect'): a.unstyled(data-toggle='tooltip', data-placement='top',
             data-original-title='The game designer can be mad as a hatter at times',
             style='text-decoration:none;') Map Architect
-          .controls
+          .col-sm-6
             select.form-control#architect(name='architect')
               option Beginner
               option Classic
               option(selected='') Random
               option Maverick
               option Full Metal Jacket
-        .form-group.col-sm-8.col-sm-offset2
-          label(for='sidekick'): a.unstyled(data-toggle='tooltip', data-placement='top',
+        .form-group
+          label.control-label.col-sm-4(for='sidekick'): a.unstyled(data-toggle='tooltip', data-placement='top',
             data-original-title='Performs menial tasks for you, like raising an alert on your turn, or by rolling automatically for you',
             style='text-decoration:none;') Turn Sidekick
-          .controls
+          .col-sm-6
             select.form-control#sidekick(name='sidekick')
               option Alert
               option(selected='') Automatic
               option Disable
-        .form-group.col-sm-8.col-sm-offset2
-          label(for='sheriff'): a.unstyled(data-toggle='tooltip', data-placement='top',
+        .form-group
+          label.control-label.col-sm-4(for='sheriff'): a.unstyled(data-toggle='tooltip', data-placement='top',
             data-original-title='The lawman of turn managment has varying degrees of enforcement',
             style='text-decoration:none;') Turn Sheriff
-          .controls
+          .col-sm-6
             select.form-control#sheriff(name='sheriff')
               option(selected='') None
               option Alert
               option Voting
               option Strict
-        .form-group.col-sm-8.col-sm-offset2
-          label(for='timer'): a.unstyled(data-toggle='tooltip', data-placement='top',
+        .form-group
+          label.control-label.col-sm-4(for='timer'): a.unstyled(data-toggle='tooltip', data-placement='top',
             data-original-title='Time until the sheriff starts enforcing the law',
             style='text-decoration:none;') Turn Timer
-          .controls
+          .col-sm-6
               input.form-control#timer(name='timer', type='tel', value='0')
               select.form-control#timerunits(name='units')
                 option seconds
                 option(selected='') minutes
                 option hours
                 option days
-        .form-group.col-sm-8.col-sm-offset2
-          label Ready? Set?
-          input#readyset.btn.btn-info.btn-block(name='submit', type='submit', value='Go!') Go!
+        .form-group
+          label.control-label.col-sm-4(for='readyset') Ready? Set?
+          .col-sm-6
+            input#readyset.btn.btn-info.btn-block(name='submit', type='submit', value='Go!') Go!
 
 append scripts
   script.

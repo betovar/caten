@@ -72,7 +72,7 @@ app.get('/account', function(req, res) {
     menu: [
       {name: 'Lobby', link: '/lobby'},
       {name: 'Home', link: '/'}],
-    user: req.user
+    user: {name:'brianetovar'}//req.user
   });
 });
 app.get('/lobby', function(req, res) {
