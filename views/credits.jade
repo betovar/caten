@@ -1,16 +1,22 @@
-#credits.modal.hide.fade
-  .modal-header: h3(align='left') Credits
-  .modal-body
-    p Thanks to Twitter for their 
-      a(href="http://twitter.github.com/bootstrap") Bootstrap 
-      | library and 
-      a(href="http://glyphicons.com") Glyphicons 
-      | for icon support inside of Bootstrap.
-    p And a special thanks to 
-      a(href="http://twitter.com/mbostock") @mbostock 
-      | for his 
-      a(href="http://github.com/mbostock/d3") D3 
-      | library
-    p The source code is hosted at 
-      a(href="http://www.github.com/betovar/caten#license") Github
-  .modal-footer: button.btn(data-dismiss="modal",aria-hidden="true") Dismiss
+#credits.modal.fade(role='dialog', aria-labelledby='', aria-hidden='true')
+  .modal-dialog
+    .modal-content
+      .modal-header
+        button.close(type='button', data-dismiss='modal', aria-hidden='true')
+          | &times;
+        h4.modal-title Credits
+      .modal-body
+        p Thanks to Twitter for their 
+          a(href='http://twitter.github.com/bootstrap') Bootstrap 
+          | library and 
+          a(href='http://glyphicons.com') Glyphicons 
+          | for icon support inside of Bootstrap.
+        p And a special thanks to 
+          a(href='http://twitter.com/mbostock') @mbostock 
+          | for his 
+          a(href='http://github.com/mbostock/d3') D3 
+          | library
+        p The source code is hosted at 
+          a(href='http://www.github.com/betovar/caten#license') Github
+      .modal-footer
+        button.btn.btn-primary(type='button', data-dismiss='modal') Dismiss

@@ -1,5 +1,5 @@
-var socket = io.connect();
-	, gameid = document.URL.split("/")[4];
+var socket = io.connect(),
+	gameid = document.URL.split("/")[4];
 
 socket.of('game').on('connect', function() {
 	socket.of('game').emit('join', gameid);

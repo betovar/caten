@@ -98,55 +98,63 @@ var expansion = {
     'city': "-15,-5 -15,-15 0,-25 15,-15 15,-5 30,-5 30,15 -30,15 -30,-5"
   };
 
-exports.newBoard = function( gameid ) {
-  db.hmset(gameid+':board',
-    'id', gameid,
+exports.what = function( gameid ) {
+  if (!db.exists('how:form:'+gameid)) {
+    return new Error("Form doesn't exist");
+  }
+  var how = hmgetall('how:form:'+gameid);
+  db.hmset('what:form:'+gameid,
     'start', Date(),
+    'chat', "Keyboard", //FIXME: v1.0
+    'title', "Caten", //FIXME v1.0
     'locale', "en" //FIXME: to be set by user record
   );
-  var f = db.hmget(gameid+':form', board);
-  switch (f.board) {
+  //hexes, chits, stack, harbors
+  switch (how.size) {
   case 'expansion':
-    createSequence(gameid, 'hexes', 30);
+    if (how.profile)createSequence(gameid, 'hexes', 30);
     createSequence(gameid, 'chits', 28);
     createSequence(gameid, 'stack', 34);
-    //createSequence(gameid, 'ports', 11);
-    //createSequence(gameid, 'harbors', 11);
+    createSequence(gameid, 'harbors', 11);
     break;
   default:
     createSequence(gameid, 'hexes', 19);
     createSequence(gameid, 'chits', 18);
     createSequence(gameid, 'stack', 25);
+    createSequence(gameid, 'harbors', 9);
     break;
   }
-  //seat ordering
-  if (f.seat == 'ordered by join') {
-    createSequence(gameid, 'seatorder', f.playercount);
+  //seat sequence
+  switch (how.sequence) {
+    case "Randomized":
+      createSequence(gameid, 'sequence', how.count);
+      break;
+    case "Order by Join":
+    case "Reverse by Join":
+    case "Select":
+    default:
+      db.lpush('what:sequence:'+gameid, range(how.count) );
+      break;
   }
-  //port configure
-  var port_count = 9;
-  if (f.board == 'expansion') { port_count = 11; }
-  createSequence(gameid, 'ports', port_count);
-  createSequence(gameid, 'harbors', port_count);
 };
 
-exports.newForm = function( form ) {
+exports.how = function( form ) {
   var gameid = newGameID();
-  if (db.exists(gameid)) { return new Error("Game already exists"); }
-  db.hmset(gameid+':form',
-    'board', form.board,
-    'player', form.player,
+  if (db.exists('how:form'+gameid)) {
+    return new Error("Game already exists");
+  }
+  db.hmset('how:form:'+gameid,
+    'size', form.size,
+    'count', form.count,
     'victory', form.victory,
     'visibility', form.visibility,
     'password', form.password,
     'placement', form.placement,
-    'seats', form.seats,
+    'sequence', form.sequence,
     'architect', form.architect,
     'sidekick', form.sidekick,
     'sheriff', form.sheriff,
     'timer', form.timer,
-    'chat', "Keyboard",
-    'title', "Caten"
   );
 };
 
@@ -160,18 +168,6 @@ function newGameID() {
   });
 }
 
-function loadBoard( gameid ) {
-  var game = {},
-    hexes = db.hmget(gameid+':hexes');
-  for (var dsrt=0, len=hexes.length, i=0; i<len; i++) {
-    game.board[i]['resource'] = hexes[i];
-    if (hexes[i] != 'desert') game.board[i]['chit'] = chits[i-dsrt];
-    else dsrt += 1;
-    if (chits[i-dsrt] == 6) game.board[i]['color'] = "maroon";
-    if (chits[i-dsrt] == 8) game.board[i]['color'] = "maroon";
-  }
-}
-
 function createSequence( gameid, key, length ) {
   if (length === undefined) {
     console.log("cannot createSequence, length undefined");
@@ -181,6 +177,14 @@ function createSequence( gameid, key, length ) {
     "maximum": length-1
   }, function(err, data) {
     if (err) throw err;
-    db.lpush(gameid+':'+key,data);
+    db.lpush('what:'+key+':'+gameid, data);
   });
+}
+
+function range( n ) {
+  var arr = new Array(n);
+  for (var i=0; i<n; i++ ) {
+    arr.push(i);
+  }
+  return arr;
 }

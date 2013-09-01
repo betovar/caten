@@ -1,4 +1,4 @@
-{ 
+{
 	"tile": [
 		{ "x": -173.2, "y": 300, "chit": 5, "resource": "quarry" },
 		{ "x": 0, "y": 300, "chit": 2, "resource": "fields" },

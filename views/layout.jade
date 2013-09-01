@@ -1,28 +1,29 @@
 doctype 5
-html
-	head
-		title= title
-		meta(name="viewport", content="width=device-width, initial-scale=1.0")
-		link(rel='stylesheet', href='/bootstrap/css/bootstrap.css')
-		link(rel='stylesheet', href='/bootstrap/css/bootstrap-responsive.css')
-		block head
-			script(src='jquery/jquery-1.9.1.min.js')
-	body
-		.container-fluid
-			block menu
-				.masthead
-					ul.nav.nav-pills.pull-right
-						each item in menu
-							li: a(href='#{item.link}') #{item.name}
-					h3.muted
-						a.brand(data-toggle="modal", data-target="#credits", role="button") #{title}
-					hr
-			block content
-			block license
-				.row-fluid
-					hr
-					p.muted.credit
-						a.pull-right(href='http://www.github.com/betovar/caten#license',
-						style='text-decoration:none;') © Brian Tovar 2013
-		block scripts
-		include credits
+html(lang='en')
+  head
+    block head
+      title= title
+      meta(name='viewport', content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no')
+      link(href='/bootstrap/css/bootstrap.css', rel='stylesheet', media='screen')
+      script(src='jquery/jquery.js')
+      //-script(src='//code.jquery.com/jquery.js')
+  body
+    .container
+      block menu
+        .header
+          ul.nav.nav-pills.pull-right
+            each item in menu
+              li: a(href='#{item.link}') #{item.name}
+          h3: a.brand.text-muted(href='#', data-toggle='modal', data-target='#credits',
+            style='text-decoration:none;', role='button') #{title}
+      block content
+      block license
+        .footer
+          p.text-muted
+            a.pull-right(href='http://www.github.com/betovar/caten#license',
+            style='text-decoration:none;') © Brian Tovar 2013
+    block scripts
+      script(src='bootstrap/js/bootstrap.js')
+      script.
+        $('#credits').modal({ keyboard: false });
+    include credits

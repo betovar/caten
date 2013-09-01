@@ -1,18 +1,8 @@
 extends layout
 
-block menu
-  .masthead
-    ul.nav.nav-pills.pull-right
-      li: a(href='/') Home
-    h3.muted
-      a.brand(data-toggle="modal",
-        data-target="#credits",
-        role="button") #{title}
-    hr
-
 block content
-  .row-fluid
-    .span4.offset4
+  .row
+    .col-md-4.col-md-offset-4
       a.btn.btn-block(href='/auth/twitter')
         img(src='/auth/sign-in-with-twitter-link.png') Twitter
       a.btn.btn-block(href='/auth/dropbox', disabled='') Dropbox

@@ -1,27 +1,26 @@
 extends layout
 
 append head
-	script(src="/socket.io/socket.io.js")
+	//-script(src='/socket.io/socket.io.js')
 
 block content
-	.row-fluid
-		.span12
-			h1 Welcome to Caten!
-			.alert.alert-info.span6.offset3
-				button.close(type="button",data-dismiss="alert")
+	.row
+		.col-sm-12
+			.alert.alert-info.alert-dismissable.col-sm-6.col-sm-offset-3
+				button.close(type='button',data-dismiss='alert', aria-hidden='true')
 					&times;
-				p This is the game staging area. Start your own game or join one.
-				p Remember to login if you haven't already done so.
-	.row-fluid
-		include samplegame
-		include samplegame
-		include samplegame
-		include samplegame
+				p: strong  Welcome to the Lobby!
+				p This is the game staging area. You can still 
+					a.alert-link(href='#') start your own game
+					|  or join an existing one. Remember to 
+					a.alert-link(href='#') login
+					|  if you haven't already.
+	.row
 		include samplegame
 		include samplegame
 		include samplegame
 		include samplegame
 
-block scripts
-	script.
+append scripts
+	//-script.
 		var socket = io.connect();

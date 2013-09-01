@@ -1,35 +1,50 @@
 extends layout
 
 append head
-  link(rel='stylesheet', href='/stylesheets/game.css')
-  script(src='bootstrap/js/bootstrap.min.js')
-  script(src='/d3/d3.min.js')
-  script(src='swipe/swipe.js')
+  link(href='/game.css', rel='stylesheet')
+  link(href='/swipe/style.css', rel='stylesheet')
+  style |
+    .swipe {
+      overflow: hidden;
+      visibility: hidden;
+      position: relative;
+    }
+    .swipe-wrap {
+      overflow: hidden;
+      position: relative;
+    }
+    .swipe-wrap > div {
+      float:left;
+      width:100%;
+      position: relative;
+    }
 block menu
-  .navbar.navbar-inverse
-    .navbar-inner
-      a#game.brand(data-toggle='modal',
-        data-target='#credits',
-        role='button') Caten
-      ul#hand.unstyled.nav.pull-right
-        li: a
-          span.badge.brick 0 
-            i.icon-white.icon-heart(alt='Brick')
-        li: a
-          span.badge.lumber 0 
-            i.icon-white.icon-leaf(alt='Lumber')
-        li: a
-          span.badge.wool 0 
-            i.icon-white.icon-tint(alt='Wool')
-        li: a
-          span.badge.grain 0 
-            i.icon-white.icon-fire(alt='Grain')
-        li: a
-          span.badge.ore 0 
-            i.icon-white.icon-globe(alt='Ore')
+  nav.navbar.navbar-inverse(role='navigation')
+    .navbar-header
+      button.navbar-toggle(type='button', data-toggle='collapse', data-target='.test')
+        span.icon-bar
+        span.icon-bar
+        span.icon-bar
+      a.navbar-brand(data-toggle='modal', data-target='#credits', role='button') #{title}
+    .test.collapse.navbar-collapse
+      ul.nav.navbar-nav.navbar-right
+        each item in menu
+          li: a(href='#{item.link}') #{item.name}
+  #hand.btn-toolbar.col-xs-6.col-xs-offset-3
+    .btn-group.btn-group-justified
+      a.btn.badge.brick 0 
+          span.glyphicon.glyphicon-heart(alt='Brick')
+      a.btn.badge.lumber 0 
+          span.glyphicon.glyphicon-leaf(alt='Lumber')
+      a.btn.badge.wool 0 
+          span.glyphicon.glyphicon-tint(alt='Wool')
+      a.btn.badge.grain 0 
+          span.glyphicon.glyphicon-fire(alt='Grain')
+      a.btn.badge.ore 0 
+          span.glyphicon.glyphicon-globe(alt='Ore')
 block content
-  .row-fluid
-    .span8.offset2
+  .row
+    .col-md-8
       svg#board(style="height:100%;",
         type="image/svg+xml",
         viewBox="-555 -481 1110 962",
@@ -40,13 +55,13 @@ block content
         g#hexes
         g#roads
         g#settlements
-  .row-fixed.carousel-seats
-    ul.unstyled
-      li: span.badge Seat1
-      li: span.badge Seat2
-      li: span.badge Seat3
-      li: span.badge Seat4
-  .row-fixed
+  .row
+    .btn-toolbar
+      .btn-group.btn-group-justified
+        a.btn.badge(type='button') Seat1
+        a.btn.badge(type='button') Seat2
+        a.btn.badge(type='button') Seat3
+        a.btn.badge(type='button') Seat4
     #slider.carousel.slide
       .carousel-inner
         #northwest.profile(data-index='0').item.active
@@ -59,21 +74,22 @@ block content
           include profile
       a.carousel-control.left(href='slider', data-slide='prev') &lsaquo;
       a.carousel-control.right(href='slider', data-slide='next') &rsaquo;
-  .container-fluid
-    .navbar.navbar-inverse
-      .navbar-inner
-        ul#commands.unstyled.nav
-          li: a(href='#play', id='devcards') Play
-          li: a(href='#trade', id='trading') Trade
-          li: a(href='#build', id='buying') Build
-          li: a(href='#pass', id='endturn') Pass
-        form#chat.navbar-search.pull-right.hidden-phone
-          input.search-query(type='text',placeholder='Chat')
+  .row
+    .btn-toolbar
+      .btn-group.btn-group-lg.btn-group-justified.dropup
+        a.btn.btn-default(type='button', href='#play', id='devcards') Play
+        a.btn.btn-default(type='button', href='#trade', id='trading') Trade
+          //-ul.dropdown-menu(role='menu')
+            li: a(href='#') Offer
+            li: a(href='#') Accept
+            li: a(href='#') Reject
+        a.btn.btn-default(type='button', href='#build', id='buying') Build
+        a.btn.btn-default(type='button', href='#pass', id='endturn') Pass
 block license
-block scripts
-  script(src='/socket.io/socket.io.js')
-  script(src='/gamelogic.js')
+append scripts
+  script(src='/d3/d3.js')
+  script(src='swipe/swipe.js')
+  //-script(src='/socket.io/socket.io.js')
+  //-script(src='/gamelogic.js')
   script.
-    $(document).ready(function(){
-      $('#slider').carousel({ interval:2000, pause:'hover' });
-    });
+    $(document).ready(function(){ $('#slider').carousel({ interval:2000, pause:'hover' }); });

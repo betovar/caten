@@ -1,11 +1,10 @@
 extends layout
 
-append head
-	link(rel='stylesheet', href='stylesheets/home.css')
 block content
 	.jumbotron
-		h1 Welcome!
-		p.lead This is the frontpage for the Caten project.<br>Look around for a brief while, then join in on the fun!
-		.btn-toolbar
-			a.btn.btn-large.btn-success(href='/demo') Demo
-			a.btn.btn-large.btn-primary(href='/new') New game
+		.container
+			h1 Welcome!
+			p.lead This is the frontpage for the Caten project.<br>Look around for a brief while, then join in on the fun!
+			p.btn-toolbar
+				a.btn.btn-large.btn-primary(href='/new') New game
+				a.btn.btn-large.btn-success(href='/demo') Demo

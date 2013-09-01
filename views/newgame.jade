@@ -11,10 +11,10 @@ block content
           style='text-decoration:none;') Board Size
         .controls
           label.radio.inline
-            input(type='radio', name='board', value='Basic', checked='')
+            input(type='radio', name='size', value='Basic', checked='')
             | Basic
           label.radio.inline
-            input(type='radio', name='board', value='Expansion')
+            input(type='radio', name='size', value='Expansion')
             | Expansion
       .control-group
         label.control-label: a.unstyled(data-toggle='tooltip', data-placement='top',
@@ -22,10 +22,10 @@ block content
           style='text-decoration:none;') Player Count
         .controls
           label.radio.inline
-            input(type='radio', name='players', value='Large', checked='')
+            input(type='radio', name='count', value='Large', checked='')
             | 4 or 6
           label.radio.inline
-            input(type='radio', name='players', value='Small')
+            input(type='radio', name='count', value='Small')
             | 3 or 5
       .control-group
         label.control-label: a.unstyled(data-toggle='tooltip', data-placement='top',
@@ -70,7 +70,7 @@ block content
           data-original-title='',
           style='text-decoration:none;') Seat Sequence
         .controls
-          select#seatsequence.span3(name='seats')
+          select#seatsequence.span3(name='sequence')
             option(selected='') Randomized
             option Ordered by Join
             option Reverse by Join
