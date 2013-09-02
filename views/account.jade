@@ -5,43 +5,49 @@ block content
     .container
       form.form-horizontal.col-sm-10.col-sm-offset2(role='form', action='/account', method='post')
         .form-group
-          label.control-label.col-sm-4: a.unstyled(data-toggle='tooltip', data-placement='left',
-            data-original-title='Your public facing user screen_name',
+          label.control-label.col-sm-4: a.unstyled(data-toggle='tooltip',
+            data-placement='left',
+            data-original-title='Your public facing user name',
             style='text-decoration:none;') Screen Name
+          .col-sm-6
+            p.form-control-static #{user.screen_name}
+        .form-group
+          label.control-label.col-sm-4: a.unstyled(data-toggle='tooltip',
+            data-placement='left',
+            data-original-title='Your public facing user name',
+            style='text-decoration:none;') Real Name
           .col-sm-6
             p.form-control-static #{user.name}
         .form-group
-          label.control-label.col-sm-4: a.unstyled(data-toggle='tooltip', data-placement='left',
-            data-original-title='Your public facing user screen_name',
-            style='text-decoration:none;') Real Name
-          .col-sm-6
-            p.form-control-static Brian E Tovar
-        .form-group
-          label.control-label.col-sm-4: a.unstyled(data-toggle='tooltip', data-placement='left',
+          label.control-label.col-sm-4: a.unstyled(data-toggle='tooltip',
+            data-placement='left',
             data-original-title='Your public facing user identifier',
             style='text-decoration:none;') ID String
           .col-sm-6
-            p.form-control-static 3214658
+            p.form-control-static #{user.id_str}
         .form-group
-          label.control-label.col-sm-4: a.unstyled(data-toggle='tooltip', data-placement='left',
+          label.control-label.col-sm-4: a.unstyled(data-toggle='tooltip',
+            data-placement='left',
             data-original-title='Your public facing user identifier',
             style='text-decoration:none;') Location
           .col-sm-6
-            p.form-control-static San Francisco, CA
+            p.form-control-static #{user.location}
         .form-group
-          label.control-label.col-sm-4: a.unstyled(data-toggle='tooltip', data-placement='left',
+          label.control-label.col-sm-4: a.unstyled(data-toggle='tooltip',
+            data-placement='left',
             data-original-title='The native language that the user speaks',
             style='text-decoration:none;') Language
           .col-sm-6
-            p.form-control-static en
+            p.form-control-static #{user.lang}
         .form-group
-          label.control-label.col-sm-4: a.unstyled(data-toggle='tooltip', data-placement='left',
+          label.control-label.col-sm-4: a.unstyled(data-toggle='tooltip',
+            data-placement='left',
             data-original-title='Your public facing user identifier',
             style='text-decoration:none;') Time Zone
           .col-sm-6
-            p.form-control-static Pacific Time (US & Canada)
+            p.form-control-static #{user.time_zone}
 
-        .form-group
+        //-.form-group
           label.control-label.col-sm-4 Save Changes?
           .col-sm-4
             input#readyset.btn.btn-info.btn-block(name='submit', type='submit', value='Update!') Update!

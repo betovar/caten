@@ -4,7 +4,7 @@ var express = require('express'),
   server = require('http').createServer(app),
   path = require('path');
 
-app.configure(function() {
+app.configure(function () {
   app.set('views', path.join(__dirname, './views'));
   app.set('view engine', 'jade');
   app.use(express.static(path.join(__dirname, 'public')));
@@ -18,17 +18,17 @@ app.configure(function() {
   app.use(express.session({ secret: process.env.SESSION_SECRET}));
   app.use(app.router);
 });
-app.configure('development', function() {
+app.configure('development', function () {
   app.use(express.errorHandler({ dumpExceptions: true, showStack: true }));
   Error.stackTraceLimit = Infinity;
   app.set('port', 8080);
   app.set('URI', "http://127.0.0.1:"+app.get('port'));
 });
-app.configure('production', function() {
+app.configure('production', function () {
   app.use(express.errorHandler());
   app.set('URI', "http://"+process.env.SUBDOMAIN+".jit.su");
 });
-server.listen(app.get('port'), function() {
+server.listen(app.get('port'), function () {
   console.log('Express server running in %s mode on port %s',
     app.get('env'), app.get('port')
   );
@@ -37,51 +37,51 @@ server.listen(app.get('port'), function() {
 
 // Authentication
 require('./game/auth.js')(app);
-var passport = require('passport');
+
 
 // Route Definitions
+var passport = require('passport');
 app.get('/auth/twitter/callback',
   //NB: https://dev.twitter.com/issues/824
-  passport.authenticate('twitter', { failureRedirect: '/login' }),
-  function(req, res) {
-    console.log(req.query);
-    res.redirect('/account');
-  });
+  passport.authenticate('twitter', {
+    successRedirect: '/account',
+    failureRedirect: '/login'
+  })
+);
 app.get('/auth/twitter', passport.authenticate('twitter'));
-app.get('/login', function(req, res) {
+app.get('/login', function (req, res) {
   res.render('login', {
     title: 'Login',
     menu: [{name: 'Home', link: '/'}]
   });
 });
-app.post('/login',
-  passport.authenticate('twitter'),
-  function(req, res) {
-    // If this function gets called, authentication was successful.
-    // `req.user` contains the authenticated user.
-    res.redirect('/account');
-  });
-app.get('/logout', function(req, res) {
+app.post('/login', passport.authenticate('twitter'), function (req, res) {
+  // If this function gets called, authentication was successful.
+  // `req.user` contains the authenticated user.
+  res.redirect('/account');
+});
+app.get('/logout', function (req, res) {
   //req.session = null;
   req.logout();
   res.redirect('/');
 });
-app.get('/account', function(req, res) {
+app.get('/account', passport.authenticate('twitter'), function (req, res) {
   res.render('account', {
     title: 'User Account',
     menu: [
       {name: 'Lobby', link: '/lobby'},
-      {name: 'Home', link: '/'}],
-    user: {name:'brianetovar'}//req.user
+      {name: 'Host', link: '/new'},
+      {name: 'Account', link: '/account'} ],
+    user: req.user
   });
 });
-app.get('/lobby', function(req, res) {
+app.get('/lobby', function (req, res) {
   res.render('lobby', {
     title: 'Lobby',
     menu: [{name: 'Home', link: '/'}]
   });
 });
-app.get('/new', function(req, res) {
+app.get('/new', function (req, res) {
   res.render('newgame', {
     title: 'New Game',
     menu: [
@@ -89,35 +89,35 @@ app.get('/new', function(req, res) {
       {name: 'Home', link: '/'}]
   });
 });
-app.post('/new', function(req, res) {
+app.post('/new', passport.authenticate('twitter'), function (req, res) {
   console.log(req.body);
   res.redirect('/lobby');
 });
-app.get('/home', function(req, res) {
+app.get('/home', function (req, res) {
   res.redirect('/');
 });
-app.get('/:id', function(req, res) {
+app.get('/:id', function (req, res) {
   res.render('game', {
     title:'Caten',
     menu: [{name: 'Home', link: '/'}],
     gameid: req.params.id
   });
 });
-app.get('/', function(req, res) {
+app.get('/', function (req, res) {
   res.render('home', {title: 'Settlers of Caten',
     menu: [{name: 'Login', link: '/login'}] });
 });
 
 
-/*// Socket Handling
+// Socket Handling
 var io = require('socket.io').listen(server);
 io.of('').on('connection', function (socket) {
-  socket.on('join', function(room) {
+  socket.on('join', function (room) {
     socket.join(room);
     io.of('').in(room).emit('joined', {username:socket.id});
     console.log(socket.id + " connected");
   });
-  socket.on('disconnect', function(socket) {
+  socket.on('disconnect', function (socket) {
     io.of('').emit('exited', {username:socket.id});
   });
-});*/
+});

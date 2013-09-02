@@ -1,11 +1,8 @@
 var redis = require('redis');
-
-var database = redis.createClient(process.env.REDIS_PORT, process.env.REDIS_HOST);
+var database = redis.createClient(6379, process.env.REDIS_HOST);
 
 database.auth(process.env.REDIS_PASS, function (err) {
-  if (err) {
-    throw err;
-  }
+  if (err) { throw err; }
 });
 
 database.on('ready', function () {
