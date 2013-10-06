@@ -51,52 +51,52 @@ var expansion = {
   'ocean': ""
 };
 
-  var hexes = [
-    "quarry",  "fields",  "forest",  "quarry",
-    "fields",  "pasture", "fields",  "pasture",
-    "forest",  "hills",   "desert",  "hills",
-    "pasture", "pasture", "forest",  "hills",
-    "quarry",  "forest",  "fields",
-    "desert",  "fields",  "fields",  "forest",
-    "forest",  "pasture", "pasture", "quarry",
-    "quarry",  "hills",   "hills" ],
-  harbor = [
-    "generic", "lumber",  "brick",
-    "generic", "generic", "wool",
-    "generic", "ore",     "grain",
-    "wool",   "generic" ],
-  stack = [
-    {type:"knight"}, {type:"knight"},
-    {type:"knight"}, {type:"knight"},
-    {type:"knight"}, {type:"knight"},
-    {type:"knight"}, {type:"knight"},
-    {type:"knight"}, {type:"knight"},
-    {type:"knight"}, {type:"knight"},
-    {type:"knight"}, {type:"knight"},
-    {type:"progress", title:"monopoly"},
-    {type:"progress", title:"monopoly"},
-    {type:"progress", title:"invention"},
-    {type:"progress", title:"invention"},
-    {type:"progress", title:"construction"},
-    {type:"progress", title:"construction"},
-    {type:"victory", title:"chapel"},
-    {type:"victory", title:"library"},
-    {type:"victory", title:"market"},
-    {type:"victory", title:"palace"},
-    {type:"victory", title:"university"},
-    {type:"knight"}, {type:"knight"},
-    {type:"knight"}, {type:"knight"},
-    {type:"knight"}, {type:"knight"},
-    {type:"progress", title:"monopoly"},
-    {type:"progress", title:"invention"},
-    {type:"progress", title:"construction"} ],
-  shapes = {
-    'port': {cir:{cx:86,r:50},rec:{y:-20,w:50,h:40,rx:3}},
-    'hex': "86.6,50 0,100 -86.6,50 -86.6,-50 0,-100 86.6,-50",
-    'road': "M 0 -35 L 0 35",
-    'town': "-15,15 -15,-5 0,-15 15,-5 15,15",
-    'city': "-15,-5 -15,-15 0,-25 15,-15 15,-5 30,-5 30,15 -30,15 -30,-5"
-  };
+var hexes = [
+  'quarry',  'fields',  'forest',  'quarry',
+  'fields',  'pasture', 'fields',  'pasture',
+  'forest',  'hills',   'desert',  'hills',
+  'pasture', 'pasture', 'forest',  'hills',
+  'quarry',  'forest',  'fields',
+  'desert',  'fields',  'fields',  'forest',
+  'forest',  'pasture', 'pasture', 'quarry',
+  'quarry',  'hills',   'hills' ],
+harbor = [
+  'generic', 'lumber',  'brick',
+  'generic', 'generic', 'wool',
+  'generic', 'ore',     'grain',
+  'wool',   'generic' ],
+stack = [
+  {type:'knight'}, {type:'knight'},
+  {type:'knight'}, {type:'knight'},
+  {type:'knight'}, {type:'knight'},
+  {type:'knight'}, {type:'knight'},
+  {type:'knight'}, {type:'knight'},
+  {type:'knight'}, {type:'knight'},
+  {type:'knight'}, {type:'knight'},
+  {type:'progress', title:'monopoly'},
+  {type:'progress', title:'monopoly'},
+  {type:'progress', title:'invention'},
+  {type:'progress', title:'invention'},
+  {type:'progress', title:'construction'},
+  {type:'progress', title:'construction'},
+  {type:'victory', title:'chapel'},
+  {type:'victory', title:'library'},
+  {type:'victory', title:'market'},
+  {type:'victory', title:'palace'},
+  {type:'victory', title:'university'},
+  {type:'knight'}, {type:'knight'},
+  {type:'knight'}, {type:'knight'},
+  {type:'knight'}, {type:'knight'},
+  {type:'progress', title:'monopoly'},
+  {type:'progress', title:'invention'},
+  {type:'progress', title:'construction'} ],
+shapes = {
+  'port': {cir:{cx:86,r:50},rec:{y:-20,w:50,h:40,rx:3}},
+  'hex': "86.6,50 0,100 -86.6,50 -86.6,-50 0,-100 86.6,-50",
+  'road': "M 0 -35 L 0 35",
+  'town': "-15,15 -15,-5 0,-15 15,-5 15,15",
+  'city': "-15,-5 -15,-15 0,-25 15,-15 15,-5 30,-5 30,15 -30,15 -30,-5"
+};
 
 exports.what = function( gameid ) {
   if (!db.exists('how:form:'+gameid)) {
@@ -105,9 +105,9 @@ exports.what = function( gameid ) {
   var how = hmgetall('how:form:'+gameid);
   db.hmset('what:form:'+gameid,
     'start', Date(),
-    'chat', "Keyboard", //FIXME: v1.0
-    'title', "Caten", //FIXME v1.0
-    'locale', "en" //FIXME: to be set by user record
+    'chat', 'Keyboard', //FIXME: v1.0
+    'title', 'Caten', //FIXME v1.0
+    'locale', 'en' //FIXME: to be set by user record
   );
   //hexes, chits, stack, harbors
   switch (how.size) {
@@ -126,12 +126,12 @@ exports.what = function( gameid ) {
   }
   //seat sequence
   switch (how.sequence) {
-    case "Randomized":
+    case 'Randomized':
       createSequence(gameid, 'sequence', how.count);
       break;
-    case "Order by Join":
-    case "Reverse by Join":
-    case "Select":
+    case 'Order by Join':
+    case 'Reverse by Join':
+    case 'Select':
     default:
       db.lpush('what:sequence:'+gameid, range(how.count) );
       break;
@@ -141,7 +141,7 @@ exports.what = function( gameid ) {
 exports.how = function( form ) {
   var gameid = newGameID();
   if (db.exists('how:form'+gameid)) {
-    return new Error("Game already exists");
+    return new Error('Game already exists');
   }
   db.hmset('how:form:'+gameid,
     'size', form.size,
@@ -154,14 +154,14 @@ exports.how = function( form ) {
     'architect', form.architect,
     'sidekick', form.sidekick,
     'sheriff', form.sheriff,
-    'timer', form.timer,
+    'timer', form.timer
   );
 };
 
 function newGameID() {
   random.strings({ // an 8 character random string
-    "length": 8,
-    "number": 1
+    length: 8,
+    number: 1
   }, function(err, data) {
     if (err) throw err;
     return data;
@@ -173,8 +173,8 @@ function createSequence( gameid, key, length ) {
     console.log("cannot createSequence, length undefined");
   }
   random.sequences({
-    "minimum": 0,
-    "maximum": length-1
+    minimum: 0,
+    maximum: length-1
   }, function(err, data) {
     if (err) throw err;
     db.lpush('what:'+key+':'+gameid, data);

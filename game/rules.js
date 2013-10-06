@@ -1,16 +1,22 @@
-var EventEmitter = require('events').EventEmitter;
+/*
+ * game RULES
+ */
 
-module.exports = new EventEmitter();
 
-function roll() {
+//var EventEmitter = require('events').EventEmitter;
+
+module.exports = {
+  roll: roll
+};
+
+var roll = function () {
   random.integers({
     "number": 2,
     "minimum": 1,
     "maximum": 6,
     "base": 10
-  }, function(err, data) {
+  }, function (err, data) {
     if (err) throw err;
     console.log('%s', data);
-    module.exports.emit('rolled', data);
   });
 };

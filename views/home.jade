@@ -3,9 +3,11 @@ extends layout
 block content
 	.jumbotron
 		.container
-			h1 Welcome!
-			p.lead This is the frontpage for the Caten project.<br>Look around for a brief while, then join in on the fun!
-			p.btn-toolbar
-				a.btn.btn-large.btn-primary(href='/new') New game
-				a.btn.btn-large.btn-success(href='/demo') Demo
-	img(src='/logo.svg', style='display:block; margin:auto;', height='100px')
+			.row
+				.col-sm-10
+					h1 Welcome!
+					img.pull-right(src='/logo.svg', height='150px', style='display:block; margin:auto;')
+					p.lead This is the frontpage for the Caten project. Look around for a brief while, then join in on the fun!
+					p.btn-toolbar
+						a.btn.btn-large.btn-primary(href='/new') New game
+						a.btn.btn-large.btn-success(href='/demo') Demo

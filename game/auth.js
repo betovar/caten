@@ -2,21 +2,18 @@
  * user AUTHENTICATION
  */
 
-var db = require('./database.js'),
-  passport = require('passport'),
+var passport = require('passport'),
+  //db = require('./database.js'),
   twitter = require('passport-twitter').Strategy;
 
 module.exports = function (app) {
-  app.use(passport.initialize());
-  app.use(passport.session());
-
   passport.use(new twitter({
     consumerKey: process.env.TWITTER_CONSUMER_KEY,
     consumerSecret: process.env.TWITTER_CONSUMER_SECRET,
     callbackURL: app.get('URI')+'/auth/twitter/callback'
   }, function (token, tokenSecret, profile, done) {
     console.log(profile);
-    //db.exists('user:'+user.name);
+    //db.exists('user:'+profile.name);
     return done(null, profile);
   }));
   passport.serializeUser(function (user, done) {
@@ -25,7 +22,6 @@ module.exports = function (app) {
   passport.deserializeUser(function (obj, done) {
     done(null, obj);
   });
-
 };
 
 // Simple route middleware to ensure user is authenticated.
